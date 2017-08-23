@@ -11,15 +11,9 @@ import ARKit
 
 class Scene: SKScene {
     
-    override func didMove(to view: SKView) {
-        // Setup your scene here
-    }
+    var spawn = 0
     
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    func CreateSprite() {
         guard let sceneView = self.view as? ARSKView else {
             return
         }
@@ -36,5 +30,26 @@ class Scene: SKScene {
             let anchor = ARAnchor(transform: transform)
             sceneView.session.add(anchor: anchor)
         }
+    }
+    
+    func spawnTimes() {
+        if spawn == 200 {
+            CreateSprite()
+            spawn = 0
+        }
+    }
+    
+    override func didMove(to view: SKView) {
+        // Setup your scene here
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        // Called before each frame is rendered
+        spawn += 1
+        spawnTimes()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // Called when touched
     }
 }
