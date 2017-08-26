@@ -88,7 +88,7 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
     var score = 20
     
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-        // code here
+        gameCenterViewController.dismiss(animated: true, completion: nil)
     }
     
     func authenticateWithGameCenter() {
@@ -115,7 +115,32 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
         }
     }
     
-    func authenticationDidChange(notification: Notification) {
+    func submitScoreToGC() {
+        score += 12
         
+        // submit score to Game Center
+        let bestScore = GKScore(leaderboardIdentifier: leaderboardID)
+        bestScore.value = Int64(score)
+        GKScore.report([bestScore]) { (error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                print("Yor score has been submitted to Game Center")
+            }
+        }
+    }
+    
+    func openGameCenter() {
+        let gameCenterVC = GKGameCenterViewController()
+        gameCenterVC.gameCenterDelegate = self
+        gameCenterVC.viewState = .leaderboards
+        gameCenterVC.leaderboardIdentifier = leaderboardID
+        present(gameCenterVC, animated: true, completion: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // Called when touched
+        submitScoreToGC()
+        openGameCenter()
     }
 }

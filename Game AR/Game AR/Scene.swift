@@ -49,7 +49,8 @@ class Scene: SKScene {
         spawnTimes()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // Called when touched
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        // Called when touched
+//        
+//    }
 }
