@@ -13,6 +13,7 @@ class Scene: SKScene {
     
     var spawn = 0
     var xTranslation = -5
+    var zTranslation = -9
     
     func CreateSprite() {
         guard let sceneView = self.view as? ARSKView else {
@@ -28,14 +29,23 @@ class Scene: SKScene {
             xTranslation = -5
         }
         
+        // Change zTranslation value before each frame is rendered
+        if zTranslation == -9 {
+            zTranslation = -27
+        } else if zTranslation == -27 {
+            zTranslation = -16
+        } else if zTranslation == -16 {
+            zTranslation = -9
+        }
+        
         // Create anchor using the camera's current position
         if let currentFrame = sceneView.session.currentFrame {
             
             // Create a transform with a translation
             var translation = matrix_identity_float4x4
             translation.columns.3.x = Float(xTranslation)
-            translation.columns.3.y = -1 // we want -5
-            translation.columns.3.z = -9
+            translation.columns.3.y = -7
+            translation.columns.3.z = Float(zTranslation)
             let transform = simd_mul(currentFrame.camera.transform, translation)
             
             // Add a new anchor to the session
