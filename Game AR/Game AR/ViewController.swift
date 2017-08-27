@@ -63,6 +63,9 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         // Create and configure a node for the anchor added to the view's session.
         return SKSpriteNode(imageNamed: "Ducky_F01")
+//        let sprite: Targets = Targets()
+//        sprite.setUpSprites("Ducky_F01")
+//        return sprite
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {

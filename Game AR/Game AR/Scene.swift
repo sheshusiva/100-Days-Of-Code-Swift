@@ -44,7 +44,7 @@ class Scene: SKScene {
             // Create a transform with a translation
             var translation = matrix_identity_float4x4
             translation.columns.3.x = Float(xTranslation)
-            translation.columns.3.y = -7
+            translation.columns.3.y = 0
             translation.columns.3.z = Float(zTranslation)
             let transform = simd_mul(currentFrame.camera.transform, translation)
             
@@ -75,4 +75,21 @@ class Scene: SKScene {
 //        // Called when touched
 //        
 //    }
+}
+
+class Targets: SKSpriteNode {
+    var targetSprites: SKSpriteNode = SKSpriteNode()
+    
+    func setUpSprites(_ name: String) {
+        targetSprites = SKSpriteNode(imageNamed: name)
+        
+        print("Hello ducks")
+        
+        let fly: SKAction = SKAction.move(by: CGVector(dx: 0, dy: 10), duration: 4)
+        fly.timingMode = .easeIn
+        
+        let repeatForever: SKAction = SKAction.repeatForever(fly)
+        
+        targetSprites.run(repeatForever)
+    }
 }
