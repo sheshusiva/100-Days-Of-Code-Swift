@@ -40,14 +40,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        if shortcutItem.type == "com.calebrwells.TopSecret.gameCenter" {
-            let gameCenter: ViewController = ViewController()
-            gameCenter.openGameCenter()
-            print("Hello??")
-        }
-        
-    }
+//    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+//        if shortcutItem.type == "com.calebrwells.TopSecret.gameCenter" {
+//            let gameCenter: ViewController = ViewController()
+//            gameCenter.openGameCenter()
+//            gameCenter.viewDidLoad()
+//
+//            print("Hello??")
+//        }
+//
+//    }
 
 
 }
