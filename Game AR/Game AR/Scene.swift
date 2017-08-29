@@ -85,8 +85,8 @@ class Targets: SKSpriteNode {
         
         print("Hello ducks")
         
-        let fly: SKAction = SKAction.move(by: CGVector(dx: 0, dy: 10), duration: 4)
-        fly.timingMode = .easeIn
+        let fly: SKAction = SKAction.move(by: CGVector(dx: -9, dy: 1), duration: 1)
+        //fly.timingMode = .easeIn
         
         let repeatForever: SKAction = SKAction.repeatForever(fly)
         
