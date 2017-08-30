@@ -61,11 +61,14 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
     // MARK: - ARSKViewDelegate
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
-        // Create and configure a node for the anchor added to the view's session.
-        //return SKSpriteNode(imageNamed: "Ducky_F01")
-        let sprite: Targets = Targets(color: SKColor.red, size: CGSize.init(width: 400, height: 400))
-        sprite.setUpSprites("Ducky_F01")
-        return sprite
+        if Helper.setupState == .addTarget {
+            let sprite: Targets = Targets() //imageNamed: "Ducky_F01"
+            sprite.setUpSprites("Ducky_F01")
+            return sprite
+        } else {
+            let someNode: SKNode = SKNode()
+            return someNode
+        }
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {

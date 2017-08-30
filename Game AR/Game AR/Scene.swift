@@ -81,15 +81,43 @@ class Targets: SKSpriteNode {
     var targetSprites: SKSpriteNode = SKSpriteNode()
     
     func setUpSprites(_ name: String) {
-        targetSprites = SKSpriteNode(imageNamed: name)
+        let targetTexture = SKTexture(imageNamed: name)
+        targetSprites = SKSpriteNode(texture:targetTexture)
         
         print("Hello ducks")
         
-        let fly: SKAction = SKAction.move(by: CGVector(dx: -9, dy: 1), duration: 1)
-        //fly.timingMode = .easeIn
+        let fly: SKAction = SKAction.move(by: CGVector(dx: 0, dy: 400), duration: 1)
+        fly.timingMode = .easeIn
         
         let repeatForever: SKAction = SKAction.repeatForever(fly)
         
         targetSprites.run(repeatForever)
+        
+        let frame2 = SKTexture(imageNamed: "Ducky_F02")
+        let frame3 = SKTexture(imageNamed: "Ducky_F03")
+        
+        let animation = SKAction.animate(with: [targetTexture, frame2, frame3], timePerFrame: 0.5)
+        let runForever = SKAction.repeatForever(animation)
+        
+        targetSprites.run(runForever)
+        
+        self.addChild(targetSprites)
     }
 }
+
+enum SetupState {
+    case addTarget
+}
+
+class Helper {
+    static var stringName: String = ""
+    static var setupState: SetupState = .addTarget
+}
+
+
+
+
+
+
+
+
