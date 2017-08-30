@@ -43,8 +43,8 @@ class Scene: SKScene {
             
             // Create a transform with a translation
             var translation = matrix_identity_float4x4
-            translation.columns.3.x = Float(xTranslation)
-            translation.columns.3.y = 0
+            translation.columns.3.x = -16 //Float(xTranslation)
+            translation.columns.3.y = -9
             translation.columns.3.z = Float(zTranslation)
             let transform = simd_mul(currentFrame.camera.transform, translation)
             
@@ -55,7 +55,7 @@ class Scene: SKScene {
     }
     
     func spawnTimes() {
-        if spawn == 200 {
+        if spawn == 100 {
             CreateSprite()
             spawn = 0
         }
@@ -86,7 +86,7 @@ class Targets: SKSpriteNode {
         
         print("Hello ducks")
         
-        let fly: SKAction = SKAction.move(by: CGVector(dx: 0, dy: 400), duration: 1)
+        let fly: SKAction = SKAction.move(by: CGVector(dx: 800, dy: 800), duration: 0.8)
         fly.timingMode = .easeIn
         
         let repeatForever: SKAction = SKAction.repeatForever(fly)
@@ -96,7 +96,7 @@ class Targets: SKSpriteNode {
         let frame2 = SKTexture(imageNamed: "Ducky_F02")
         let frame3 = SKTexture(imageNamed: "Ducky_F03")
         
-        let animation = SKAction.animate(with: [targetTexture, frame2, frame3], timePerFrame: 0.5)
+        let animation = SKAction.animate(with: [targetTexture, frame2, frame3], timePerFrame: 0.3)
         let runForever = SKAction.repeatForever(animation)
         
         targetSprites.run(runForever)
@@ -113,11 +113,3 @@ class Helper {
     static var stringName: String = ""
     static var setupState: SetupState = .addTarget
 }
-
-
-
-
-
-
-
-
