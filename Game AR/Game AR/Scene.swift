@@ -9,6 +9,8 @@
 import SpriteKit
 import ARKit
 
+var gunShot = 0
+
 class Scene: SKScene {
     
     var spawn = 0
@@ -63,6 +65,7 @@ class Scene: SKScene {
     
     override func didMove(to view: SKView) {
         // Setup your scene here
+        gun()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -71,10 +74,51 @@ class Scene: SKScene {
         spawnTimes()
     }
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        // Called when touched
-//        
-//    }
+    func gun() {
+        if gunShot == 0 {
+            let gunTexture = SKTexture(imageNamed: "Shoot_F01")
+            let gunShooting = SKSpriteNode(texture:gunTexture)
+            
+            gunShooting.scale(to: CGSize(width: 250, height: 250))
+            gunShooting.position = CGPoint(x: 0, y: (view?.frame.midY)! - 300)
+            
+            let frame1 = SKTexture(imageNamed: "Shoot_F01")
+            let frame2 = SKTexture(imageNamed: "Shoot_F02")
+            let frame3 = SKTexture(imageNamed: "Shoot_F03")
+            let frame4 = SKTexture(imageNamed: "Shoot_F04")
+            let frame5 = SKTexture(imageNamed: "Shoot_F05")
+            let frame6 = SKTexture(imageNamed: "Shoot_F06")
+            
+            let animation = SKAction.animate(with: [frame1, frame2, frame3, frame4, frame5, frame6], timePerFrame: 0.2)
+            
+            gunShooting.run(animation)
+            
+            let repeatForever: SKAction = SKAction.repeatForever(animation)
+            
+            gunShooting.run(repeatForever)
+
+            
+            self.addChild(gunShooting)
+        }
+//        else if gunShot == 0 {
+//            let gunTexture = SKTexture(imageNamed: "Shoot_F01")
+//            let gun = SKSpriteNode(texture:gunTexture)
+//
+//            gun.scale(to: CGSize(width: 250, height: 250))
+//            gun.position = CGPoint(x: 0, y: (view?.frame.midY)! - 300)
+//            self.addChild(gun)
+//        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        if gunShot == 0 {
+//            gunShot = 1
+//            gun()
+//        } else if gunShot == 1 {
+//            gunShot = 0
+//            gun()
+//        }
+    }
 }
 
 class Targets: SKSpriteNode {
@@ -95,8 +139,9 @@ class Targets: SKSpriteNode {
         
         let frame2 = SKTexture(imageNamed: "Ducky_F02")
         let frame3 = SKTexture(imageNamed: "Ducky_F03")
+        let frame4 = SKTexture(imageNamed: "Ducky_F04")
         
-        let animation = SKAction.animate(with: [targetTexture, frame2, frame3], timePerFrame: 0.3)
+        let animation = SKAction.animate(with: [targetTexture, frame2, frame3, frame4], timePerFrame: 0.2)
         let runForever = SKAction.repeatForever(animation)
         
         targetSprites.run(runForever)

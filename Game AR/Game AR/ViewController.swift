@@ -62,7 +62,7 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         if Helper.setupState == .addTarget {
-            let sprite: Targets = Targets() //imageNamed: "Ducky_F01"
+            let sprite: Targets = Targets()
             sprite.setUpSprites("Ducky_F01")
             return sprite
         } else {
@@ -145,8 +145,18 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // Called when touched
-        submitScoreToGC()
-        openGameCenter()
+        // MARK: ==== Check what side of the screen got tapped
+        //let touch = touches.first!
+        //let point = touch.location(in: self.view)
+        
+        //        if point.x < /2 {
+        //            print("Left side of screen")
+        //        } else {
+        //            print("Right side of screen")
+        //        }
+        
+//        submitScoreToGC()
+//        openGameCenter()
+        
     }
 }
