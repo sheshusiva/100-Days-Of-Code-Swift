@@ -7,123 +7,106 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0057870A1F4E366F00823FC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005787091F4E366F00823FC6 /* AppDelegate.swift */; };
-		0057870C1F4E366F00823FC6 /* Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0057870B1F4E366F00823FC6 /* Scene.sks */; };
-		0057870E1F4E366F00823FC6 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057870D1F4E366F00823FC6 /* Scene.swift */; };
-		005787101F4E366F00823FC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057870F1F4E366F00823FC6 /* ViewController.swift */; };
-		005787131F4E366F00823FC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005787111F4E366F00823FC6 /* Main.storyboard */; };
-		005787151F4E366F00823FC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005787141F4E366F00823FC6 /* Assets.xcassets */; };
-		005787181F4E366F00823FC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005787161F4E366F00823FC6 /* LaunchScreen.storyboard */; };
-		00D6383A1F5895B700E3DE0B /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D638391F5895B700E3DE0B /* GameKit.framework */; };
+		00D638481F58A85D00E3DE0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D638471F58A85D00E3DE0B /* AppDelegate.swift */; };
+		00D6384A1F58A85D00E3DE0B /* Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 00D638491F58A85D00E3DE0B /* Scene.sks */; };
+		00D6384C1F58A85D00E3DE0B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6384B1F58A85D00E3DE0B /* Scene.swift */; };
+		00D6384E1F58A85D00E3DE0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6384D1F58A85D00E3DE0B /* ViewController.swift */; };
+		00D638511F58A85D00E3DE0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D6384F1F58A85D00E3DE0B /* Main.storyboard */; };
+		00D638531F58A85D00E3DE0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D638521F58A85D00E3DE0B /* Assets.xcassets */; };
+		00D638561F58A85D00E3DE0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D638541F58A85D00E3DE0B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		005787061F4E366F00823FC6 /* Game AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		005787091F4E366F00823FC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0057870B1F4E366F00823FC6 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
-		0057870D1F4E366F00823FC6 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
-		0057870F1F4E366F00823FC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		005787121F4E366F00823FC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		005787141F4E366F00823FC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		005787171F4E366F00823FC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		005787191F4E366F00823FC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00D638391F5895B700E3DE0B /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		00D638441F58A85D00E3DE0B /* AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00D638471F58A85D00E3DE0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		00D638491F58A85D00E3DE0B /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
+		00D6384B1F58A85D00E3DE0B /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		00D6384D1F58A85D00E3DE0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		00D638501F58A85D00E3DE0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00D638521F58A85D00E3DE0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00D638551F58A85D00E3DE0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		00D638571F58A85D00E3DE0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		005787031F4E366F00823FC6 /* Frameworks */ = {
+		00D638411F58A85D00E3DE0B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00D6383A1F5895B700E3DE0B /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		005786FD1F4E366F00823FC6 = {
+		00D6383B1F58A85D00E3DE0B = {
 			isa = PBXGroup;
 			children = (
-				005787081F4E366F00823FC6 /* Game AR */,
-				005787071F4E366F00823FC6 /* Products */,
-				007F378F1F4F0E5000F710C6 /* Frameworks */,
+				00D638461F58A85D00E3DE0B /* AR */,
+				00D638451F58A85D00E3DE0B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		005787071F4E366F00823FC6 /* Products */ = {
+		00D638451F58A85D00E3DE0B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				005787061F4E366F00823FC6 /* Game AR.app */,
+				00D638441F58A85D00E3DE0B /* AR.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		005787081F4E366F00823FC6 /* Game AR */ = {
+		00D638461F58A85D00E3DE0B /* AR */ = {
 			isa = PBXGroup;
 			children = (
-				005787091F4E366F00823FC6 /* AppDelegate.swift */,
-				0057870B1F4E366F00823FC6 /* Scene.sks */,
-				0057870D1F4E366F00823FC6 /* Scene.swift */,
-				0057870F1F4E366F00823FC6 /* ViewController.swift */,
-				005787111F4E366F00823FC6 /* Main.storyboard */,
-				005787141F4E366F00823FC6 /* Assets.xcassets */,
-				005787161F4E366F00823FC6 /* LaunchScreen.storyboard */,
-				005787191F4E366F00823FC6 /* Info.plist */,
+				00D638471F58A85D00E3DE0B /* AppDelegate.swift */,
+				00D638491F58A85D00E3DE0B /* Scene.sks */,
+				00D6384B1F58A85D00E3DE0B /* Scene.swift */,
+				00D6384D1F58A85D00E3DE0B /* ViewController.swift */,
+				00D6384F1F58A85D00E3DE0B /* Main.storyboard */,
+				00D638521F58A85D00E3DE0B /* Assets.xcassets */,
+				00D638541F58A85D00E3DE0B /* LaunchScreen.storyboard */,
+				00D638571F58A85D00E3DE0B /* Info.plist */,
 			);
-			path = "Game AR";
-			sourceTree = "<group>";
-		};
-		007F378F1F4F0E5000F710C6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				00D638391F5895B700E3DE0B /* GameKit.framework */,
-			);
-			name = Frameworks;
+			path = AR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		005787051F4E366F00823FC6 /* Game AR */ = {
+		00D638431F58A85D00E3DE0B /* AR */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0057871C1F4E366F00823FC6 /* Build configuration list for PBXNativeTarget "Game AR" */;
+			buildConfigurationList = 00D6385A1F58A85D00E3DE0B /* Build configuration list for PBXNativeTarget "AR" */;
 			buildPhases = (
-				005787021F4E366F00823FC6 /* Sources */,
-				005787031F4E366F00823FC6 /* Frameworks */,
-				005787041F4E366F00823FC6 /* Resources */,
+				00D638401F58A85D00E3DE0B /* Sources */,
+				00D638411F58A85D00E3DE0B /* Frameworks */,
+				00D638421F58A85D00E3DE0B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Game AR";
-			productName = "Game AR";
-			productReference = 005787061F4E366F00823FC6 /* Game AR.app */;
+			name = AR;
+			productName = AR;
+			productReference = 00D638441F58A85D00E3DE0B /* AR.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		005786FE1F4E366F00823FC6 /* Project object */ = {
+		00D6383C1F58A85D00E3DE0B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Caleb Wells";
 				TargetAttributes = {
-					005787051F4E366F00823FC6 = {
+					00D638431F58A85D00E3DE0B = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.GameCenter = {
-								enabled = 1;
-							};
-						};
 					};
 				};
 			};
-			buildConfigurationList = 005787011F4E366F00823FC6 /* Build configuration list for PBXProject "Game AR" */;
+			buildConfigurationList = 00D6383F1F58A85D00E3DE0B /* Build configuration list for PBXProject "AR" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -131,56 +114,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 005786FD1F4E366F00823FC6;
-			productRefGroup = 005787071F4E366F00823FC6 /* Products */;
+			mainGroup = 00D6383B1F58A85D00E3DE0B;
+			productRefGroup = 00D638451F58A85D00E3DE0B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				005787051F4E366F00823FC6 /* Game AR */,
+				00D638431F58A85D00E3DE0B /* AR */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		005787041F4E366F00823FC6 /* Resources */ = {
+		00D638421F58A85D00E3DE0B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0057870C1F4E366F00823FC6 /* Scene.sks in Resources */,
-				005787181F4E366F00823FC6 /* LaunchScreen.storyboard in Resources */,
-				005787151F4E366F00823FC6 /* Assets.xcassets in Resources */,
-				005787131F4E366F00823FC6 /* Main.storyboard in Resources */,
+				00D6384A1F58A85D00E3DE0B /* Scene.sks in Resources */,
+				00D638561F58A85D00E3DE0B /* LaunchScreen.storyboard in Resources */,
+				00D638531F58A85D00E3DE0B /* Assets.xcassets in Resources */,
+				00D638511F58A85D00E3DE0B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		005787021F4E366F00823FC6 /* Sources */ = {
+		00D638401F58A85D00E3DE0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005787101F4E366F00823FC6 /* ViewController.swift in Sources */,
-				0057870E1F4E366F00823FC6 /* Scene.swift in Sources */,
-				0057870A1F4E366F00823FC6 /* AppDelegate.swift in Sources */,
+				00D6384E1F58A85D00E3DE0B /* ViewController.swift in Sources */,
+				00D6384C1F58A85D00E3DE0B /* Scene.swift in Sources */,
+				00D638481F58A85D00E3DE0B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		005787111F4E366F00823FC6 /* Main.storyboard */ = {
+		00D6384F1F58A85D00E3DE0B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				005787121F4E366F00823FC6 /* Base */,
+				00D638501F58A85D00E3DE0B /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		005787161F4E366F00823FC6 /* LaunchScreen.storyboard */ = {
+		00D638541F58A85D00E3DE0B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				005787171F4E366F00823FC6 /* Base */,
+				00D638551F58A85D00E3DE0B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -188,7 +171,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0057871A1F4E366F00823FC6 /* Debug */ = {
+		00D638581F58A85D00E3DE0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -245,7 +228,7 @@
 			};
 			name = Debug;
 		};
-		0057871B1F4E366F00823FC6 /* Release */ = {
+		00D638591F58A85D00E3DE0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -295,30 +278,30 @@
 			};
 			name = Release;
 		};
-		0057871D1F4E366F00823FC6 /* Debug */ = {
+		00D6385B1F58A85D00E3DE0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33NUGZ4GWE;
-				INFOPLIST_FILE = "Game AR/Info.plist";
+				INFOPLIST_FILE = AR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.calebrwells.TopSecret;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calebrwells.AR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		0057871E1F4E366F00823FC6 /* Release */ = {
+		00D6385C1F58A85D00E3DE0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33NUGZ4GWE;
-				INFOPLIST_FILE = "Game AR/Info.plist";
+				INFOPLIST_FILE = AR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.calebrwells.TopSecret;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calebrwells.AR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -328,25 +311,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		005787011F4E366F00823FC6 /* Build configuration list for PBXProject "Game AR" */ = {
+		00D6383F1F58A85D00E3DE0B /* Build configuration list for PBXProject "AR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0057871A1F4E366F00823FC6 /* Debug */,
-				0057871B1F4E366F00823FC6 /* Release */,
+				00D638581F58A85D00E3DE0B /* Debug */,
+				00D638591F58A85D00E3DE0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0057871C1F4E366F00823FC6 /* Build configuration list for PBXNativeTarget "Game AR" */ = {
+		00D6385A1F58A85D00E3DE0B /* Build configuration list for PBXNativeTarget "AR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0057871D1F4E366F00823FC6 /* Debug */,
-				0057871E1F4E366F00823FC6 /* Release */,
+				00D6385B1F58A85D00E3DE0B /* Debug */,
+				00D6385C1F58A85D00E3DE0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 005786FE1F4E366F00823FC6 /* Project object */;
+	rootObject = 00D6383C1F58A85D00E3DE0B /* Project object */;
 }

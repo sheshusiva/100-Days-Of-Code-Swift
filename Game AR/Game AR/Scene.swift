@@ -66,20 +66,12 @@ class Scene: SKScene {
     override func didMove(to view: SKView) {
         // Setup your scene here
         gun()
-        gameCenterIcon()
     }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         spawn += 1
         spawnTimes()
-    }
-    
-    func gameCenterIcon() {
-        let gci = SKSpriteNode(imageNamed: "gcIcon")
-
-        gci.scale(to: CGSize(width: 250, height: 250))
-        gci.position = CGPoint(x: (view?.frame.midX)! - 300, y: (view?.frame.midY)! - 300)
     }
     
     func gun() {
@@ -104,15 +96,19 @@ class Scene: SKScene {
             let repeatForever: SKAction = SKAction.repeatForever(animation)
             
             gunShooting.run(repeatForever)
-
+            
             
             self.addChild(gunShooting)
         }
+        //        else if gunShot == 0 {
+        //            let gunTexture = SKTexture(imageNamed: "Shoot_F01")
+        //            let gun = SKSpriteNode(texture:gunTexture)
+        //
+        //            gun.scale(to: CGSize(width: 250, height: 250))
+        //            gun.position = CGPoint(x: 0, y: (view?.frame.midY)! - 300)
+        //            self.addChild(gun)
+        //        }
     }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("Hello")
-//    }
 }
 
 class Targets: SKSpriteNode {

@@ -41,7 +41,7 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-
+        
         // Run the view's session
         sceneView.session.run(configuration)
     }
@@ -61,14 +61,14 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
     // MARK: - ARSKViewDelegate
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
-        //if Helper.setupState == .addTarget {
+        if Helper.setupState == .addTarget {
             let sprite: Targets = Targets()
             sprite.setUpSprites("Ducky_F01")
             return sprite
-        //} else {
-            //let someNode: SKNode = SKNode()
-            //return someNode
-        //}
+        } else {
+            let someNode: SKNode = SKNode()
+            return someNode
+        }
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
@@ -148,7 +148,7 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
         // MARK: ==== Check what side of the screen got tapped
         let touch = touches.first!
         let point = touch.location(in: self.view)
-
+        
         if point.x < view.bounds.width / 2 && point.y > view.bounds.width / 2 {
             submitScoreToGC()
             openGameCenter()
@@ -159,3 +159,4 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
         }
     }
 }
+
