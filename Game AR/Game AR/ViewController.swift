@@ -149,7 +149,7 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
         let touch = touches.first!
         let point = touch.location(in: self.view)
 
-        if point.x < view.bounds.width / 2 {
+        if point.x < view.bounds.width / 2 && point.y > view.bounds.width / 2 {
             submitScoreToGC()
             openGameCenter()
             print("Left side of screen")
