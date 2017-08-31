@@ -152,10 +152,10 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
         if point.x < view.bounds.width / 2 && point.y > view.bounds.width / 2 {
             submitScoreToGC()
             openGameCenter()
-            print("Left side of screen")
+            print("Game Center button")
         } else {
             
-            print("Right side of screen")
+            print("Shoot")
         }
     }
 }

@@ -17,22 +17,11 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.1</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>0.1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>This application will use the camera for Augmented Reality.</string>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeLove</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Game Center</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>com.calebrwells.TopSecret.gameCenter</string>
-		</dict>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
