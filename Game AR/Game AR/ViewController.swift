@@ -145,6 +145,7 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         // MARK: ==== Check what side of the screen got tapped
         let touch = touches.first!
         let point = touch.location(in: self.view)
@@ -153,10 +154,17 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
             submitScoreToGC()
             openGameCenter()
             print("Game Center button")
-        } else {
+        } //else {
+//            if gunShot == 0 {
+//                gunShot = 1
+//                newGunShot = 1
+//                gunShot = gunShotFunc(gunShot)
+//            } else if gunShot == 1 {
+//                gunShot = 0
+//                gunShot = gunShotFunc(gunShot)
+//            }
             
-            print("Shoot")
-        }
+        //}
     }
 }
 
