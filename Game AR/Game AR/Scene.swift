@@ -144,8 +144,6 @@ class Targets: SKSpriteNode {
         let targetTexture = SKTexture(imageNamed: name)
         targetSprites = SKSpriteNode(texture:targetTexture)
         
-        print("Hello ducks")
-        
         let fly: SKAction = SKAction.move(by: CGVector(dx: 800, dy: 800), duration: 0.8)
         fly.timingMode = .easeIn
         
@@ -155,9 +153,8 @@ class Targets: SKSpriteNode {
         
         let frame2 = SKTexture(imageNamed: "Ducky_F02")
         let frame3 = SKTexture(imageNamed: "Ducky_F03")
-        let frame4 = SKTexture(imageNamed: "Ducky_F04")
         
-        let animation = SKAction.animate(with: [targetTexture, frame2, frame3, frame4], timePerFrame: 0.2)
+        let animation = SKAction.animate(with: [targetTexture, frame2, frame3], timePerFrame: 0.18)
         let runForever = SKAction.repeatForever(animation)
         
         targetSprites.run(runForever)
