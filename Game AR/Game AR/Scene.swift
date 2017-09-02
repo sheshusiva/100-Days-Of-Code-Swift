@@ -70,7 +70,7 @@ class Scene: SKScene {
     
     override func didMove(to view: SKView) {
         // Setup your scene
-        gun(0)
+        gunShoooting(0)
         gameCenterIcon()
     }
     
@@ -94,22 +94,24 @@ class Scene: SKScene {
         let point = touch.location(in: self.view)
         
         if point.x > size.width / 2 && point.y < size.width / 2 {
-            gun(1)
+            gunShoooting(1)
+            gunShoooting(2)
         }
     }
     
-    func gun(_ number: Int) {
-        let gunTexture = SKTexture(imageNamed: "Shoot_F01")
+    let gunTexture = SKTexture(imageNamed: "Shoot_F01")
+    var gunShooting = SKSpriteNode()
+    
+    func gunShoooting(_ number: Int) {
+        
+        gunShooting = SKSpriteNode(texture:gunTexture)
         
         if number == 1 {
             print("===== HELLO?????")
-            let gunShooting = SKSpriteNode(texture:gunTexture)
-            
             
             gunShooting.scale(to: CGSize(width: 250, height: 250))
             gunShooting.position = CGPoint(x: 0, y: (view?.frame.midY)! - 300)
             
-            //let frame1 = SKTexture(imageNamed: "Shoot_F01")
             let frame2 = SKTexture(imageNamed: "Shoot_F02")
             let frame3 = SKTexture(imageNamed: "Shoot_F03")
             let frame4 = SKTexture(imageNamed: "Shoot_F04")
@@ -120,8 +122,6 @@ class Scene: SKScene {
             
             gunShooting.run(animation)
             
-            gunShooting.zPosition = 2
-            
             self.addChild(gunShooting)
         } else if number == 0 {
             print("===== WTF?????")
@@ -129,9 +129,16 @@ class Scene: SKScene {
 
             gun.scale(to: CGSize(width: 250, height: 250))
             gun.position = CGPoint(x: 0, y: (view?.frame.midY)! - 300)
-            
+
             self.addChild(gun)
-            gun.zPosition = -2
+        } else if number == 2 {
+            print("===== 2222222?????")
+            let gun = SKSpriteNode(texture:gunTexture)
+            
+            gun.scale(to: CGSize(width: 250, height: 250))
+            gun.position = CGPoint(x: 0, y: (view?.frame.midY)! - 300)
+            
+            gunShooting.isHidden = true
         }
     }
 }
