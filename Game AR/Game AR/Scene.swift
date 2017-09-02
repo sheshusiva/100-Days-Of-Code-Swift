@@ -9,14 +9,16 @@
 import SpriteKit
 import ARKit
 
-//var gunShot = 0
 var xTranslation = -5
 var zTranslation = -9
 
-//func gunShotFunc(_ number: Int) -> Int {
-//    print("Shoot \(number)")
-//    return gunShot
-//}
+var targetSprites: SKSpriteNode = SKSpriteNode()
+let gunTexture = SKTexture(imageNamed: "Shoot_F01")
+var gunShooting: SKSpriteNode = SKSpriteNode()
+
+let noCategory: UInt32 = 0
+let targetCategory: UInt32 = 1
+let gunCategory: UInt32 = 2
 
 class Scene: SKScene {
     
@@ -70,8 +72,21 @@ class Scene: SKScene {
     
     override func didMove(to view: SKView) {
         // Setup your scene
+        targetSprites.physicsBody?.categoryBitMask = targetCategory
+        targetSprites.physicsBody?.contactTestBitMask = gunCategory
+        
+        gunShooting.physicsBody?.categoryBitMask = gunCategory
+        gunShooting.physicsBody?.contactTestBitMask = targetCategory
+        
         gunShoooting(0)
         gameCenterIcon()
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        contact.bodyA.node?.removeFromParent()
+        contact.bodyB.node?.removeFromParent()
+
+        print("--- Contact! ----")
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -98,9 +113,6 @@ class Scene: SKScene {
             gunShoooting(2)
         }
     }
-    
-    let gunTexture = SKTexture(imageNamed: "Shoot_F01")
-    var gunShooting = SKSpriteNode()
     
     func gunShoooting(_ number: Int) {
         
@@ -142,8 +154,6 @@ class Scene: SKScene {
         }
     }
 }
-
-var targetSprites: SKSpriteNode = SKSpriteNode()
 
 class Targets: SKSpriteNode {
     
