@@ -91,8 +91,6 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
     var gkEnabled = Bool()
     var gkDefaultLeaderBoardID = String()
     
-    var score = 20
-    
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
     }
@@ -122,7 +120,6 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
     }
     
     func submitScoreToGC() {
-        score += 12
         
         // submit score to Game Center
         let bestScore = GKScore(leaderboardIdentifier: leaderboardID)
@@ -151,20 +148,11 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
         let point = touch.location(in: self.view)
         
         if point.x < view.bounds.width / 2 && point.y > view.bounds.width / 2 {
+            score += 100
             submitScoreToGC()
             openGameCenter()
             print("Game Center button")
-        } //else {
-//            if gunShot == 0 {
-//                gunShot = 1
-//                newGunShot = 1
-//                gunShot = gunShotFunc(gunShot)
-//            } else if gunShot == 1 {
-//                gunShot = 0
-//                gunShot = gunShotFunc(gunShot)
-//            }
-            
-        //}
+        }
     }
 }
 

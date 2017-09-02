@@ -12,15 +12,22 @@ import ARKit
 var xTranslation = -5
 var zTranslation = -9
 
+var scoreLabel: SKLabelNode!
+
+var score = 0 {
+    didSet {
+        scoreLabel.text = "SCORE: \(score)"
+    }
+}
+
 var targetSprites: SKSpriteNode = SKSpriteNode()
 let gunTexture = SKTexture(imageNamed: "Shoot_F01")
 var gunShooting: SKSpriteNode = SKSpriteNode()
 
-let noCategory: UInt32 = 0
-let targetCategory: UInt32 = 1
-let gunCategory: UInt32 = 2
+let targetCategory: UInt32 = 0b1
+let gunCategory: UInt32 = 0b1 << 1
 
-class Scene: SKScene {
+class Scene: SKScene, SKPhysicsContactDelegate {
     
     var spawn = 0
     
@@ -72,6 +79,8 @@ class Scene: SKScene {
     
     override func didMove(to view: SKView) {
         // Setup your scene
+        self.physicsWorld.contactDelegate = self
+        
         targetSprites.physicsBody?.categoryBitMask = targetCategory
         targetSprites.physicsBody?.contactTestBitMask = gunCategory
         
@@ -80,6 +89,7 @@ class Scene: SKScene {
         
         gunShoooting(0)
         gameCenterIcon()
+        createScore()
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -104,6 +114,16 @@ class Scene: SKScene {
         self.addChild(gcNode)
     }
     
+    func createScore() {
+        scoreLabel = SKLabelNode(fontNamed: "Optima-ExtraBlack")
+        scoreLabel.fontSize = 27
+        
+        scoreLabel.position = CGPoint(x: 0, y: (view?.frame.midY)! - 30)
+        scoreLabel.text = "SCORE: 0"
+        
+        self.addChild(scoreLabel)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         let point = touch.location(in: self.view)
@@ -111,6 +131,7 @@ class Scene: SKScene {
         if point.x > size.width / 2 && point.y < size.width / 2 {
             gunShoooting(1)
             gunShoooting(2)
+            score += 100
         }
     }
     
