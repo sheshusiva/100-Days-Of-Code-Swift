@@ -106,7 +106,7 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
                 
                 localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: {(leaderboardID, error) in
                     if error != nil {
-                        print(error)
+                        print(error!)
                     } else {
                         self.gkDefaultLeaderBoardID = leaderboardID!
                     }
@@ -114,7 +114,7 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
             } else {
                 self.gkEnabled = false
                 print("Player could not be authenicated")
-                print(error)
+                print(error!)
             }
         }
     }
