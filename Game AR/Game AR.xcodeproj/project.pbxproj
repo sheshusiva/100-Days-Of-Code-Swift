@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000677B21F5B00F9005D75E3 /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000677B11F5B00F9005D75E3 /* Stickers.xcassets */; };
+		000677B61F5B00F9005D75E3 /* Ducky Hunt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 000677AF1F5B00F9005D75E3 /* Ducky Hunt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0057870A1F4E366F00823FC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005787091F4E366F00823FC6 /* AppDelegate.swift */; };
 		0057870C1F4E366F00823FC6 /* Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0057870B1F4E366F00823FC6 /* Scene.sks */; };
 		0057870E1F4E366F00823FC6 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057870D1F4E366F00823FC6 /* Scene.swift */; };
@@ -17,7 +19,34 @@
 		00D6383A1F5895B700E3DE0B /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D638391F5895B700E3DE0B /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		000677B41F5B00F9005D75E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 005786FE1F4E366F00823FC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000677AE1F5B00F9005D75E3;
+			remoteInfo = "Ducky Hunt";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		000677BA1F5B00F9005D75E3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				000677B61F5B00F9005D75E3 /* Ducky Hunt.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		000677AF1F5B00F9005D75E3 /* Ducky Hunt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Ducky Hunt.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		000677B11F5B00F9005D75E3 /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
+		000677B31F5B00F9005D75E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		005787061F4E366F00823FC6 /* Game AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		005787091F4E366F00823FC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0057870B1F4E366F00823FC6 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
@@ -42,10 +71,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		000677B01F5B00F9005D75E3 /* Ducky Hunt */ = {
+			isa = PBXGroup;
+			children = (
+				000677B11F5B00F9005D75E3 /* Stickers.xcassets */,
+				000677B31F5B00F9005D75E3 /* Info.plist */,
+			);
+			path = "Ducky Hunt";
+			sourceTree = "<group>";
+		};
 		005786FD1F4E366F00823FC6 = {
 			isa = PBXGroup;
 			children = (
 				005787081F4E366F00823FC6 /* Game AR */,
+				000677B01F5B00F9005D75E3 /* Ducky Hunt */,
 				005787071F4E366F00823FC6 /* Products */,
 				007F378F1F4F0E5000F710C6 /* Frameworks */,
 			);
@@ -55,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				005787061F4E366F00823FC6 /* Game AR.app */,
+				000677AF1F5B00F9005D75E3 /* Ducky Hunt.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +125,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		000677AE1F5B00F9005D75E3 /* Ducky Hunt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000677B91F5B00F9005D75E3 /* Build configuration list for PBXNativeTarget "Ducky Hunt" */;
+			buildPhases = (
+				000677AD1F5B00F9005D75E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ducky Hunt";
+			productName = "Ducky Hunt";
+			productReference = 000677AF1F5B00F9005D75E3 /* Ducky Hunt.appex */;
+			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
+		};
 		005787051F4E366F00823FC6 /* Game AR */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0057871C1F4E366F00823FC6 /* Build configuration list for PBXNativeTarget "Game AR" */;
@@ -92,10 +147,12 @@
 				005787021F4E366F00823FC6 /* Sources */,
 				005787031F4E366F00823FC6 /* Frameworks */,
 				005787041F4E366F00823FC6 /* Resources */,
+				000677BA1F5B00F9005D75E3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				000677B51F5B00F9005D75E3 /* PBXTargetDependency */,
 			);
 			name = "Game AR";
 			productName = "Game AR";
@@ -112,6 +169,10 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Caleb Wells";
 				TargetAttributes = {
+					000677AE1F5B00F9005D75E3 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
 					005787051F4E366F00823FC6 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -137,11 +198,20 @@
 			projectRoot = "";
 			targets = (
 				005787051F4E366F00823FC6 /* Game AR */,
+				000677AE1F5B00F9005D75E3 /* Ducky Hunt */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		000677AD1F5B00F9005D75E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000677B21F5B00F9005D75E3 /* Stickers.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		005787041F4E366F00823FC6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -168,6 +238,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		000677B51F5B00F9005D75E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000677AE1F5B00F9005D75E3 /* Ducky Hunt */;
+			targetProxy = 000677B41F5B00F9005D75E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		005787111F4E366F00823FC6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -188,6 +266,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		000677B71F5B00F9005D75E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 33NUGZ4GWE;
+				INFOPLIST_FILE = "Ducky Hunt/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calebrwells.TopSecret.Ducky-Hunt";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		000677B81F5B00F9005D75E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 33NUGZ4GWE;
+				INFOPLIST_FILE = "Ducky Hunt/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calebrwells.TopSecret.Ducky-Hunt";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		0057871A1F4E366F00823FC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -328,6 +434,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		000677B91F5B00F9005D75E3 /* Build configuration list for PBXNativeTarget "Ducky Hunt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000677B71F5B00F9005D75E3 /* Debug */,
+				000677B81F5B00F9005D75E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		005787011F4E366F00823FC6 /* Build configuration list for PBXProject "Game AR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
