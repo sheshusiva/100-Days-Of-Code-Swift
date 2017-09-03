@@ -20,14 +20,14 @@ var score = 0 {
     }
 }
 
+var targetTexture = SKTexture()
 var targetSprites: SKSpriteNode = SKSpriteNode()
+
 let gunTexture = SKTexture(imageNamed: "Shoot_F01")
 var gunShooting: SKSpriteNode = SKSpriteNode()
+var gunSprite: SKSpriteNode = SKSpriteNode()
 
-let targetCategory: UInt32 = 0b1
-let gunCategory: UInt32 = 0b1 << 1
-
-class Scene: SKScene, SKPhysicsContactDelegate {
+class Scene: SKScene {
     
     var spawn = 0
     
@@ -36,21 +36,15 @@ class Scene: SKScene, SKPhysicsContactDelegate {
             return
         }
         
-        // Change xTranslation value before each frame is rendered
-        if xTranslation == -5 {
+        // Change xTranslation & zTranslation value before each frame is rendered
+        if xTranslation == -5 && zTranslation == -9 {
             xTranslation = -1
-        } else if xTranslation == -1 {
-            xTranslation = 5
-        } else if xTranslation == 5 {
-            xTranslation = -5
-        }
-        
-        // Change zTranslation value before each frame is rendered
-        if zTranslation == -9 {
             zTranslation = -27
-        } else if zTranslation == -27 {
+        } else if xTranslation == -1 && zTranslation == -27 {
+            xTranslation = 5
             zTranslation = -16
-        } else if zTranslation == -16 {
+        } else if xTranslation == 5 && zTranslation == -16 {
+            xTranslation = -5
             zTranslation = -9
         }
         
@@ -59,7 +53,7 @@ class Scene: SKScene, SKPhysicsContactDelegate {
             
             // Create a transform with a translation
             var translation = matrix_identity_float4x4
-            translation.columns.3.x = -16 //Float(xTranslation)
+            translation.columns.3.x = Float(xTranslation)
             translation.columns.3.y = -9
             translation.columns.3.z = Float(zTranslation)
             let transform = simd_mul(currentFrame.camera.transform, translation)
@@ -79,24 +73,12 @@ class Scene: SKScene, SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         // Setup your scene
-        self.physicsWorld.contactDelegate = self
+        gunSprite.zPosition = -50
+        gunShooting.zPosition = 50
         
-        targetSprites.physicsBody?.categoryBitMask = targetCategory
-        targetSprites.physicsBody?.contactTestBitMask = gunCategory
-        
-        gunShooting.physicsBody?.categoryBitMask = gunCategory
-        gunShooting.physicsBody?.contactTestBitMask = targetCategory
-        
-        gunShoooting(0)
+        gun()
         gameCenterIcon()
         createScore()
-    }
-    
-    func didBegin(_ contact: SKPhysicsContact) {
-        contact.bodyA.node?.removeFromParent()
-        contact.bodyB.node?.removeFromParent()
-
-        print("--- Contact! ----")
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -117,6 +99,7 @@ class Scene: SKScene, SKPhysicsContactDelegate {
     func createScore() {
         scoreLabel = SKLabelNode(fontNamed: "Optima-ExtraBlack")
         scoreLabel.fontSize = 27
+        scoreLabel.fontColor = .black
         
         scoreLabel.position = CGPoint(x: 0, y: (view?.frame.midY)! - 30)
         scoreLabel.text = "SCORE: 0"
@@ -130,8 +113,10 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         
         if point.x > size.width / 2 && point.y < size.width / 2 {
             gunShoooting(1)
-            gunShoooting(2)
-            score += 100
+            gunSprite.isHidden = true
+            gunShooting.removeFromParent()
+            addChild(gunShooting)
+            score += 10
         }
     }
     
@@ -140,7 +125,7 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         gunShooting = SKSpriteNode(texture:gunTexture)
         
         if number == 1 {
-            print("===== HELLO?????")
+            print("===== BANG!!! BANG!!!")
             
             gunShooting.scale(to: CGSize(width: 250, height: 250))
             gunShooting.position = CGPoint(x: 0, y: (view?.frame.midY)! - 300)
@@ -156,33 +141,27 @@ class Scene: SKScene, SKPhysicsContactDelegate {
             gunShooting.run(animation)
             
             self.addChild(gunShooting)
-        } else if number == 0 {
-            print("===== WTF?????")
-            let gun = SKSpriteNode(texture:gunTexture)
-
-            gun.scale(to: CGSize(width: 250, height: 250))
-            gun.position = CGPoint(x: 0, y: (view?.frame.midY)! - 300)
-
-            self.addChild(gun)
-        } else if number == 2 {
-            print("===== 2222222?????")
-            let gun = SKSpriteNode(texture:gunTexture)
-            
-            gun.scale(to: CGSize(width: 250, height: 250))
-            gun.position = CGPoint(x: 0, y: (view?.frame.midY)! - 300)
-            
-            gunShooting.isHidden = true
         }
+    }
+    
+    func gun() {
+        let gunTexture = SKTexture(imageNamed: "Shoot_F01")
+        gunSprite = SKSpriteNode(texture:gunTexture)
+        
+        gunSprite.scale(to: CGSize(width: 200, height: 200))
+        gunSprite.position = CGPoint(x: 0, y: (view?.frame.midY)! - 320)
+        gunSprite.zPosition = -50
+        addChild(gunSprite)
     }
 }
 
 class Targets: SKSpriteNode {
     
     func setUpSprites(_ name: String) {
-        let targetTexture = SKTexture(imageNamed: name)
+        targetTexture = SKTexture(imageNamed: name)
         targetSprites = SKSpriteNode(texture:targetTexture)
         
-        let fly: SKAction = SKAction.move(by: CGVector(dx: 800, dy: 800), duration: 0.8)
+        let fly: SKAction = SKAction.move(by: CGVector(dx: 800, dy: 800), duration: 0.3)
         fly.timingMode = .easeIn
         
         let repeatForever: SKAction = SKAction.repeatForever(fly)
@@ -192,9 +171,10 @@ class Targets: SKSpriteNode {
         let frame2 = SKTexture(imageNamed: "Ducky_F02")
         let frame3 = SKTexture(imageNamed: "Ducky_F03")
         
-        let animation = SKAction.animate(with: [targetTexture, frame2, frame3], timePerFrame: 0.18)
+        let animation = SKAction.animate(with: [targetTexture, frame2, frame3], timePerFrame: 0.1)
         let runForever = SKAction.repeatForever(animation)
         
+        targetSprites.zPosition = -72
         targetSprites.run(runForever)
         
         self.addChild(targetSprites)

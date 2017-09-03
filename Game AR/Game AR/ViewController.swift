@@ -113,7 +113,6 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
                 })
             } else {
                 self.gkEnabled = false
-                print("Player could not be authenicated")
                 print(error!)
             }
         }
@@ -128,7 +127,7 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
             if error != nil {
                 print(error!.localizedDescription)
             } else {
-                print("Yor score has been submitted to Game Center")
+                // code?
             }
         }
     }
@@ -148,7 +147,7 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
         let point = touch.location(in: self.view)
         
         if point.x < view.bounds.width / 2 && point.y > view.bounds.width / 2 {
-            score += 100
+            score += 10
             submitScoreToGC()
             openGameCenter()
             print("Game Center button")
