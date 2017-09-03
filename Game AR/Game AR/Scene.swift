@@ -9,7 +9,7 @@
 import SpriteKit
 import ARKit
 
-var xTranslation = -5
+var xTranslation = -21
 var zTranslation = -9
 
 var scoreLabel: SKLabelNode!
@@ -27,7 +27,7 @@ let gunTexture = SKTexture(imageNamed: "Shoot_F01")
 var gunShooting: SKSpriteNode = SKSpriteNode()
 var gunSprite: SKSpriteNode = SKSpriteNode()
 
-class Scene: SKScene {
+class Scene: SKScene, SKPhysicsContactDelegate {
     
     var spawn = 0
     
@@ -37,14 +37,14 @@ class Scene: SKScene {
         }
         
         // Change xTranslation & zTranslation value before each frame is rendered
-        if xTranslation == -5 && zTranslation == -9 {
-            xTranslation = -1
+        if xTranslation == -21 && zTranslation == -9 {
+            xTranslation = -11
             zTranslation = -27
-        } else if xTranslation == -1 && zTranslation == -27 {
-            xTranslation = 5
-            zTranslation = -16
-        } else if xTranslation == 5 && zTranslation == -16 {
+        } else if xTranslation == -11 && zTranslation == -27 {
             xTranslation = -5
+            zTranslation = -32
+        } else if xTranslation == -5 && zTranslation == -32 {
+            xTranslation = -21
             zTranslation = -9
         }
         
@@ -73,6 +73,8 @@ class Scene: SKScene {
     
     override func didMove(to view: SKView) {
         // Setup your scene
+        physicsWorld.contactDelegate = self
+        
         gunSprite.zPosition = -50
         gunShooting.zPosition = 50
         
@@ -105,6 +107,14 @@ class Scene: SKScene {
         scoreLabel.text = "SCORE: 0"
         
         self.addChild(scoreLabel)
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        if contact.bodyA.node == targetSprites || contact.bodyB.node == targetSprites {
+            
+            targetSprites.removeFromParent()
+            print("-- Did contact??")
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -141,6 +151,9 @@ class Scene: SKScene {
             gunShooting.run(animation)
             
             self.addChild(gunShooting)
+            
+            gunShooting.physicsBody = SKPhysicsBody(texture: gunTexture, size: gunTexture.size())
+            gunShooting.physicsBody?.isDynamic = false
         }
     }
     
@@ -155,13 +168,13 @@ class Scene: SKScene {
     }
 }
 
-class Targets: SKSpriteNode {
+class Targets: SKSpriteNode, SKPhysicsContactDelegate {
     
     func setUpSprites(_ name: String) {
         targetTexture = SKTexture(imageNamed: name)
         targetSprites = SKSpriteNode(texture:targetTexture)
         
-        let fly: SKAction = SKAction.move(by: CGVector(dx: 800, dy: 800), duration: 0.3)
+        let fly: SKAction = SKAction.move(by: CGVector(dx: 1200, dy: 800), duration: 0.3)
         fly.timingMode = .easeIn
         
         let repeatForever: SKAction = SKAction.repeatForever(fly)
@@ -177,7 +190,13 @@ class Targets: SKSpriteNode {
         targetSprites.zPosition = -72
         targetSprites.run(runForever)
         
-        self.addChild(targetSprites)
+        addChild(targetSprites)
+        
+        targetSprites.physicsBody = SKPhysicsBody(texture: targetTexture, size: targetTexture.size())
+        targetSprites.physicsBody!.contactTestBitMask = targetSprites.physicsBody!.collisionBitMask
+        targetSprites.physicsBody?.isDynamic = false
+        
+        targetSprites.physicsBody?.collisionBitMask = 0
     }
 }
 
