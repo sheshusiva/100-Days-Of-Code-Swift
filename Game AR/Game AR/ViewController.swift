@@ -29,6 +29,7 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
         // Show statistics such as fps and node count
         sceneView.showsFPS = true
         sceneView.showsNodeCount = true
+        sceneView.showsPhysics = true
         
         // Load the SKScene from 'Scene.sks'
         if let scene = SKScene(fileNamed: "Scene") {
@@ -151,6 +152,8 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
             submitScoreToGC()
             openGameCenter()
             print("Game Center button")
+        } else {
+            print("Duck location: \(sprite)")
         }
     }
 }
