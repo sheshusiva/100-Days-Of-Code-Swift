@@ -10,6 +10,7 @@ import SpriteKit
 import ARKit
 
 var xTranslation = -21
+var yTranslation = -9
 var zTranslation = -9
 
 var scoreLabel: SKLabelNode!
@@ -20,13 +21,11 @@ var score = 0 {
     }
 }
 
-let sprite: Targets = Targets()
-
 let gunTexture = SKTexture(imageNamed: "Shoot_F01")
 var gunShooting: SKSpriteNode = SKSpriteNode()
 var gunSprite: SKSpriteNode = SKSpriteNode()
 
-class Scene: SKScene, SKPhysicsContactDelegate {
+class Scene: SKScene {
     
     var spawn = 0
     
@@ -53,7 +52,7 @@ class Scene: SKScene, SKPhysicsContactDelegate {
             // Create a transform with a translation
             var translation = matrix_identity_float4x4
             translation.columns.3.x = Float(xTranslation)
-            translation.columns.3.y = -9
+            translation.columns.3.y = Float(yTranslation)
             translation.columns.3.z = Float(zTranslation)
             let transform = simd_mul(currentFrame.camera.transform, translation)
             
@@ -71,7 +70,7 @@ class Scene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
-        gun()
+        gun(1)
         gameCenterIcon()
         createScore()
     }
@@ -103,80 +102,65 @@ class Scene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let sprite: Targets = Targets()
+        if Helper.setupState == .addTarget {
+            sprite.setUpSprites("Ducky_F01")
+        }
+        
         let touch = touches.first!
         let point = touch.location(in: self.view)
         
         if point.x > size.width / 2 && point.y < size.width / 2 {
             gunShoooting(1)
+//            print("== Duck X position is: \(xTranslation)")
+//            print("== Duck Y position is: \(yTranslation)")
+//            print("== Gun position is: \(gunShooting.position)")
+            if xTranslation == -11 && yTranslation == -9 {
+                sprite.removeAllChildren()
+                score += 10
+                print("DEAD DUCK!!!")
+                sprite.removeFromParent()
+                
+            }
+            gun(0)
         }
     }
-    
+
+    func gun(_ number: Int) {
+        if number == 1 {
+            let gunTexture = SKTexture(imageNamed: "Shoot_F01")
+            gunSprite = SKSpriteNode(texture:gunTexture)
+
+            gunSprite.scale(to: CGSize(width: 250, height: 250))
+            gunSprite.position = CGPoint(x: 0, y: (view?.frame.midY)! - 320)
+            gunSprite.zPosition = -50
+            addChild(gunSprite)
+        }
+    }
+
     func gunShoooting(_ number: Int) {
-        
+
         gunShooting = SKSpriteNode(texture:gunTexture)
-        
+
         if number == 1 {
             print("===== BANG!!! BANG!!!")
-            
+
             gunShooting.scale(to: CGSize(width: 250, height: 250))
             gunShooting.position = CGPoint(x: 0, y: (view?.frame.midY)! - 300)
-            
+
             let frame2 = SKTexture(imageNamed: "Shoot_F02")
             let frame3 = SKTexture(imageNamed: "Shoot_F03")
-            let frame4 = SKTexture(imageNamed: "Shoot_F04")
-            let frame5 = SKTexture(imageNamed: "Shoot_F05")
-            let frame6 = SKTexture(imageNamed: "Shoot_F06")
-            
-            let animation = SKAction.animate(with: [gunTexture, frame2, frame3, frame4, frame5, frame6, gunTexture], timePerFrame: 0.2)
-            
+//            let frame4 = SKTexture(imageNamed: "Shoot_F04")
+//            let frame5 = SKTexture(imageNamed: "Shoot_F05")
+//            let frame6 = SKTexture(imageNamed: "Shoot_F06")
+
+            let animation = SKAction.animate(with: [gunTexture, frame2, frame3, gunTexture], timePerFrame: 0.2)
+
             gunShooting.run(animation)
-            
+
+            gunShooting.zPosition = 72
+
             self.addChild(gunShooting)
         }
     }
-    
-    func gun() {
-        let gunTexture = SKTexture(imageNamed: "Shoot_F01")
-        gunSprite = SKSpriteNode(texture:gunTexture)
-        
-        gunSprite.scale(to: CGSize(width: 200, height: 200))
-        gunSprite.position = CGPoint(x: 0, y: (view?.frame.midY)! - 320)
-        gunSprite.zPosition = -50
-        addChild(gunSprite)
-    }
-}
-
-class Targets: SKSpriteNode, SKPhysicsContactDelegate {
-    
-    func setUpSprites(_ name: String) {
-        let targetTexture = SKTexture(imageNamed: name)
-        let targetSprites = SKSpriteNode(texture:targetTexture)
-        
-        let fly: SKAction = SKAction.move(by: CGVector(dx: 1200, dy: 800), duration: 0.3)
-        fly.timingMode = .easeIn
-        
-        let repeatForever: SKAction = SKAction.repeatForever(fly)
-        
-        targetSprites.run(repeatForever)
-        
-        let frame2 = SKTexture(imageNamed: "Ducky_F02")
-        let frame3 = SKTexture(imageNamed: "Ducky_F03")
-        
-        let animation = SKAction.animate(with: [targetTexture, frame2, frame3], timePerFrame: 0.12)
-        let runForever = SKAction.repeatForever(animation)
-        
-        targetSprites.zPosition = -72
-        targetSprites.run(runForever)
-        
-        addChild(targetSprites)
-    }
-}
-
-enum SetupState {
-    case addTarget
-}
-
-class Helper {
-    static var stringName: String = ""
-    static var setupState: SetupState = .addTarget
 }

@@ -148,12 +148,11 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
         let point = touch.location(in: self.view)
         
         if point.x < view.bounds.width / 2 && point.y > view.bounds.width / 2 {
-            score += 10
             submitScoreToGC()
             openGameCenter()
             print("Game Center button")
         } else {
-            print("Duck location: \(sprite)")
+            // ??
         }
     }
 }
