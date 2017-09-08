@@ -9,14 +9,11 @@
 import SpriteKit
 import ARKit
 
-enum BodyType: UInt32 {
-    case target = 1
-    case gun = 2
-}
-
 var xTranslation = -21
 var yTranslation = -9
 var zTranslation = -9
+
+let gunSound = SKAction.playSoundFileNamed("bang", waitForCompletion: false)
 
 var scoreLabel: SKLabelNode!
 
@@ -33,13 +30,6 @@ class Scene: SKScene {
     override func didMove(to view: SKView) {
         gameCenterIcon()
         createScore()
-        
-        for node in self.children {
-            if let spriteNode: SKSpriteNode = node as? SKSpriteNode {
-                Helper.setupStateArray.append(spriteNode)
-                spriteNode.removeFromParent()
-            }
-        }
     }
     
     func CreateSprite() {
@@ -106,19 +96,5 @@ class Scene: SKScene {
         scoreLabel.text = "SCORE: 0"
         
         self.addChild(scoreLabel)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let sprite: Targets = Targets()
-        if Helper.setupState == .addTarget {
-            sprite.setUpSprites("Ducky_F01")
-        }
-        
-        let touch = touches.first!
-        let point = touch.location(in: self.view)
-        
-        if point.x > size.width / 2 && point.y < size.width / 2 {
-            //
-        }
     }
 }

@@ -16,7 +16,6 @@
 		005787181F4E366F00823FC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005787161F4E366F00823FC6 /* LaunchScreen.storyboard */; };
 		008423071F60E0C90039A769 /* Targets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008423061F60E0C90039A769 /* Targets.swift */; };
 		008423091F60E1440039A769 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008423081F60E1440039A769 /* Helper.swift */; };
-		0084230B1F60E1770039A769 /* Gun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084230A1F60E1770039A769 /* Gun.swift */; };
 		00D6383A1F5895B700E3DE0B /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D638391F5895B700E3DE0B /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		000561D41F633FC8003134CE /* bang.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bang.m4a; sourceTree = "<group>"; };
 		005787061F4E366F00823FC6 /* Game AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		005787091F4E366F00823FC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0057870B1F4E366F00823FC6 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
@@ -45,7 +45,6 @@
 		005787191F4E366F00823FC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		008423061F60E0C90039A769 /* Targets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Targets.swift; sourceTree = "<group>"; };
 		008423081F60E1440039A769 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		0084230A1F60E1770039A769 /* Gun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gun.swift; sourceTree = "<group>"; };
 		00D638391F5895B700E3DE0B /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -85,11 +84,11 @@
 				0057870B1F4E366F00823FC6 /* Scene.sks */,
 				0057870D1F4E366F00823FC6 /* Scene.swift */,
 				008423081F60E1440039A769 /* Helper.swift */,
-				0084230A1F60E1770039A769 /* Gun.swift */,
 				008423061F60E0C90039A769 /* Targets.swift */,
 				0057870F1F4E366F00823FC6 /* ViewController.swift */,
 				005787111F4E366F00823FC6 /* Main.storyboard */,
 				005787141F4E366F00823FC6 /* Assets.xcassets */,
+				000561D41F633FC8003134CE /* bang.m4a */,
 				005787161F4E366F00823FC6 /* LaunchScreen.storyboard */,
 				005787191F4E366F00823FC6 /* Info.plist */,
 			);
@@ -183,7 +182,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0084230B1F60E1770039A769 /* Gun.swift in Sources */,
 				005787101F4E366F00823FC6 /* ViewController.swift in Sources */,
 				0057870E1F4E366F00823FC6 /* Scene.swift in Sources */,
 				008423091F60E1440039A769 /* Helper.swift in Sources */,
