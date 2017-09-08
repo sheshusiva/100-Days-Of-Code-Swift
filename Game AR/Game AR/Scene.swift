@@ -30,6 +30,18 @@ class Scene: SKScene {
     
     var spawn = 0
     
+    override func didMove(to view: SKView) {
+        gameCenterIcon()
+        createScore()
+        
+        for node in self.children {
+            if let spriteNode: SKSpriteNode = node as? SKSpriteNode {
+                Helper.setupStateArray.append(spriteNode)
+                spriteNode.removeFromParent()
+            }
+        }
+    }
+    
     func CreateSprite() {
         guard let sceneView = self.view as? ARSKView else {
             return
@@ -68,12 +80,6 @@ class Scene: SKScene {
             CreateSprite()
             spawn = 0
         }
-    }
-    
-    override func didMove(to view: SKView) {
-        //gun()
-        gameCenterIcon()
-        createScore()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -115,13 +121,4 @@ class Scene: SKScene {
             //
         }
     }
-
-//    func gun() {
-//        let gunTexture = SKTexture(imageNamed: "Gun_Scope")
-//        gunSprite = SKSpriteNode(texture:gunTexture)
-//
-//        gunSprite.scale(to: CGSize(width: 100, height: 100))
-//        gunSprite.position = CGPoint(x: 0, y: 0)
-//        addChild(gunSprite)
-//    }
 }

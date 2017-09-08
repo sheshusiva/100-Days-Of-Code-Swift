@@ -69,8 +69,10 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
             let gunSprite: Gun = Gun()
             gunSprite.setUp()  //("Gun_Scope")
             
-            let spriteArrary: SKSpriteNode = Helper.setupStateArray[sprite, gunSprite]
-            return spriteArrary
+            return sprite
+            
+            //let spriteArrary: SKSpriteNode = Helper.setupStateArray[sprite, gunSprite]
+            //return spriteArrary
         } else {
             let someNode: SKNode = SKNode()
             return someNode
