@@ -39,7 +39,3 @@ class Targets: SKSpriteNode {
         addChild(targetSprites)
     }
 }
-
-enum SetupState {
-    case addTarget
-}

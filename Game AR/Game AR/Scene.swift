@@ -9,6 +9,11 @@
 import SpriteKit
 import ARKit
 
+enum BodyType: UInt32 {
+    case target = 1
+    case gun = 2
+}
+
 var xTranslation = -21
 var yTranslation = -9
 var zTranslation = -9
@@ -20,10 +25,6 @@ var score = 0 {
         scoreLabel.text = "SCORE: \(score)"
     }
 }
-
-let gunTexture = SKTexture(imageNamed: "Gun_Scope")
-var gunShooting: SKSpriteNode = SKSpriteNode()
-var gunSprite: SKSpriteNode = SKSpriteNode()
 
 class Scene: SKScene {
     
@@ -70,7 +71,7 @@ class Scene: SKScene {
     }
     
     override func didMove(to view: SKView) {
-        gun()
+        //gun()
         gameCenterIcon()
         createScore()
     }
@@ -111,26 +112,16 @@ class Scene: SKScene {
         let point = touch.location(in: self.view)
         
         if point.x > size.width / 2 && point.y < size.width / 2 {
-            gun()
-//            print("== Duck X position is: \(xTranslation)")
-//            print("== Duck Y position is: \(yTranslation)")
-//            print("== Gun position is: \(gunShooting.position)")
-            if xTranslation == -11 && yTranslation == -9 {
-                sprite.removeAllChildren()
-                score += 10
-                print("DEAD DUCK!!!")
-                sprite.removeFromParent()
-                
-            }
+            //
         }
     }
 
-    func gun() {
-        let gunTexture = SKTexture(imageNamed: "Gun_Scope")
-        gunSprite = SKSpriteNode(texture:gunTexture)
-
-        gunSprite.scale(to: CGSize(width: 150, height: 150))
-        gunSprite.position = CGPoint(x: 0, y: 0)
-        addChild(gunSprite)
-    }
+//    func gun() {
+//        let gunTexture = SKTexture(imageNamed: "Gun_Scope")
+//        gunSprite = SKSpriteNode(texture:gunTexture)
+//
+//        gunSprite.scale(to: CGSize(width: 100, height: 100))
+//        gunSprite.position = CGPoint(x: 0, y: 0)
+//        addChild(gunSprite)
+//    }
 }
