@@ -14,8 +14,6 @@ import GameKit
 // add your own Leaderboard ID below
 let leaderboardID = "bestDuckyHuntARScore"
 
-let sprite: Targets = Targets()
-
 class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterControllerDelegate {
     
     @IBOutlet var sceneView: ARSKView!
@@ -64,8 +62,8 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         if Helper.setupState == .addTarget {
+            let sprite: Targets = Targets()
             sprite.setUpSprites("Ducky_F01")
-            
             return sprite
         } else {
             let someNode: SKNode = SKNode()

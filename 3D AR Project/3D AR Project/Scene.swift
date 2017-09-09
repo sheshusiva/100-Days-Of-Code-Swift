@@ -1,8 +1,8 @@
 //
 //  Scene.swift
-//  AR
+//  3D AR Project
 //
-//  Created by Caleb Wells on 8/31/17.
+//  Created by Caleb Wells on 9/9/17.
 //  Copyright © 2017 Caleb Wells. All rights reserved.
 //
 

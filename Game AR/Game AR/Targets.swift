@@ -15,6 +15,7 @@ class Targets: SKSpriteNode {
     var targetSprites = SKSpriteNode()
     
     func setUpSprites(_ name: String) {
+        
         targetTexture = SKTexture(imageNamed: name)
         targetSprites = SKSpriteNode(texture:targetTexture)
         
@@ -38,29 +39,4 @@ class Targets: SKSpriteNode {
         
         addChild(targetSprites)
     }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        let touch = touches.first!
-//        let point = touch.location(in: self)
-//        
-//        let hit = nodes(at: point)
-//        
-//        if let nodes = hit.first {
-//            if nodes == targetSprites {
-//                let death = SKAction.fadeOut(withDuration: 0.5)
-//                let remove = SKAction.removeFromParent()
-//                
-//                // Group the fade out and sound actions
-//                let groupKillingActions = SKAction.group([death, gunSound])
-//                // Create an action sequence
-//                let sequenceAction = SKAction.sequence([groupKillingActions, remove])
-//                
-//                // Excecute the actions
-//                nodes.run(sequenceAction)
-//                
-//                // Update the score
-//                score += 10
-//            }
-//        }
-//    }
 }
