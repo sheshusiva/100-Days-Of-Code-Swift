@@ -38,15 +38,18 @@ class Scene: SKScene {
         }
         
         // Change xTranslation & zTranslation value before each frame is rendered
-        if xTranslation == -21 && zTranslation == -9 {
+        if xTranslation == -21 && zTranslation == -9 && yTranslation == -9 {
             xTranslation = -11
             zTranslation = -27
-        } else if xTranslation == -11 && zTranslation == -27 {
+            yTranslation = -12
+        } else if xTranslation == -11 && zTranslation == -27 && yTranslation == -12 {
             xTranslation = -5
             zTranslation = -32
-        } else if xTranslation == -5 && zTranslation == -32 {
+            yTranslation = -4
+        } else if xTranslation == -5 && zTranslation == -32 && yTranslation == -4 {
             xTranslation = -21
             zTranslation = -9
+            yTranslation = -9
         }
         
         // Create anchor using the camera's current position
@@ -96,5 +99,16 @@ class Scene: SKScene {
         scoreLabel.text = "SCORE: 0"
         
         self.addChild(scoreLabel)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let point = touch.location(in: self.view)
+        
+        if point.x > (view?.bounds.width)! / 2 && point.y < (view?.bounds.width)! / 2 {
+            if yTranslation == -11 {
+                print("========== ????????????????")
+            }
+        }
     }
 }

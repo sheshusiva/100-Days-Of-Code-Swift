@@ -21,6 +21,8 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        sceneView.scene?.addChild(targetSprites)
+        
         authenticateWithGameCenter()
         
         // Set the view's delegate
@@ -148,6 +150,8 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
             submitScoreToGC()
             openGameCenter()
             print("Game Center button")
+        } else {
+            
         }
     }
 }
