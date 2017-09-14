@@ -10,9 +10,15 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+enum BodyType: Int {
+    case bullet = 1
+    case target = 2
+}
+
+class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    var lastContactNode: SCNNode!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +31,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a new scene
         let scene = SCNScene()
+        
+        // Create sprites
         let sprite1 = SCNPlane(width: 0.1, height: 0.1)
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "Ducky_F01")
@@ -32,12 +40,71 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sprite1.materials = [material]
         
         let spriteNode = SCNNode(geometry: sprite1)
-        spriteNode.position = SCNVector3(0, 0.1, -0.2)
+        spriteNode.name = "target"
+        spriteNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
+        spriteNode.physicsBody?.categoryBitMask = BodyType.target.rawValue
+        spriteNode.position = SCNVector3(0, 0, -0.6)
         
         scene.rootNode.addChildNode(spriteNode)
         
         // Set the scene to the view
         sceneView.scene = scene
+        
+        self.sceneView.scene.physicsWorld.contactDelegate = self
+        
+        registerTapRecognizer()
+    }
+    
+    private func registerTapRecognizer() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(shoot))
+        self.sceneView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func shoot(recognizer: UIGestureRecognizer) {
+        guard let currentFrame = self.sceneView.session.currentFrame else {
+            return
+        }
+        
+        var translation = matrix_identity_float4x4
+        translation.columns.3.z = -0.3
+        
+        let bullet = SCNBox(width: 0.05, height: 0.05, length: 0.05, chamferRadius: 0)
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.white
+        
+        let bulletNode = SCNNode(geometry: bullet)
+        bulletNode.name = "bullet"
+        bulletNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
+        bulletNode.physicsBody?.categoryBitMask = BodyType.bullet.rawValue
+        bulletNode.physicsBody?.contactTestBitMask = BodyType.target.rawValue
+        bulletNode.physicsBody?.isAffectedByGravity = false
+        bulletNode.simdTransform = matrix_multiply(currentFrame.camera.transform, translation)
+        
+        let force = SCNVector3(bulletNode.worldFront.x * 2, bulletNode.worldFront.y * 2, bulletNode.worldFront.z * 2)
+        
+        bulletNode.physicsBody?.applyForce(force, asImpulse: true)
+        self.sceneView.scene.rootNode.addChildNode(bulletNode)
+    }
+    
+    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
+        var contactNode: SCNNode
+        
+        if contact.nodeA.name == "bullet" {
+            contactNode = contact.nodeB
+        } else {
+            contactNode = contact.nodeA
+        }
+        
+        if self.lastContactNode != nil && self.lastContactNode == contactNode {
+            return
+        }
+        
+        self.lastContactNode = contactNode
+        
+        let material = SCNMaterial()
+        material.diffuse.contents = UIImage(named: "Ducky_Dead")
+        
+        self.lastContactNode.geometry?.materials = [material]
     }
     
     override func viewWillAppear(_ animated: Bool) {
