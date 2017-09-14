@@ -24,7 +24,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
+        let sprite1 = SCNPlane(width: 0.1, height: 0.1)
+        let material = SCNMaterial()
+        material.diffuse.contents = UIImage(named: "Ducky_F01")
+        
+        sprite1.materials = [material]
+        
+        let spriteNode = SCNNode(geometry: sprite1)
+        spriteNode.position = SCNVector3(0, 0.1, -0.2)
+        
+        scene.rootNode.addChildNode(spriteNode)
         
         // Set the scene to the view
         sceneView.scene = scene
