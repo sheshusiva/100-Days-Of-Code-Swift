@@ -8,6 +8,7 @@
 
 import UIKit
 import SceneKit
+import SpriteKit
 import ARKit
 
 enum BodyType: Int {
@@ -19,6 +20,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 
     @IBOutlet var sceneView: ARSCNView!
     var lastContactNode: SCNNode!
+    var spriteNode = SCNNode()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,19 +34,32 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
         // Create a new scene
         let scene = SCNScene()
         
+        var spriteTextures: [SKTexture] = [SKTexture(imageNamed: "Ducky_F01"), SKTexture(imageNamed: "Ducky_F02"), SKTexture(imageNamed: "Ducky_F03"), SKTexture(imageNamed: "Ducky_F04"), SKTexture(imageNamed: "Ducky_F05")]
+        
+        var spriteTexture = SKSpriteNode(texture: spriteTextures[0])
+        spriteTexture.position = CGPoint(x: spriteTexture.size.width / 2.0, y: spriteTexture.size.height / 2.0)
+        spriteTexture.run(SKAction.repeatForever(SKAction.animate(with: spriteTextures, timePerFrame: 0.1)))
+        
+//        var spriteScene = SKScene(size: spriteTexture.size)
+//        spriteScene.backgroundColor = UIColor.clear
+//        spriteScene.addChild(spriteScene)
+//        let material = SCNMaterial()
+//        spriteScene.material.diffuse.contents = spriteScene
+        
         // Create sprites
         let sprite1 = SCNPlane(width: 0.1, height: 0.1)
         let material = SCNMaterial()
-        material.diffuse.contents = UIImage(named: "Ducky_F01")
-        
+        material.diffuse.contents = spriteScene
+//        material.diffuse.contents = UIImage(named: "Ducky_F01")
+
         sprite1.materials = [material]
         
-        let spriteNode = SCNNode(geometry: sprite1)
+        spriteNode = SCNNode(geometry: sprite1)
         spriteNode.name = "target"
         spriteNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
         spriteNode.physicsBody?.categoryBitMask = BodyType.target.rawValue
         spriteNode.position = SCNVector3(0, 0, -0.6)
-        
+
         scene.rootNode.addChildNode(spriteNode)
         
         // Set the scene to the view
