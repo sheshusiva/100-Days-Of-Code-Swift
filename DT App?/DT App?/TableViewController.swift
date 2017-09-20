@@ -46,13 +46,13 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let actionOne = UIContextualAction(style: .normal, title: "Action One") {
             action, view, completionHandler in
-            print("Marking read")
+            print("Action One")
             completionHandler(true)
         }
         
         let actionTwo = UIContextualAction(style: .normal, title: "Action Two") {
             action, view, completionHandler in
-            print("Marking read")
+            print("Action Two")
             completionHandler(true)
         }
         
@@ -89,8 +89,8 @@ class TableViewCellLayout: UITableViewCell {
     
     func setupSubViews() {
         addSubview(cellLabel)
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": cellLabel]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": cellLabel]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": cellLabel]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": cellLabel]))
     }
 }
 
