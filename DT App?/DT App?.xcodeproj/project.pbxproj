@@ -11,6 +11,7 @@
 		009B63671F7216F4009DA6E4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009B63661F7216F4009DA6E4 /* TableViewController.swift */; };
 		009B636C1F7216F4009DA6E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009B636B1F7216F4009DA6E4 /* Assets.xcassets */; };
 		009B636F1F7216F4009DA6E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009B636D1F7216F4009DA6E4 /* LaunchScreen.storyboard */; };
+		00D34A1B1F723C8500FB844C /* TableViewCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D34A1A1F723C8500FB844C /* TableViewCellLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		009B636B1F7216F4009DA6E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		009B636E1F7216F4009DA6E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		009B63701F7216F4009DA6E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00D34A1A1F723C8500FB844C /* TableViewCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				009B63641F7216F4009DA6E4 /* AppDelegate.swift */,
 				009B63661F7216F4009DA6E4 /* TableViewController.swift */,
+				00D34A1A1F723C8500FB844C /* TableViewCellLayout.swift */,
 				009B636B1F7216F4009DA6E4 /* Assets.xcassets */,
 				009B636D1F7216F4009DA6E4 /* LaunchScreen.storyboard */,
 				009B63701F7216F4009DA6E4 /* Info.plist */,
@@ -134,6 +137,7 @@
 			files = (
 				009B63671F7216F4009DA6E4 /* TableViewController.swift in Sources */,
 				009B63651F7216F4009DA6E4 /* AppDelegate.swift in Sources */,
+				00D34A1B1F723C8500FB844C /* TableViewCellLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

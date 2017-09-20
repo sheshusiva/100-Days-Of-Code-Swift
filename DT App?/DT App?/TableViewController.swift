@@ -22,7 +22,7 @@ class TableViewController: UITableViewController {
         navigationItem.title = "Daily Travels"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(addButton))
-        navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .edit, target: self, action: #selector(editButton))
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(actionButton))
         
         tableView.register(TableViewCellLayout.self, forCellReuseIdentifier: cellId)
     }
@@ -31,12 +31,12 @@ class TableViewController: UITableViewController {
         //
     }
     
-    @objc func editButton() {
+    @objc func actionButton() {
         //
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 15
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,28 +69,3 @@ class TableViewController: UITableViewController {
 
 
 }
-
-class TableViewCellLayout: UITableViewCell {
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupSubViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    let cellLabel: UILabel = {
-       let label = UILabel()
-        label.text = "Test label"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    func setupSubViews() {
-        addSubview(cellLabel)
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": cellLabel]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": cellLabel]))
-    }
-}
-
