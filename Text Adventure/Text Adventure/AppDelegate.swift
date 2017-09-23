@@ -19,11 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         
-        window = UIWindow()
-        window?.makeKeyAndVisible()
-        
-        let vc = ViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        window?.rootViewController = UINavigationController(rootViewController: vc)
+        let vc = ViewController()
+        vc.view.backgroundColor = UIColor.red
         return true
     }
 
