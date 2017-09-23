@@ -35,6 +35,17 @@ class Vehicle {
 let someVehicle = Vehicle()
 print("Vehicle: \(someVehicle.description)")
 
+/*
+Subclassing is the act of basing a new class on an existing class. The
+subclass inherits characteristics, like properties and methods, from
+the superclass, which you can then refine and make more specific. You
+can also add new properties or methods to the subclass.
+ 
+Excerpt From: Apple Education. “App Development with Swift.” Apple Inc.
+- Education, 2017. iBooks.
+ https://itunes.apple.com/us/book/app-development-with-swift/id1219117996?mt=11
+*/
+
 //  The Bicycle class with the superclass of Vehicle.
 /*
 The new Bicycle class automatically inherits all of the properties and
