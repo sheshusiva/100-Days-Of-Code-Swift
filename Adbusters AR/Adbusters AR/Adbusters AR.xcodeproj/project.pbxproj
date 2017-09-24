@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		005E1E841F7752CE0032C7EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E1E831F7752CE0032C7EF /* AppDelegate.swift */; };
-		005E1E861F7752CE0032C7EF /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 005E1E851F7752CE0032C7EF /* art.scnassets */; };
 		005E1E881F7752CE0032C7EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E1E871F7752CE0032C7EF /* ViewController.swift */; };
 		005E1E8B1F7752CE0032C7EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005E1E891F7752CE0032C7EF /* Main.storyboard */; };
 		005E1E8D1F7752CE0032C7EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005E1E8C1F7752CE0032C7EF /* Assets.xcassets */; };
@@ -45,7 +44,6 @@
 /* Begin PBXFileReference section */
 		005E1E801F7752CE0032C7EF /* Adbusters AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adbusters AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		005E1E831F7752CE0032C7EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		005E1E851F7752CE0032C7EF /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		005E1E871F7752CE0032C7EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		005E1E8A1F7752CE0032C7EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		005E1E8C1F7752CE0032C7EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				005E1E831F7752CE0032C7EF /* AppDelegate.swift */,
-				005E1E851F7752CE0032C7EF /* art.scnassets */,
 				005E1E871F7752CE0032C7EF /* ViewController.swift */,
 				005E1E891F7752CE0032C7EF /* Main.storyboard */,
 				005E1E8C1F7752CE0032C7EF /* Assets.xcassets */,
@@ -200,7 +197,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005E1E861F7752CE0032C7EF /* art.scnassets in Resources */,
 				005E1E901F7752CE0032C7EF /* LaunchScreen.storyboard in Resources */,
 				005E1E8D1F7752CE0032C7EF /* Assets.xcassets in Resources */,
 				005E1E8B1F7752CE0032C7EF /* Main.storyboard in Resources */,
