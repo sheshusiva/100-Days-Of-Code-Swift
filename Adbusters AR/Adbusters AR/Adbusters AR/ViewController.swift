@@ -16,6 +16,7 @@ enum BodyType: Int {
 }
 
 var spawnTimeer = Timer()
+var deathTimer = Timer()
 
 class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDelegate {
 
@@ -37,7 +38,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
         
         // Create sprite
         //createSprite()
-        spawnTimeer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(spawnSprite), userInfo: nil, repeats: true)
+        spawnTimeer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(spawnSprite), userInfo: nil, repeats: true)
+        deathTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(cleanUp), userInfo: nil, repeats: true)
+
         
         // Set the scene to the view
         sceneView.scene = scene
@@ -82,7 +85,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
         let bullet = SCNSphere(radius: 0.01)
         //let bullet = SCNBox(width: 0.05, height: 0.05, length: 0.05, chamferRadius: 0)
         let material = SCNMaterial()
-        material.diffuse.contents = UIColor.red
+        material.diffuse.contents = UIColor.white
         
         let bulletNode = SCNNode(geometry: bullet)
         bulletNode.name = "bullet"
@@ -113,10 +116,20 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
         
         self.lastContactNode = contactNode
         
-        let material = SCNMaterial()
-        material.diffuse.contents = UIColor.red
+        contactNode.removeFromParentNode()
         
-        self.lastContactNode.geometry?.materials = [material]
+//        let material = SCNMaterial()
+//        material.diffuse.contents = UIColor.red
+//
+//        self.lastContactNode.geometry?.materials = [material]
+    }
+    
+    @objc func cleanUp() {
+        for node in self.sceneView.scene.rootNode.childNodes {
+            if node.name == "bullet" && node.presentation.position.y > -1 {
+                node.removeFromParentNode()
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
