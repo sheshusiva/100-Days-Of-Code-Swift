@@ -126,7 +126,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
     
     @objc func cleanUp() {
         for node in self.sceneView.scene.rootNode.childNodes {
-            if node.name == "bullet" && node.presentation.position.y > -1 {
+            if node.name == "bullet" && node.presentation.position.x > -1 {
                 node.removeFromParentNode()
             }
         }
