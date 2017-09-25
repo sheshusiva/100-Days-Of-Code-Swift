@@ -15,6 +15,8 @@ enum BodyType: Int {
     case target = 2
 }
 
+var spawnTimeer = Timer()
+
 class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
@@ -34,6 +36,18 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
         let scene = SCNScene()
         
         // Create sprite
+        //createSprite()
+        spawnTimeer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(spawnSprite), userInfo: nil, repeats: true)
+        
+        // Set the scene to the view
+        sceneView.scene = scene
+        
+        self.sceneView.scene.physicsWorld.contactDelegate = self
+        
+        registerTapRecognizer()
+    }
+    
+    func createSprite() {//(_ scene: SCNScene) {
         let sprite = SCNPlane(width: 0.2, height: 0.1)
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "ad")
@@ -45,14 +59,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
         spriteNode.physicsBody?.categoryBitMask = BodyType.target.rawValue
         spriteNode.position = SCNVector3(0, 0, -0.6)
         
-        scene.rootNode.addChildNode(spriteNode)
-        
-        // Set the scene to the view
-        sceneView.scene = scene
-        
-        self.sceneView.scene.physicsWorld.contactDelegate = self
-        
-        registerTapRecognizer()
+        self.sceneView.scene.rootNode.addChildNode(spriteNode)
+    }
+    
+    @objc func spawnSprite() {
+        createSprite()
     }
     
     private func registerTapRecognizer() {
@@ -68,9 +79,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
         var translation = matrix_identity_float4x4
         translation.columns.3.z = -0.3
         
-        let bullet = SCNBox(width: 0.05, height: 0.05, length: 0.05, chamferRadius: 0)
+        let bullet = SCNSphere(radius: 0.01)
+        //let bullet = SCNBox(width: 0.05, height: 0.05, length: 0.05, chamferRadius: 0)
         let material = SCNMaterial()
-        material.diffuse.contents = UIColor.white
+        material.diffuse.contents = UIColor.red
         
         let bulletNode = SCNNode(geometry: bullet)
         bulletNode.name = "bullet"
