@@ -18,9 +18,12 @@ var score = 0 {
 
 class GameScene: SKScene {
     
+    let bang = SKAction.playSoundFileNamed("shot", waitForCompletion: false)
+    let hit = SKAction.playSoundFileNamed("quack", waitForCompletion: false)
+    
     var spawn = 0
-    var xTranslation = -5
-    var zTranslation = -1 //-9
+    var xTranslation = -1
+    //var zTranslation = -1 //-9
     
     var sceneView: ARSKView {
         return view as! ARSKView
@@ -48,7 +51,6 @@ class GameScene: SKScene {
         if spawn == 100 {
             CreateSprite()
             spawn = 0
-            print("=== New target")
         }
     }
     
@@ -104,12 +106,12 @@ class GameScene: SKScene {
         }
         
         // Change xTranslation value before each frame is rendered
-        if xTranslation == -5 {
+        if xTranslation == -1 {
+            xTranslation = Int(-0.5)
+        } else if xTranslation == Int(-0.5) {
+            xTranslation = Int(-1.5)
+        } else if xTranslation == Int(-1.5) {
             xTranslation = -1
-        } else if xTranslation == -1 {
-            xTranslation = 5
-        } else if xTranslation == 5 {
-            xTranslation = -5
         }
         
         // Change zTranslation value before each frame is rendered
@@ -126,7 +128,7 @@ class GameScene: SKScene {
             
             // Create a transform with a translation
             var translation = matrix_identity_float4x4
-            translation.columns.3.x = -1 //Float(xTranslation)
+            translation.columns.3.x = Float(xTranslation)
             translation.columns.3.y = -1 //-9
             translation.columns.3.z = -1 //Float(zTranslation)
             let transform = simd_mul(currentFrame.camera.transform, translation)
@@ -138,6 +140,7 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        run(bang)
         let location = gun.position
         let hitNodes = nodes(at: location)
 
@@ -145,34 +148,37 @@ class GameScene: SKScene {
         for node in hitNodes {
             if node.name == "target" {
                 hitTarget = node
+                run(hit)
                 score += 1
                 break
             }
         }
 
         if let hitTarget = hitTarget, let anchor = sceneView.anchor(for: hitTarget) {
-            let hit = SKAction.playSoundFileNamed("quack", waitForCompletion: false)
+//            let hit = SKAction.playSoundFileNamed("quack", waitForCompletion: false)
             
             let action = SKAction.run {
                 self.sceneView.session.remove(anchor: anchor)
             }
             
-            let group = SKAction.group([hit, action])
-            let sequence = [SKAction.wait(forDuration: 0.3), group]
+            //let group = SKAction.group([hit, action])
+            let sequence = [SKAction.wait(forDuration: 0.2), action]
+//            hitTarget.run(hit)
             hitTarget.run(SKAction.sequence(sequence))
             
         }
         // Gun animations and sound
-        let bang = SKAction.playSoundFileNamed("gun-shot", waitForCompletion: false)
+//        let bang = SKAction.playSoundFileNamed("gun-shot", waitForCompletion: false)
         let frame1 = SKTexture(imageNamed: "Gun_F01")
         let frame2 = SKTexture(imageNamed: "Gun_F02")
         let frame3 = SKTexture(imageNamed: "Gun_F03")
 
         let animation = SKAction.animate(with: [frame2, frame3, frame1], timePerFrame: 0.3)
 
-        let group = SKAction.group([bang, animation])
-
-        gun.run(group)
+        //let group = SKAction.group([bang, animation])
+        
+//        gun.run(bang)
+        gun.run(animation)
     }
 }
 

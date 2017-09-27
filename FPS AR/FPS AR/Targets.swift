@@ -24,8 +24,9 @@ class Targets: SKSpriteNode {
         
         let frame2 = SKTexture(imageNamed: "Ducky_F02")
         let frame3 = SKTexture(imageNamed: "Ducky_F03")
+        let frame4 = SKTexture(imageNamed: "Ducky_F04")
         
-        let animation = SKAction.animate(with: [targetTexture, frame2, frame3], timePerFrame: 0.3)
+        let animation = SKAction.animate(with: [targetTexture, frame2, frame3, frame4], timePerFrame: 0.3)
         let runForever = SKAction.repeatForever(animation)
         
         targetSprites.run(runForever)
