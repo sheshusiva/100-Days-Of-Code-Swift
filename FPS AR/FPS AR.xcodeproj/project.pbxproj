@@ -13,6 +13,8 @@
 		006A6D2E1F7B342D00DCFE62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006A6D2C1F7B342D00DCFE62 /* Main.storyboard */; };
 		006A6D301F7B342D00DCFE62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006A6D2F1F7B342D00DCFE62 /* Assets.xcassets */; };
 		006A6D331F7B342D00DCFE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006A6D311F7B342D00DCFE62 /* LaunchScreen.storyboard */; };
+		008ED73C1F7B5F81009F54C4 /* gun-shot.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 006A6D3A1F7B58EB00DCFE62 /* gun-shot.aiff */; };
+		008ED73D1F7B5F85009F54C4 /* quack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 006A6D3B1F7B58EB00DCFE62 /* quack.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		006A6D2F1F7B342D00DCFE62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		006A6D321F7B342D00DCFE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		006A6D341F7B342D00DCFE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		006A6D3A1F7B58EB00DCFE62 /* gun-shot.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "gun-shot.aiff"; sourceTree = "<group>"; };
+		006A6D3B1F7B58EB00DCFE62 /* quack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = quack.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				006A6D221F7B342D00DCFE62 /* AppDelegate.swift */,
 				006A6D281F7B342D00DCFE62 /* GameScene.swift */,
 				006A6D2A1F7B342D00DCFE62 /* GameViewController.swift */,
+				006A6D3A1F7B58EB00DCFE62 /* gun-shot.aiff */,
+				006A6D3B1F7B58EB00DCFE62 /* quack.wav */,
 				006A6D2C1F7B342D00DCFE62 /* Main.storyboard */,
 				006A6D2F1F7B342D00DCFE62 /* Assets.xcassets */,
 				006A6D311F7B342D00DCFE62 /* LaunchScreen.storyboard */,
@@ -128,6 +134,8 @@
 			files = (
 				006A6D2E1F7B342D00DCFE62 /* Main.storyboard in Resources */,
 				006A6D301F7B342D00DCFE62 /* Assets.xcassets in Resources */,
+				008ED73D1F7B5F85009F54C4 /* quack.wav in Resources */,
+				008ED73C1F7B5F81009F54C4 /* gun-shot.aiff in Resources */,
 				006A6D331F7B342D00DCFE62 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
