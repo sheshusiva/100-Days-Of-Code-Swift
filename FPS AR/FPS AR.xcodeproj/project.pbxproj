@@ -16,6 +16,7 @@
 		008ED73D1F7B5F85009F54C4 /* quack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 006A6D3B1F7B58EB00DCFE62 /* quack.wav */; };
 		008ED7401F7B63A8009F54C4 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008ED73F1F7B63A8009F54C4 /* GameKit.framework */; };
 		008ED7421F7B6FF3009F54C4 /* Targets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008ED7411F7B6FF3009F54C4 /* Targets.swift */; };
+		008ED7641F7C113F009F54C4 /* bang.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 008ED7631F7C0FD7009F54C4 /* bang.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +31,7 @@
 		006A6D3B1F7B58EB00DCFE62 /* quack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = quack.wav; sourceTree = "<group>"; };
 		008ED73F1F7B63A8009F54C4 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		008ED7411F7B6FF3009F54C4 /* Targets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Targets.swift; sourceTree = "<group>"; };
-		008ED7621F7C0B5C009F54C4 /* shot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shot.wav; sourceTree = "<group>"; };
+		008ED7631F7C0FD7009F54C4 /* bang.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bang.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +70,7 @@
 				006A6D281F7B342D00DCFE62 /* GameScene.swift */,
 				008ED7411F7B6FF3009F54C4 /* Targets.swift */,
 				006A6D2A1F7B342D00DCFE62 /* GameViewController.swift */,
-				008ED7621F7C0B5C009F54C4 /* shot.wav */,
+				008ED7631F7C0FD7009F54C4 /* bang.m4a */,
 				006A6D3B1F7B58EB00DCFE62 /* quack.wav */,
 				006A6D2C1F7B342D00DCFE62 /* Main.storyboard */,
 				006A6D2F1F7B342D00DCFE62 /* Assets.xcassets */,
@@ -154,6 +155,7 @@
 				006A6D2E1F7B342D00DCFE62 /* Main.storyboard in Resources */,
 				006A6D301F7B342D00DCFE62 /* Assets.xcassets in Resources */,
 				008ED73D1F7B5F85009F54C4 /* quack.wav in Resources */,
+				008ED7641F7C113F009F54C4 /* bang.m4a in Resources */,
 				006A6D331F7B342D00DCFE62 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

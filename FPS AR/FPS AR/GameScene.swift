@@ -18,7 +18,7 @@ var score = 0 {
 
 class GameScene: SKScene {
     
-    let bang = SKAction.playSoundFileNamed("shot", waitForCompletion: false)
+    let bang = SKAction.playSoundFileNamed("bang.m4a", waitForCompletion: false)
     let hit = SKAction.playSoundFileNamed("quack", waitForCompletion: false)
     
     var spawn = 0
@@ -140,9 +140,10 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        run(bang)
         let location = gun.position
         let hitNodes = nodes(at: location)
+        
+        run(bang)
 
         var hitTarget: SKNode?
         for node in hitNodes {
@@ -177,7 +178,6 @@ class GameScene: SKScene {
 
         //let group = SKAction.group([bang, animation])
         
-//        gun.run(bang)
         gun.run(animation)
     }
 }
