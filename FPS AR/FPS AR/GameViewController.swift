@@ -7,13 +7,18 @@
 //
 
 import ARKit
+import GameKit
 
-class GameViewController: UIViewController {
+let leaderboardID = "bestDuckyHuntARScore"
+
+class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     
     var sceneView: ARSKView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        authenticateWithGameCenter()
+        
         if let view = self.view as? ARSKView {
             sceneView = view
             sceneView!.delegate = self
@@ -58,7 +63,73 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    // MARK: === Game Center code
+    
+    var gkEnabled = Bool()
+    var gkDefaultLeaderBoardID = String()
+    
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func authenticateWithGameCenter() {
+        let localPlayer: GKLocalPlayer = GKLocalPlayer.localPlayer()
+        
+        localPlayer.authenticateHandler = {(ViewController, error) -> Void in
+            if (ViewController) != nil {
+                self.present(ViewController!, animated: true, completion: nil)
+            } else if localPlayer.isAuthenticated {
+                self.gkEnabled = true
+                
+                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: {(leaderboardID, error) in
+                    if error != nil {
+                        print(error!)
+                    } else {
+                        self.gkDefaultLeaderBoardID = leaderboardID!
+                    }
+                })
+            } else {
+                self.gkEnabled = false
+                print(error!)
+            }
+        }
+    }
+    
+    func submitScoreToGC() {
+        
+        // submit score to Game Center
+        let bestScore = GKScore(leaderboardIdentifier: leaderboardID)
+        bestScore.value = Int64(score)
+        GKScore.report([bestScore]) { (error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                // code?
+            }
+        }
+    }
+    
+    func openGameCenter() {
+        let gameCenterVC = GKGameCenterViewController()
+        gameCenterVC.gameCenterDelegate = self
+        gameCenterVC.viewState = .leaderboards
+        gameCenterVC.leaderboardIdentifier = leaderboardID
+        present(gameCenterVC, animated: true, completion: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let point = touch.location(in: self.view)
+        
+        if point.x < view.bounds.width / 2 && point.y > view.bounds.width / 2 {
+            submitScoreToGC()
+            openGameCenter()
+            print("==== Game Center button")
+        }
+    }
 }
+
 // MARK: === Respond to session events
 extension GameViewController: ARSKViewDelegate {
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {

@@ -8,6 +8,14 @@
 
 import ARKit
 
+var scoreLabel: SKLabelNode!
+
+var score = 0 {
+    didSet {
+        scoreLabel.text = "SCORE: \(score)"
+    }
+}
+
 class GameScene: SKScene {
     var sceneView: ARSKView {
         return view as! ARSKView
@@ -56,6 +64,22 @@ class GameScene: SKScene {
         gun = SKSpriteNode(imageNamed: "Gun_F01")
         gun.position = CGPoint(x: (view.frame.midX) / 8, y: (view.frame.midY) - 340)
         addChild(gun)
+        
+        scoreLabel = SKLabelNode(fontNamed: "Optima-ExtraBlack")
+        scoreLabel.fontSize = 27
+        scoreLabel.fontColor = .black
+        
+        scoreLabel.position = CGPoint(x: 0, y: (view.frame.midY) - 30)
+        scoreLabel.text = "SCORE: 0"
+        
+        addChild(scoreLabel)
+        
+        let gcT = SKTexture(imageNamed: "gcIcon")
+        let gcNode = SKSpriteNode(texture:gcT)
+        
+        gcNode.scale(to: CGSize(width: 50, height: 50))
+        gcNode.position = CGPoint(x: (view.frame.midX) - 640, y: (view.frame.midY) - 380)
+        addChild(gcNode)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -66,6 +90,7 @@ class GameScene: SKScene {
         for node in hitNodes {
             if node.name == "target" {
                 hitTarget = node
+                score += 1
                 break
             }
         }
@@ -82,7 +107,7 @@ class GameScene: SKScene {
             hitTarget.run(SKAction.sequence(sequence))
             
         }
-        
+        // Gun animations and sound
         let bang = SKAction.playSoundFileNamed("gun-shot", waitForCompletion: false)
         let frame1 = SKTexture(imageNamed: "Gun_F01")
         let frame2 = SKTexture(imageNamed: "Gun_F02")
@@ -93,6 +118,5 @@ class GameScene: SKScene {
         let group = SKAction.group([bang, animation])
         
         gun.run(group)
-        
     }
 }

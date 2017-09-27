@@ -15,6 +15,7 @@
 		006A6D331F7B342D00DCFE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006A6D311F7B342D00DCFE62 /* LaunchScreen.storyboard */; };
 		008ED73C1F7B5F81009F54C4 /* gun-shot.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 006A6D3A1F7B58EB00DCFE62 /* gun-shot.aiff */; };
 		008ED73D1F7B5F85009F54C4 /* quack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 006A6D3B1F7B58EB00DCFE62 /* quack.wav */; };
+		008ED7401F7B63A8009F54C4 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008ED73F1F7B63A8009F54C4 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		006A6D341F7B342D00DCFE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		006A6D3A1F7B58EB00DCFE62 /* gun-shot.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "gun-shot.aiff"; sourceTree = "<group>"; };
 		006A6D3B1F7B58EB00DCFE62 /* quack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = quack.wav; sourceTree = "<group>"; };
+		008ED73F1F7B63A8009F54C4 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				008ED7401F7B63A8009F54C4 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 			children = (
 				006A6D211F7B342D00DCFE62 /* FPS AR */,
 				006A6D201F7B342D00DCFE62 /* Products */,
+				008ED73E1F7B63A8009F54C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +75,14 @@
 				006A6D341F7B342D00DCFE62 /* Info.plist */,
 			);
 			path = "FPS AR";
+			sourceTree = "<group>";
+		};
+		008ED73E1F7B63A8009F54C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				008ED73F1F7B63A8009F54C4 /* GameKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +118,11 @@
 					006A6D1E1F7B342D00DCFE62 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -290,7 +307,7 @@
 				DEVELOPMENT_TEAM = 33NUGZ4GWE;
 				INFOPLIST_FILE = "FPS AR/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.calebrwells.FPS-AR";
+				PRODUCT_BUNDLE_IDENTIFIER = com.calebrwells.TopSecret;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -305,7 +322,7 @@
 				DEVELOPMENT_TEAM = 33NUGZ4GWE;
 				INFOPLIST_FILE = "FPS AR/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.calebrwells.FPS-AR";
+				PRODUCT_BUNDLE_IDENTIFIER = com.calebrwells.TopSecret;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
