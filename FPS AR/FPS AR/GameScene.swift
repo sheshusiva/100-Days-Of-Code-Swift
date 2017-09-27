@@ -17,6 +17,11 @@ var score = 0 {
 }
 
 class GameScene: SKScene {
+    
+    var spawn = 0
+    var xTranslation = -5
+    var zTranslation = -1 //-9
+    
     var sceneView: ARSKView {
         return view as! ARSKView
     }
@@ -39,10 +44,21 @@ class GameScene: SKScene {
         isWorldSetUp = true
     }
     
+    func spawnTimes() {
+        if spawn == 100 {
+            CreateSprite()
+            spawn = 0
+            print("=== New target")
+        }
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         if !isWorldSetUp {
             setUpWorld()
         }
+        
+        spawn += 1
+        spawnTimes()
         
         guard let currentFrame = sceneView.session.currentFrame, let lightEstimate = currentFrame.lightEstimate else {
             return
@@ -82,10 +98,49 @@ class GameScene: SKScene {
         addChild(gcNode)
     }
     
+    func CreateSprite() {
+        guard let sceneView = self.view as? ARSKView else {
+            return
+        }
+        
+        // Change xTranslation value before each frame is rendered
+        if xTranslation == -5 {
+            xTranslation = -1
+        } else if xTranslation == -1 {
+            xTranslation = 5
+        } else if xTranslation == 5 {
+            xTranslation = -5
+        }
+        
+        // Change zTranslation value before each frame is rendered
+//        if zTranslation == -9 {
+//            zTranslation = -27
+//        } else if zTranslation == -27 {
+//            zTranslation = -16
+//        } else if zTranslation == -16 {
+//            zTranslation = -9
+//        }
+        
+        // Create anchor using the camera's current position
+        if let currentFrame = sceneView.session.currentFrame {
+            
+            // Create a transform with a translation
+            var translation = matrix_identity_float4x4
+            translation.columns.3.x = -1 //Float(xTranslation)
+            translation.columns.3.y = -1 //-9
+            translation.columns.3.z = -1 //Float(zTranslation)
+            let transform = simd_mul(currentFrame.camera.transform, translation)
+            
+            // Add a new anchor to the session
+            let anchor = ARAnchor(transform: transform)
+            sceneView.session.add(anchor: anchor)
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let location = gun.position
         let hitNodes = nodes(at: location)
-        
+
         var hitTarget: SKNode?
         for node in hitNodes {
             if node.name == "target" {
@@ -94,7 +149,7 @@ class GameScene: SKScene {
                 break
             }
         }
-        
+
         if let hitTarget = hitTarget, let anchor = sceneView.anchor(for: hitTarget) {
             let hit = SKAction.playSoundFileNamed("quack", waitForCompletion: false)
             
@@ -112,11 +167,12 @@ class GameScene: SKScene {
         let frame1 = SKTexture(imageNamed: "Gun_F01")
         let frame2 = SKTexture(imageNamed: "Gun_F02")
         let frame3 = SKTexture(imageNamed: "Gun_F03")
-        
+
         let animation = SKAction.animate(with: [frame2, frame3, frame1], timePerFrame: 0.3)
-        
+
         let group = SKAction.group([bang, animation])
-        
+
         gun.run(group)
     }
 }
+

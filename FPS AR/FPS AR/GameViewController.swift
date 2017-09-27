@@ -139,6 +139,7 @@ extension GameViewController: ARSKViewDelegate {
         if Helper.setupState == .addTarget {
             let sprite: Targets = Targets() //imageNamed: "Ducky_F01"
             sprite.setUpSprites("Ducky_F01")
+            sprite.name = "target"
             return sprite
         } else {
             let someNode: SKNode = SKNode()
