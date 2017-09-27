@@ -61,6 +61,12 @@ class GameViewController: UIViewController {
 }
 // MARK: === Respond to session events
 extension GameViewController: ARSKViewDelegate {
+    func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
+        let target = SKSpriteNode(imageNamed: "Ducky_F01")
+        target.name = "target"
+        return target
+    }
+    
     func session(_ session: ARSession, didFailWithError error: Error) {
         print("Session failed")
     }
