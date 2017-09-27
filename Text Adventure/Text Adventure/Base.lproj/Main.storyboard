@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Text_Adventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGz-Xt-AkN">
+                                <rect key="frame" x="164" y="709" width="195" height="49"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fgD-cd-nvP">
+                                <rect key="frame" x="16" y="44" width="343" height="624"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zp-2G-OeB">
+                                <rect key="frame" x="16" y="709" width="140" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="ggQ-zP-Iga"/>
+                                    <constraint firstAttribute="height" constant="49" id="k6p-tM-DvU"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DGz-Xt-AkN" secondAttribute="bottom" constant="20" id="5Km-ku-dBt"/>
+                            <constraint firstItem="1zp-2G-OeB" firstAttribute="top" secondItem="fgD-cd-nvP" secondAttribute="bottom" constant="41" id="Lpw-nL-nSh"/>
+                            <constraint firstItem="fgD-cd-nvP" firstAttribute="trailing" secondItem="DGz-Xt-AkN" secondAttribute="trailing" id="M3K-0N-NTg"/>
+                            <constraint firstItem="1zp-2G-OeB" firstAttribute="top" secondItem="fgD-cd-nvP" secondAttribute="bottom" constant="41" id="SVL-Hv-7hu"/>
+                            <constraint firstItem="DGz-Xt-AkN" firstAttribute="leading" secondItem="1zp-2G-OeB" secondAttribute="trailing" constant="8" symbolic="YES" id="ZSo-jT-5X0"/>
+                            <constraint firstItem="fgD-cd-nvP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cVC-t3-QtQ"/>
+                            <constraint firstItem="DGz-Xt-AkN" firstAttribute="baseline" secondItem="1zp-2G-OeB" secondAttribute="firstBaseline" id="fLK-Of-pXJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DGz-Xt-AkN" secondAttribute="trailing" constant="16" id="kbz-7D-J4h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1zp-2G-OeB" secondAttribute="bottom" constant="20" id="uph-YC-w0h"/>
+                            <constraint firstItem="1zp-2G-OeB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="v47-nS-a7g"/>
+                            <constraint firstItem="fgD-cd-nvP" firstAttribute="leading" secondItem="1zp-2G-OeB" secondAttribute="leading" id="wCp-Cd-21X"/>
+                            <constraint firstItem="DGz-Xt-AkN" firstAttribute="top" secondItem="fgD-cd-nvP" secondAttribute="bottom" constant="41" id="xVu-w9-XWD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="103.75"/>
+        </scene>
+    </scenes>
+</document>

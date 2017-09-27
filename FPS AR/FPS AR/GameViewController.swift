@@ -133,9 +133,17 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
 // MARK: === Respond to session events
 extension GameViewController: ARSKViewDelegate {
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
-        let target = SKSpriteNode(imageNamed: "Ducky_F01")
-        target.name = "target"
-        return target
+//        let target = SKSpriteNode(imageNamed: "Ducky_F01")
+//        target.name = "target"
+//        return target
+        if Helper.setupState == .addTarget {
+            let sprite: Targets = Targets() //imageNamed: "Ducky_F01"
+            sprite.setUpSprites("Ducky_F01")
+            return sprite
+        } else {
+            let someNode: SKNode = SKNode()
+            return someNode
+        }
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
