@@ -22,6 +22,7 @@ class GameScene: SKScene {
     let hit = SKAction.playSoundFileNamed("quack", waitForCompletion: false)
     
     var spawn = 0
+    var spawnCounter = 0
     var xTranslation = -1
     //var zTranslation = -1 //-9
     
@@ -52,6 +53,15 @@ class GameScene: SKScene {
             CreateSprite()
             spawn = 0
         }
+        
+        if spawnCounter == 900 {
+            for node in children {
+                if node.name == "target" {
+                    node.removeFromParent()
+                }
+            }
+            spawnCounter = 0
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -59,6 +69,7 @@ class GameScene: SKScene {
             setUpWorld()
         }
         
+        spawnCounter += 1
         spawn += 1
         spawnTimes()
         
