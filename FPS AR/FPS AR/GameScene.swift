@@ -24,7 +24,6 @@ class GameScene: SKScene {
     var spawn = 0
     var spawnCounter = 0
     var xTranslation = -1
-    //var zTranslation = -1 //-9
     
     var sceneView: ARSKView {
         return view as! ARSKView
@@ -125,15 +124,6 @@ class GameScene: SKScene {
             xTranslation = -1
         }
         
-        // Change zTranslation value before each frame is rendered
-//        if zTranslation == -9 {
-//            zTranslation = -27
-//        } else if zTranslation == -27 {
-//            zTranslation = -16
-//        } else if zTranslation == -16 {
-//            zTranslation = -9
-//        }
-        
         // Create anchor using the camera's current position
         if let currentFrame = sceneView.session.currentFrame {
             
@@ -167,29 +157,22 @@ class GameScene: SKScene {
         }
 
         if let hitTarget = hitTarget, let anchor = sceneView.anchor(for: hitTarget) {
-//            let hit = SKAction.playSoundFileNamed("quack", waitForCompletion: false)
             
             let action = SKAction.run {
                 self.sceneView.session.remove(anchor: anchor)
             }
             
-            //let group = SKAction.group([hit, action])
             let sequence = [SKAction.wait(forDuration: 0.2), action]
-//            hitTarget.run(hit)
             hitTarget.run(SKAction.sequence(sequence))
-            
         }
+        
         // Gun animations and sound
-//        let bang = SKAction.playSoundFileNamed("gun-shot", waitForCompletion: false)
         let frame1 = SKTexture(imageNamed: "Gun_F01")
         let frame2 = SKTexture(imageNamed: "Gun_F02")
         let frame3 = SKTexture(imageNamed: "Gun_F03")
 
         let animation = SKAction.animate(with: [frame2, frame3, frame1], timePerFrame: 0.3)
-
-        //let group = SKAction.group([bang, animation])
         
         gun.run(animation)
     }
 }
-
