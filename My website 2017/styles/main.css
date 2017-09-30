@@ -50,10 +50,15 @@ body {
 .card  {
   margin: 2em 0;
   padding: 1em;
-  max-width: 700px;
+  max-width: 650px;
+  float: left;
   box-shadow: 0 0.4em 0.8em 0 rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   transition: 0.3s;
+}
+.card:nth-child(2n) {
+  max-width: 450px;
+  float: right;
 }
 .card h4 {
   text-align: center;
