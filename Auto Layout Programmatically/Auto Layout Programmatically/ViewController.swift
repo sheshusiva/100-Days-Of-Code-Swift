@@ -29,6 +29,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         view.addSubview(stepOneImageView)
         view.addSubview(descriptionTextView)
         
