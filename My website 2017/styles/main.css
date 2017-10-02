@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #f0f0f0ff;
 }
 .main {
   width: 90%;
@@ -50,16 +51,21 @@ body {
 .card  {
   margin: 2em 0;
   padding: 1em;
-  max-width: 650px;
+  max-width: 550px;
   float: left;
   box-shadow: 0 0.4em 0.8em 0 rgba(0, 0, 0, 0.2);
   border-radius: 12px;
+  background-color: #fff;
   transition: 0.3s;
 }
-.card:nth-child(2n) {
-  max-width: 450px;
+.card:nth-child(even) {
+  max-width: 550px;
   float: right;
 }
+/*.card:nth-child(2n) {
+  max-width: 450px;
+  float: right;
+}*/
 .card h4 {
   text-align: center;
   margin: -0.2em;
@@ -82,6 +88,9 @@ body {
   text-decoration: none;
 }
 /* Media queries
+*************************/
+
+/* Footer
 *************************/
 @media (max-width: 500px) {
   .headshot {
