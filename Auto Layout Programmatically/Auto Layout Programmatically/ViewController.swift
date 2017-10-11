@@ -8,10 +8,51 @@
 
 import UIKit
 
+class WelcomePageViewController: UIPageViewController, UIPageViewControllerDataSource {
+    
+    let imageNames = [#imageLiteral(resourceName: "s1"),#imageLiteral(resourceName: "s2"),#imageLiteral(resourceName: "s3"),#imageLiteral(resourceName: "s4")]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        dataSource = self
+        
+        view.backgroundColor = .white
+        
+        let currentViewController = ViewController()
+        currentViewController.imageName = imageNames.first
+        let viewControllers = [currentViewController]
+        setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        let currentImageName = (viewControllers as! ViewController).imageName
+        let currentIndex = imageNames.index(of: currentImageName!)
+        
+        if currentIndex < imageNames.count -1 {
+            let currentViewController = ViewController()
+            currentViewController.imageView = imageNames[currentIndex! +1]
+            return currentViewController
+        }
+        
+        return nil
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        return nil
+    }
+}
+
 class ViewController: UIViewController {
     
-    let stepOneImageView: UIImageView = {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "s1"))
+    var imageName: String? {
+        didSet {
+            imageView.image = UIImage(named: imageName!)
+        }
+    }
+    
+    let imageView: UIImageView = {
+        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -30,7 +71,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(stepOneImageView)
+        view.addSubview(imageView)
         view.addSubview(descriptionTextView)
         
         setupLayout()

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Auto Layout Programmatically
+//  Camera
 //
-//  Created by Caleb Wells on 10/1/17.
+//  Created by Caleb Wells on 10/10/17.
 //  Copyright © 2017 Caleb Wells. All rights reserved.
 //
 
@@ -16,11 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        
-        let welcomePageViewController = WelcomePageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        window?.rootViewController = welcomePageViewController
         return true
     }
 

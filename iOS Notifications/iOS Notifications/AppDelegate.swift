@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Auto Layout Programmatically
+//  iOS Notifications
 //
-//  Created by Caleb Wells on 10/1/17.
+//  Created by Caleb Wells on 10/7/17.
 //  Copyright © 2017 Caleb Wells. All rights reserved.
 //
 
@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        
-        let welcomePageViewController = WelcomePageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        window?.rootViewController = welcomePageViewController
+        let tableView = ViewController()
+        let navigationController = UINavigationController(rootViewController: tableView)
+        window?.rootViewController = navigationController
         return true
     }
 
