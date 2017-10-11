@@ -7,19 +7,76 @@
 //
 
 import UIKit
+import AVFoundation
+import Photos
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+    
+    let session = AVCaptureSession()
+    let photoOutput = AVCapturePhotoOutput()
+    var capturePreview: CapturePreview!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        capturePreview = CapturePreview()
+        capturePreview.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(capturePreview)
+        
+        capturePreview.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        capturePreview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        capturePreview.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        capturePreview.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        (capturePreview.layer as! AVCaptureVideoPreviewLayer).session = session
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        _ = configureSession()
     }
-
+    
+    func configureSession() -> Bool {
+        session.beginConfiguration()
+        session.sessionPreset = AVCaptureSession.Preset.photo
+        
+        do {
+            let videoCaptureDevice = AVCaptureDevice.default(for: .video)
+            let videoDeviceInput = try AVCaptureDeviceInput(device: videoCaptureDevice!)
+            
+            if session.canAddInput(videoDeviceInput) {
+                session.addInput(videoDeviceInput)
+            } else {
+                print("Video failed.")
+                session.commitConfiguration()
+                return false
+            }
+            
+            if session.canAddOutput(photoOutput) {
+                session.addOutput(photoOutput)
+                photoOutput.isHighResolutionCaptureEnabled = true
+            } else {
+                print("Photo failed")
+                session.commitConfiguration()
+                return false
+            }
+        } catch {
+            print("Faild \(error)")
+            session.commitConfiguration()
+            return false
+        }
+        
+        print("We made it!")
+        session.commitConfiguration()
+        session.startRunning()
+        return true
+    }
+    
+    func capturePhoto() {
+        print("click!")
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        capturePhoto()
+    }
 
 }
-

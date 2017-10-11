@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
-class CapturePreviewView: UIView {
-    
+class CapturePreview: UIView {
+    override class var layerClass: AnyClass {
+        return AVCaptureVideoPreviewLayer.self
+    }
 
 }
