@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+a {
+  color: #0521eeed;
+  text-decoration: none;
+}
+/* Main
+***************************/
+main {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1200px;
+}
+/* About
+***************************/
+.aboutTitleAndImg {
+  width: 72%;
+  margin: 1em auto 2em auto;
+}
+.aboutTitleAndImg h1 {
+  float: left;
+  font-size: 2em;
+  padding: 2em;
+  width: 50%;
+}
+.subtitle {
+  font-size: 0.8em;
+  font-weight: normal;
+}
+.headshot {
+  float: right;
+  width: 300px;
+  border-radius: 20px;
+}
+.aboutTitleAndImg::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.aboutText {
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1px solid #666;
+}
+nav {
+  width: 300px;
+  margin: 1em auto;
+}
+nav a {
+  color: #000;
+  text-transform: uppercase;
+  padding: .5em .7em;
+  text-align: center;
+  text-decoration: none;
+  transition: .5s;
+}
+nav a:hover {
+  color: #ccc;
+}
+.socialNav {
+  width: 300px;
+  margin: 1em auto;
+}
+.social {
+  color: #000;
+  text-transform: uppercase;
+  padding: .5em 1.2em;
+  text-align: center;
+  text-decoration: none;
+  transition: .5s;
+}
+.social:hover {
+  color: #ccc;
+}
+/* Portfolio
+***************************/
+.prtfolio {
+  border-bottom: 1px solid #ccc;
+}
+.card {
+  float: left;
+  width: 250px;
+  margin: 2.5em;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 .5em 1em 0 rgba(0,0,0, 0.5);
+}
+.card h2 {
+  text-align: center;
+}
+.cardImg {
+  max-width: 200px;
+  margin: 1em 25px;
+  border-radius: 20px;
+}
+.viewApp {
+  padding: 0 1.8em;
+}
+.portfolio::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Contact
+***************************/
+.contact {
+  text-align: center;
+}
+/* Footer
+***************************/
+footer {
+  text-align: center;
+  padding: 2em 0;
+}

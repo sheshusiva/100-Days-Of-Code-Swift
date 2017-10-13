@@ -19,13 +19,13 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         capturePreview = CapturePreview()
-        capturePreview.translatesAutoresizingMaskIntoConstraints = false
+//        capturePreview.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(capturePreview)
         
-        capturePreview.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        capturePreview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        capturePreview.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        capturePreview.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        capturePreview.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        capturePreview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        capturePreview.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//        capturePreview.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
         (capturePreview.layer as! AVCaptureVideoPreviewLayer).session = session
     }
@@ -72,7 +72,22 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     func capturePhoto() {
+        guard let rawFormat = photoOutput.supportedRawPhotoPixelFormatTypes(for: .dng).first else {
+            let photoSettings = AVCapturePhotoSettings(rawPixelFormatType: rawFormat.uint32Value)
+            photoSettings.isHighResolutionPhotoEnabled = true
+            photoSettings.flashMode = .off
+            photoOutput.capturePhoto(with: photoSettings, delegate: self)
+        }
+        
         print("click!")
+    }
+    
+    func capture(_ captureOutput: AVCapturePhotoOutput, willBeginCaptureForResolvesSettings resolvedSettings: AVCaptureResolvedPhotoSettings) {
+        // Update UI?
+    }
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        let data = photo.fileDataRepresentation()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
