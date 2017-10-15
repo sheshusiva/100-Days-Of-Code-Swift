@@ -3,6 +3,13 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.bg {
+  background: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 a {
   color: #0521eeed;
   text-decoration: none;
