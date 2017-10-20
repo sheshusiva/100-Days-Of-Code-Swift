@@ -10,11 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var timer: Timer!
+    
     let timerButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Start Timer!", for: .normal)
         button.setTitleColor(.red, for: .normal)
-        button.addTarget(self, action: #selector(startTimer), for: .touchUpInside)
+        button.addTarget(self, action: #selector(startTimerButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -30,9 +32,19 @@ class ViewController: UIViewController {
         timerButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
-    @objc func startTimer() {
+    @objc func startTimerButton() {
         print("=== Start the timer!!!")
+        timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(timerIsRunning), userInfo: nil, repeats: true)
     }
     
+    @objc func timerIsRunning() {
+        print("=== timer is running!")
+        if view.backgroundColor == .white {
+            view.backgroundColor = .yellow
+        } else if view.backgroundColor == .yellow {
+            view.backgroundColor = .white
+        }
+        
+    }
 }
 
