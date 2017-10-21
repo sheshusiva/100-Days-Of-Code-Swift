@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     let startTimerButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Start Timer!", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 27)
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(startTimerButtonFunc), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
