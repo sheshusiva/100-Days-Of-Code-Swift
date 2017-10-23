@@ -9,17 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let puppyImageView: UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "puppy"))
+        return imageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let image = UIImageView(image: #imageLiteral(resourceName: "puppy"))
-        view.addSubview(image)
-        image.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(puppyImageView)
         
-        image.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        image.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        image.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        image.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        puppyImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        puppyImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        puppyImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        puppyImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
     }
 }
 
