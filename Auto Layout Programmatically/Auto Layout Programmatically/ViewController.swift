@@ -2,17 +2,24 @@
 //  ViewController.swift
 //  Auto Layout Programmatically
 //
-//  Created by Caleb Wells on 10/1/17.
+//  Created by Caleb Wells on 10/22/17.
 //  Copyright © 2017 Caleb Wells. All rights reserved.
 //
 
 import UIKit
 
-class WelcomePageViewController: UIPageViewController {
-    
+class ViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        // Do any additional setup after loading the view, typically from a nib.
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
 }
 
