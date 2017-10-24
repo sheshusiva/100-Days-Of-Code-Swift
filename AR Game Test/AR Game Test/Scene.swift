@@ -82,7 +82,7 @@ class Scene: SKScene {
             print("playing!")
         case .gameOver:
             let scene = Scene(fileNamed: "Scene")!
-            let transition = SKTransition.crossFade(withDuration: 1)
+            let transition = SKTransition.moveIn(with: .down, duration: 1)
             self.view?.presentScene(scene, transition: transition)
         }
         
