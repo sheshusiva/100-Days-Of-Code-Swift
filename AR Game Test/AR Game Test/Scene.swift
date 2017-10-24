@@ -23,12 +23,25 @@ class Scene: SKScene {
     
     var gameState = GameState.home
     
+    var temp = 0
+    
+    func tempUpdate() {
+        temp += 1
+        if temp == 100 {
+            replayButton.alpha = 1
+            homeButton.alpha = 1
+            gameState = .gameOver
+        }
+    }
+    
     override func didMove(to view: SKView) {
         createMenus()
     }
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+        if gameState == .playing {
+            tempUpdate()
+        }
     }
     
     //MARK: ==== Create the menus
@@ -55,6 +68,22 @@ class Scene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let sceneView = self.view as? ARSKView else {
             return
+        }
+        
+        switch gameState {
+        case .home:
+            gameState = .playing
+            let fadeOut = SKAction.fadeOut(withDuration: 0.5)
+            let remove = SKAction.removeFromParent()
+            let wait = SKAction.wait(forDuration: 0.5)
+            let sequence = SKAction.sequence([fadeOut, wait, remove])
+            playButton.run(sequence)
+        case .playing:
+            print("playing!")
+        case .gameOver:
+            let scene = Scene(fileNamed: "Scene")!
+            let transition = SKTransition.crossFade(withDuration: 1)
+            self.view?.presentScene(scene, transition: transition)
         }
         
         // Create anchor using the camera's current position
