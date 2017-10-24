@@ -23,16 +23,7 @@ class Scene: SKScene {
     
     var gameState = GameState.home
     
-    var temp = 0
-    
-    func tempUpdate() {
-        temp += 1
-        if temp == 100 {
-            replayButton.alpha = 1
-            homeButton.alpha = 1
-            gameState = .gameOver
-        }
-    }
+    var anchorCount = 0
     
     override func didMove(to view: SKView) {
         createMenus()
@@ -40,7 +31,17 @@ class Scene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         if gameState == .playing {
-            tempUpdate()
+            anchorCount += 1
+            
+            if gameState == .playing && anchorCount == 20 {
+                createAnchor()
+                anchorCount = 0
+            }
+        }
+        
+        if gameState == .gameOver {
+            replayButton.alpha = 1
+            homeButton.alpha = 1
         }
     }
     
@@ -66,10 +67,6 @@ class Scene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let sceneView = self.view as? ARSKView else {
-            return
-        }
-        
         switch gameState {
         case .home:
             gameState = .playing
@@ -79,11 +76,28 @@ class Scene: SKScene {
             let sequence = SKAction.sequence([fadeOut, wait, remove])
             playButton.run(sequence)
         case .playing:
-            print("playing!")
+            print("=== playing!")
+            gameState = .gameOver
         case .gameOver:
-            let scene = Scene(fileNamed: "Scene")!
-            let transition = SKTransition.moveIn(with: .down, duration: 1)
-            self.view?.presentScene(scene, transition: transition)
+            let touch = touches.first!
+            let point = touch.location(in: self.view)
+            
+            if point.x < (view?.frame.width)! / 2 && point.y > (view?.frame.width)! / 2 {
+                let scene = Scene(fileNamed: "Scene")!
+                let transition = SKTransition.moveIn(with: .up, duration: 0.5)
+                self.view?.presentScene(scene, transition: transition)
+            } else {
+                let scene = Scene(fileNamed: "Scene")!
+                let transition = SKTransition.moveIn(with: .up, duration: 0.5)
+                self.view?.presentScene(scene, transition: transition)
+                gameState = .playing
+            }
+        }
+    }
+    
+    func createAnchor() {
+        guard let sceneView = self.view as? ARSKView else {
+            return
         }
         
         // Create anchor using the camera's current position
