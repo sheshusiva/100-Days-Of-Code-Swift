@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     let puppyImageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "puppy"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
