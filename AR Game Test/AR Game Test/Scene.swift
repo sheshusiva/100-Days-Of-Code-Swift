@@ -9,6 +9,8 @@
 import SpriteKit
 import ARKit
 
+var score = 0
+
 enum GameState {
     case home
     case playing
@@ -57,9 +59,7 @@ class Scene: SKScene {
         
         switch gameState {
         case .home:
-            if point.x < (view?.frame.width)! / 2 { //}&& point.y > (view?.frame.width)! / 2 {
-                print("=== Game Center coming soon...")
-            } else {
+            if point.x > (view?.frame.width)! / 2 {
                 gameState = .playing
                 let fadeOut = SKAction.fadeOut(withDuration: 0.5)
                 let remove = SKAction.removeFromParent()

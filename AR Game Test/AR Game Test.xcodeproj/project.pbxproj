@@ -14,6 +14,7 @@
 		0009A8F01F9F09EC004A8246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0009A8EE1F9F09EC004A8246 /* Main.storyboard */; };
 		0009A8F21F9F09EC004A8246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0009A8F11F9F09EC004A8246 /* Assets.xcassets */; };
 		0009A8F51F9F09EC004A8246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0009A8F31F9F09EC004A8246 /* LaunchScreen.storyboard */; };
+		0009A8FE1F9FFE27004A8246 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0009A8FD1F9FFE27004A8246 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0009A8F11F9F09EC004A8246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0009A8F41F9F09EC004A8246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0009A8F61F9F09EC004A8246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0009A8FD1F9FFE27004A8246 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0009A8FE1F9FFE27004A8246 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				0009A8E51F9F09EC004A8246 /* AR Game Test */,
 				0009A8E41F9F09EC004A8246 /* Products */,
+				0009A8FC1F9FFE27004A8246 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +72,14 @@
 				0009A8F61F9F09EC004A8246 /* Info.plist */,
 			);
 			path = "AR Game Test";
+			sourceTree = "<group>";
+		};
+		0009A8FC1F9FFE27004A8246 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0009A8FD1F9FFE27004A8246 /* GameKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,6 +115,11 @@
 					0009A8E21F9F09EC004A8246 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -287,7 +304,7 @@
 				INFOPLIST_FILE = "AR Game Test/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.calebrwells.AR-Game-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = com.calebrwells.TopSecret;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -303,7 +320,7 @@
 				INFOPLIST_FILE = "AR Game Test/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.calebrwells.AR-Game-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = com.calebrwells.TopSecret;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
