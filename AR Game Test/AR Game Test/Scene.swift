@@ -26,7 +26,7 @@ class Scene: SKScene {
     var anchorCount = 0
     
     override func didMove(to view: SKView) {
-        createMenus()
+        createMenu()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -41,7 +41,7 @@ class Scene: SKScene {
     }
     
     //MARK: ==== Create the menus
-    func createMenus() {
+    func createMenu() {
         playButton = SKSpriteNode(imageNamed: "play")
         playButton.position = CGPoint(x: frame.midX + 200, y: frame.midY)
         playButton.size = CGSize(width: 100, height: 100)
@@ -77,13 +77,13 @@ class Scene: SKScene {
         let gameOverLabel = SKLabelNode(text: "Game Over")
         addChild(gameOverLabel)
         
-        let fadeIn = SKAction.fadeIn(withDuration: 1)
+        let fadeIn = SKAction.fadeIn(withDuration: 1.5)
         let remove = SKAction.removeFromParent()
-        let wait = SKAction.wait(forDuration: 2)
+        let wait = SKAction.wait(forDuration: 1)
         let gameOverSequence = SKAction.sequence([fadeIn, wait, remove])
         gameOverLabel.run(gameOverSequence)
         
-        let transitioWait = SKAction.wait(forDuration: 2)
+        let transitioWait = SKAction.wait(forDuration: 1)
         let action = SKAction.run {
             let scene = Scene(fileNamed: "Scene")!
             let transition = SKTransition.moveIn(with: .up, duration: 0.1)
