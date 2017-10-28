@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LogInController: UIViewController {
     
@@ -28,6 +29,7 @@ class LogInController: UIViewController {
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
         return button
     }()
     
@@ -77,8 +79,35 @@ class LogInController: UIViewController {
         return imageView
     }()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    //MARK: === Handle register
+    @objc func handleRegister() {
+        guard let name = nameTextField.text, let email = emailTextField.text, let password = passwordTextField.text else {
+            return
+        }
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            //successfully authenticated user
+            let ref = Database.database().reference(fromURL: "https://login-screen-chat-app.firebaseio.com/")
+            let userReference = ref.child("users")
+            let values = ["name": name, "email": email]
+            userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
+                if err != nil {
+                    return
+                }
+                
+                print("Successfully saved user into Firebase db")
+            })
+        })
+    }
+    
     //MARK: === View did load
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,10 +120,6 @@ class LogInController: UIViewController {
         setupProfileImageView()
         setupInputsContainerView()
         setupRegisterButton()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     func setupProfileImageView() {

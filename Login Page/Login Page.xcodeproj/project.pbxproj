@@ -12,6 +12,8 @@
 		008BBA881FA2F7CF00C7C2FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008BBA871FA2F7CF00C7C2FD /* Assets.xcassets */; };
 		008BBA8B1FA2F7CF00C7C2FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008BBA891FA2F7CF00C7C2FD /* LaunchScreen.storyboard */; };
 		008BBA941FA2FC9D00C7C2FD /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008BBA931FA2FC9D00C7C2FD /* LogInController.swift */; };
+		008BBA961FA42C8200C7C2FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008BBA951FA42C8200C7C2FD /* GoogleService-Info.plist */; };
+		582DA4AE7E4CD5953B7FD5AD /* Pods_Login_Page.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6843B9D80567B7E7B4E7EFA /* Pods_Login_Page.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		008BBA8A1FA2F7CF00C7C2FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		008BBA8C1FA2F7CF00C7C2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		008BBA931FA2FC9D00C7C2FD /* LogInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
+		008BBA951FA42C8200C7C2FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		546135F9291EA7967D3F7F72 /* Pods-Login Page.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login Page.release.xcconfig"; path = "Pods/Target Support Files/Pods-Login Page/Pods-Login Page.release.xcconfig"; sourceTree = "<group>"; };
+		A57CD153BDED2F09B5A5A417 /* Pods-Login Page.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login Page.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Login Page/Pods-Login Page.debug.xcconfig"; sourceTree = "<group>"; };
+		C6843B9D80567B7E7B4E7EFA /* Pods_Login_Page.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Login_Page.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582DA4AE7E4CD5953B7FD5AD /* Pods_Login_Page.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				008BBA7F1FA2F7CF00C7C2FD /* Login Page */,
 				008BBA7E1FA2F7CF00C7C2FD /* Products */,
+				66115E6DCAE1AD2FE1D084A2 /* Pods */,
+				BF7FFA15567E2C4518C0C2EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +68,7 @@
 				008BBA871FA2F7CF00C7C2FD /* Assets.xcassets */,
 				008BBA891FA2F7CF00C7C2FD /* LaunchScreen.storyboard */,
 				008BBA8C1FA2F7CF00C7C2FD /* Info.plist */,
+				008BBA951FA42C8200C7C2FD /* GoogleService-Info.plist */,
 			);
 			path = "Login Page";
 			sourceTree = "<group>";
@@ -72,6 +82,23 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		66115E6DCAE1AD2FE1D084A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A57CD153BDED2F09B5A5A417 /* Pods-Login Page.debug.xcconfig */,
+				546135F9291EA7967D3F7F72 /* Pods-Login Page.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF7FFA15567E2C4518C0C2EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6843B9D80567B7E7B4E7EFA /* Pods_Login_Page.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,9 +106,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 008BBA8F1FA2F7CF00C7C2FD /* Build configuration list for PBXNativeTarget "Login Page" */;
 			buildPhases = (
+				7A52DEBAD58B687BB9084163 /* [CP] Check Pods Manifest.lock */,
 				008BBA791FA2F7CF00C7C2FD /* Sources */,
 				008BBA7A1FA2F7CF00C7C2FD /* Frameworks */,
 				008BBA7B1FA2F7CF00C7C2FD /* Resources */,
+				46DAB35A085500AB9D02A6ED /* [CP] Embed Pods Frameworks */,
+				9343AC27DA966261FFEFD299 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,10 +163,71 @@
 			files = (
 				008BBA8B1FA2F7CF00C7C2FD /* LaunchScreen.storyboard in Resources */,
 				008BBA881FA2F7CF00C7C2FD /* Assets.xcassets in Resources */,
+				008BBA961FA42C8200C7C2FD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46DAB35A085500AB9D02A6ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Login Page/Pods-Login Page-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Login Page/Pods-Login Page-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A52DEBAD58B687BB9084163 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Login Page-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9343AC27DA966261FFEFD299 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Login Page/Pods-Login Page-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		008BBA791FA2F7CF00C7C2FD /* Sources */ = {
@@ -272,6 +363,7 @@
 		};
 		008BBA901FA2F7CF00C7C2FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A57CD153BDED2F09B5A5A417 /* Pods-Login Page.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +379,7 @@
 		};
 		008BBA911FA2F7CF00C7C2FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 546135F9291EA7967D3F7F72 /* Pods-Login Page.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
