@@ -47,7 +47,7 @@ class IntroController: UIViewController {
     func setupImageView() {
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: -100).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        imageView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -80).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
     }
     
