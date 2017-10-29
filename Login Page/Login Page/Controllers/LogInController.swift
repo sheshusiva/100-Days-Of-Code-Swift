@@ -93,9 +93,14 @@ class LogInController: UIViewController {
                 print(error!)
                 return
             }
+            
+            guard let uid = user?.uid else {
+                return
+            }
+            
             //successfully authenticated user
             let ref = Database.database().reference(fromURL: "https://login-screen-chat-app.firebaseio.com/")
-            let userReference = ref.child("users")
+            let userReference = ref.child("users").child(uid)
             let values = ["name": name, "email": email]
             userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
                 if err != nil {
