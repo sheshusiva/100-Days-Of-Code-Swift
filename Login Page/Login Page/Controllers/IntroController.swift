@@ -10,6 +10,14 @@ import UIKit
 
 class IntroController: UIViewController {
     
+    let introTextView: UITextView = {
+        let textView = UITextView()
+        textView.text = "New and interesting stuff."
+        textView.textAlignment = .center
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
+    }()
+    
     let imageView: UIImageView = {
         let image = UIImageView(image: #imageLiteral(resourceName: "introImage"))
         image.contentMode = .scaleAspectFill
@@ -37,11 +45,20 @@ class IntroController: UIViewController {
 
         view.backgroundColor = .white
         
+        view.addSubview(introTextView)
         view.addSubview(imageView)
         view.addSubview(loginButton)
         
+        setupIntroTextView()
         setupImageView()
         setupLoginButton()
+    }
+    
+    func setupIntroTextView() {
+        introTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        introTextView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        introTextView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+        introTextView.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     func setupImageView() {
