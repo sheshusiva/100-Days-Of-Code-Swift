@@ -13,6 +13,7 @@
 		008BBA8B1FA2F7CF00C7C2FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008BBA891FA2F7CF00C7C2FD /* LaunchScreen.storyboard */; };
 		008BBA941FA2FC9D00C7C2FD /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008BBA931FA2FC9D00C7C2FD /* LogInController.swift */; };
 		008BBA961FA42C8200C7C2FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008BBA951FA42C8200C7C2FD /* GoogleService-Info.plist */; };
+		008BBA981FA671EF00C7C2FD /* IntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008BBA971FA671EF00C7C2FD /* IntroController.swift */; };
 		582DA4AE7E4CD5953B7FD5AD /* Pods_Login_Page.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6843B9D80567B7E7B4E7EFA /* Pods_Login_Page.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		008BBA8C1FA2F7CF00C7C2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		008BBA931FA2FC9D00C7C2FD /* LogInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		008BBA951FA42C8200C7C2FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		008BBA971FA671EF00C7C2FD /* IntroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroController.swift; sourceTree = "<group>"; };
 		546135F9291EA7967D3F7F72 /* Pods-Login Page.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login Page.release.xcconfig"; path = "Pods/Target Support Files/Pods-Login Page/Pods-Login Page.release.xcconfig"; sourceTree = "<group>"; };
 		A57CD153BDED2F09B5A5A417 /* Pods-Login Page.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login Page.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Login Page/Pods-Login Page.debug.xcconfig"; sourceTree = "<group>"; };
 		C6843B9D80567B7E7B4E7EFA /* Pods_Login_Page.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Login_Page.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 		008BBA921FA2FC2000C7C2FD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				008BBA971FA671EF00C7C2FD /* IntroController.swift */,
 				008BBA931FA2FC9D00C7C2FD /* LogInController.swift */,
 				008BBA821FA2F7CF00C7C2FD /* ViewController.swift */,
 			);
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				008BBA981FA671EF00C7C2FD /* IntroController.swift in Sources */,
 				008BBA831FA2F7CF00C7C2FD /* ViewController.swift in Sources */,
 				008BBA941FA2FC9D00C7C2FD /* LogInController.swift in Sources */,
 				008BBA811FA2F7CF00C7C2FD /* AppDelegate.swift in Sources */,
