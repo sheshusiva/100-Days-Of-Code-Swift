@@ -34,7 +34,7 @@ class IntroController: UIViewController {
     
     func setupLoginButton() {
         loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+        loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
         loginButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }

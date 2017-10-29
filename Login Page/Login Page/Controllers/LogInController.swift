@@ -33,6 +33,19 @@ class LogInController: UIViewController {
         return button
     }()
     
+    let cancelButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor(red: 13/255, green: 0/255, blue: 204/255, alpha: 1.0)
+        button.setTitle("Cancel", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.layer.cornerRadius = 12
+        button.layer.masksToBounds = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(goToIntro), for: .touchUpInside)
+        return button
+    }()
+    
     let nameTextField: UITextField = {
        let textField = UITextField()
         textField.placeholder = "Name"
@@ -121,10 +134,12 @@ class LogInController: UIViewController {
         view.addSubview(profileImageView)
         view.addSubview(inputsContainerView)
         view.addSubview(registerButton)
+        view.addSubview(cancelButton)
         
         setupProfileImageView()
         setupInputsContainerView()
         setupRegisterButton()
+        setupCancelButton()
     }
     
     func setupProfileImageView() {
@@ -176,5 +191,17 @@ class LogInController: UIViewController {
         registerButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
         registerButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         registerButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    func setupCancelButton() {
+        cancelButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        cancelButton.topAnchor.constraint(equalTo: registerButton.bottomAnchor, constant: 12).isActive = true
+        cancelButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
+        cancelButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    @objc func goToIntro() {
+        let introController = IntroController()
+        present(introController, animated: true, completion: nil)
     }
 }
