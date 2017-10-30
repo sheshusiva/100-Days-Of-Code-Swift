@@ -22,7 +22,7 @@ class LogInController: UIViewController {
     
     let registerButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(red: 13/255, green: 0/255, blue: 204/255, alpha: 1.0)
+        button.backgroundColor = UIColor(red: 228/255, green: 62/255, blue: 136/255, alpha: 1.0)
         button.setTitle("Register", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -35,7 +35,7 @@ class LogInController: UIViewController {
     
     let cancelButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(red: 13/255, green: 0/255, blue: 204/255, alpha: 1.0)
+        button.backgroundColor = UIColor(red: 228/255, green: 62/255, blue: 136/255, alpha: 1.0)
         button.setTitle("Cancel", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -129,7 +129,7 @@ class LogInController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .blue
+        view.backgroundColor = UIColor(red: 52/255, green: 33/255, blue: 76/255, alpha: 1.0)
         
         view.addSubview(profileImageView)
         view.addSubview(inputsContainerView)
