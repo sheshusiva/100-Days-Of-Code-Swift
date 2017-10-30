@@ -19,15 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.makeKeyAndVisible()
-//        window?.rootViewController = IntroController()
-        
         window = UIWindow()
         window?.makeKeyAndVisible()
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        let swipingController = SwipingController(collectionViewLayout: layout)
+        let swipingController = IntroSwipingController(collectionViewLayout: layout)
         window?.rootViewController = swipingController
         
         return true
