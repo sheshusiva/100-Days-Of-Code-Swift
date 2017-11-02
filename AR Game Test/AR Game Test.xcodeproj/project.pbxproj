@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0000FF751FAB73C300CB0F25 /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0000FF741FAB73C300CB0F25 /* blockerList.json */; };
+		0000FF771FAB73C300CB0F25 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000FF761FAB73C300CB0F25 /* ContentBlockerRequestHandler.swift */; };
+		0000FF7B1FAB73C300CB0F25 /* Adbusters.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0000FF721FAB73C300CB0F25 /* Adbusters.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0009A8E71F9F09EC004A8246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0009A8E61F9F09EC004A8246 /* AppDelegate.swift */; };
 		0009A8E91F9F09EC004A8246 /* Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0009A8E81F9F09EC004A8246 /* Scene.sks */; };
 		0009A8EB1F9F09EC004A8246 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0009A8EA1F9F09EC004A8246 /* Scene.swift */; };
@@ -17,7 +20,35 @@
 		0009A8FE1F9FFE27004A8246 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0009A8FD1F9FFE27004A8246 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0000FF791FAB73C300CB0F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0009A8DB1F9F09EC004A8246 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000FF711FAB73C300CB0F25;
+			remoteInfo = Adbusters;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0000FF7F1FAB73C300CB0F25 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0000FF7B1FAB73C300CB0F25 /* Adbusters.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0000FF721FAB73C300CB0F25 /* Adbusters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Adbusters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0000FF741FAB73C300CB0F25 /* blockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
+		0000FF761FAB73C300CB0F25 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
+		0000FF781FAB73C300CB0F25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0009A8E31F9F09EC004A8246 /* AR Game Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Game Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0009A8E61F9F09EC004A8246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0009A8E81F9F09EC004A8246 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
@@ -31,6 +62,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0000FF6F1FAB73C300CB0F25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0009A8E01F9F09EC004A8246 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,10 +80,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0000FF731FAB73C300CB0F25 /* Adbusters */ = {
+			isa = PBXGroup;
+			children = (
+				0000FF741FAB73C300CB0F25 /* blockerList.json */,
+				0000FF761FAB73C300CB0F25 /* ContentBlockerRequestHandler.swift */,
+				0000FF781FAB73C300CB0F25 /* Info.plist */,
+			);
+			path = Adbusters;
+			sourceTree = "<group>";
+		};
 		0009A8DA1F9F09EC004A8246 = {
 			isa = PBXGroup;
 			children = (
 				0009A8E51F9F09EC004A8246 /* AR Game Test */,
+				0000FF731FAB73C300CB0F25 /* Adbusters */,
 				0009A8E41F9F09EC004A8246 /* Products */,
 				0009A8FC1F9FFE27004A8246 /* Frameworks */,
 			);
@@ -55,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				0009A8E31F9F09EC004A8246 /* AR Game Test.app */,
+				0000FF721FAB73C300CB0F25 /* Adbusters.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +135,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0000FF711FAB73C300CB0F25 /* Adbusters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0000FF7E1FAB73C300CB0F25 /* Build configuration list for PBXNativeTarget "Adbusters" */;
+			buildPhases = (
+				0000FF6E1FAB73C300CB0F25 /* Sources */,
+				0000FF6F1FAB73C300CB0F25 /* Frameworks */,
+				0000FF701FAB73C300CB0F25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Adbusters;
+			productName = Adbusters;
+			productReference = 0000FF721FAB73C300CB0F25 /* Adbusters.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		0009A8E21F9F09EC004A8246 /* AR Game Test */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0009A8F91F9F09EC004A8246 /* Build configuration list for PBXNativeTarget "AR Game Test" */;
@@ -92,10 +159,12 @@
 				0009A8DF1F9F09EC004A8246 /* Sources */,
 				0009A8E01F9F09EC004A8246 /* Frameworks */,
 				0009A8E11F9F09EC004A8246 /* Resources */,
+				0000FF7F1FAB73C300CB0F25 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0000FF7A1FAB73C300CB0F25 /* PBXTargetDependency */,
 			);
 			name = "AR Game Test";
 			productName = "AR Game Test";
@@ -112,6 +181,10 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Caleb Wells";
 				TargetAttributes = {
+					0000FF711FAB73C300CB0F25 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 					0009A8E21F9F09EC004A8246 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -137,11 +210,20 @@
 			projectRoot = "";
 			targets = (
 				0009A8E21F9F09EC004A8246 /* AR Game Test */,
+				0000FF711FAB73C300CB0F25 /* Adbusters */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0000FF701FAB73C300CB0F25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0000FF751FAB73C300CB0F25 /* blockerList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0009A8E11F9F09EC004A8246 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,6 +238,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0000FF6E1FAB73C300CB0F25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0000FF771FAB73C300CB0F25 /* ContentBlockerRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0009A8DF1F9F09EC004A8246 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -167,6 +257,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0000FF7A1FAB73C300CB0F25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0000FF711FAB73C300CB0F25 /* Adbusters */;
+			targetProxy = 0000FF791FAB73C300CB0F25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0009A8EE1F9F09EC004A8246 /* Main.storyboard */ = {
@@ -188,6 +286,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0000FF7C1FAB73C300CB0F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 33NUGZ4GWE;
+				INFOPLIST_FILE = Adbusters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.calebrwells.TopSecret.Adbusters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0000FF7D1FAB73C300CB0F25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 33NUGZ4GWE;
+				INFOPLIST_FILE = Adbusters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.calebrwells.TopSecret.Adbusters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		0009A8F71F9F09EC004A8246 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -298,6 +428,7 @@
 		0009A8FA1F9F09EC004A8246 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33NUGZ4GWE;
@@ -314,6 +445,7 @@
 		0009A8FB1F9F09EC004A8246 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33NUGZ4GWE;
@@ -330,6 +462,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0000FF7E1FAB73C300CB0F25 /* Build configuration list for PBXNativeTarget "Adbusters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0000FF7C1FAB73C300CB0F25 /* Debug */,
+				0000FF7D1FAB73C300CB0F25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0009A8DE1F9F09EC004A8246 /* Build configuration list for PBXProject "AR Game Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

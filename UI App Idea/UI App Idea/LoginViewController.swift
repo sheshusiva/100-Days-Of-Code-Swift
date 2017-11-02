@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Vision
 
 class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var detectedFaces = [(observation: VNFaceObservation, blur: Bool)]()
     
     let imageView: UIImageView = {
         let image = UIImageView()
@@ -65,5 +68,9 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         dismiss(animated: true) {
             // detect faces!
         }
+    }
+    
+    func detectFaces() {
+        
     }
 }
