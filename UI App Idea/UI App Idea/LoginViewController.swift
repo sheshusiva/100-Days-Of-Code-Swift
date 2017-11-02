@@ -11,6 +11,7 @@ import Vision
 
 class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var selectedImageFromPicker: UIImage?
     var detectedFaces = [(observation: VNFaceObservation, blur: Bool)]()
     
     let imageView: UIImageView = {
@@ -22,6 +23,17 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
+    
+    let textView: UITextView = {
+        let text = UITextView()
+        text.textColor = .red
+        text.textAlignment = .center
+        text.isEditable = false
+        text.isScrollEnabled = false
+        text.translatesAutoresizingMaskIntoConstraints = false
+        return text
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +41,10 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         view.backgroundColor = .white
         
         view.addSubview(imageView)
+        view.addSubview(textView)
         
         setupImageView()
+        setupTextView()
     }
     
     func setupImageView() {
@@ -45,6 +59,13 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         imageView.addGestureRecognizer(tapRecognizer)
     }
     
+    func setupTextView() {
+        textView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        textView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 45).isActive = true
+        textView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -50).isActive = true
+        textView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    }
+    
     @objc func selectPhoto() {
         let picker = UIImagePickerController()
         picker.allowsEditing = true
@@ -53,8 +74,6 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        var selectedImageFromPicker: UIImage?
-        
         if let editedImage = info["UIImagePickerControllerEditedImage"] {
             selectedImageFromPicker = editedImage as? UIImage
         } else if let originalImage = info["UIImagePickerControllerOriginalImage"] {
@@ -66,11 +85,51 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
         
         dismiss(animated: true) {
-            // detect faces!
+            self.detectFaces()
         }
     }
     
     func detectFaces() {
+        guard let selectedImageFromPicker = selectedImageFromPicker else { return }
+        
+        guard let ciImage = CIImage(image: selectedImageFromPicker) else { return }
+        
+        let request = VNDetectFaceRectanglesRequest {
+            [unowned self] request, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                guard let observations = request.results as? [VNFaceObservation] else { return }
+                self.detectedFaces = Array(zip(observations, [Bool](repeating: false, count: observations.count)))
+            }
+            
+            request.results?.forEach({(request) in
+                guard let faceObservation = request as? VNFaceObservation else { return }
+                
+                self.textView.text = "Faces detected: \(self.detectedFaces.count)"
+                print("=== \(faceObservation.boundingBox)")
+                
+//                let x = self.view.frame.width * faceObservation.boundingBox.origin.x
+//                let height = self.view.frame.height * faceObservation.boundingBox.height
+//                let y = 1 - (faceObservation.boundingBox.origin.y) - height
+//                let width = self.view.frame.width * faceObservation.boundingBox.width
+                
+//                let faceView = UIView()
+//                faceView.backgroundColor = .red
+//                faceView.alpha = 0.4
+//                faceView.frame = CGRect(x: x, y: y, width: width, height: height)
+//                self.view.addSubview(faceView)
+                
+            })
+        }
+        
+        let handler = VNImageRequestHandler(ciImage: ciImage)
+        
+        do {
+            try handler.perform([request])
+        } catch {
+            print(error.localizedDescription)
+        }
         
     }
 }
