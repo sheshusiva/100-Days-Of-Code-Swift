@@ -8,9 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UIImagePickerControllerDelegate {
-    
-    var inputImage: UIImage?
+class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let imageView: UIImageView = {
         let image = UIImageView()
@@ -47,18 +45,22 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate {
     @objc func selectPhoto() {
         let picker = UIImagePickerController()
         picker.allowsEditing = true
-        picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        present(picker, animated: true)
-        print("====== select a photo")
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let image = info[UIImagePickerControllerEditedImage] as? UIImage else {
-            return
+        var selectedImageFromPicker: UIImage?
+        
+        if let editedImage = info["UIImagePickerControllerEditedImage"] {
+            selectedImageFromPicker = editedImage as? UIImage
+        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] {
+            selectedImageFromPicker = originalImage as? UIImage
         }
         
-        imageView.image = image
-        inputImage = image
+        if let selectedImage = selectedImageFromPicker {
+            imageView.image = selectedImage
+        }
         
         dismiss(animated: true) {
             // detect faces!
