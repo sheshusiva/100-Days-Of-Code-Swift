@@ -14,5 +14,6 @@ class CardsViewController: UICollectionViewController {
         super.viewDidLoad()
         
         collectionView?.backgroundColor = .white
+        
     }
 }

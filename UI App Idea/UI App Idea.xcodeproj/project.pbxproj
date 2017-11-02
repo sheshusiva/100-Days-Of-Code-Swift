@@ -11,6 +11,7 @@
 		0097C1591FAAC70E000E7B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0097C1581FAAC70E000E7B49 /* Assets.xcassets */; };
 		0097C15C1FAAC70E000E7B49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0097C15A1FAAC70E000E7B49 /* LaunchScreen.storyboard */; };
 		0097C1641FAAC7F0000E7B49 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097C1631FAAC7F0000E7B49 /* CardsViewController.swift */; };
+		00B7D88A1FAAD15E00484ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B7D8891FAAD15E00484ECF /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		0097C15B1FAAC70E000E7B49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0097C15D1FAAC70E000E7B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0097C1631FAAC7F0000E7B49 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		00B7D8891FAAD15E00484ECF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				0097C1511FAAC70E000E7B49 /* AppDelegate.swift */,
 				0097C1631FAAC7F0000E7B49 /* CardsViewController.swift */,
+				00B7D8891FAAD15E00484ECF /* LoginViewController.swift */,
 				0097C1581FAAC70E000E7B49 /* Assets.xcassets */,
 				0097C15A1FAAC70E000E7B49 /* LaunchScreen.storyboard */,
 				0097C15D1FAAC70E000E7B49 /* Info.plist */,
@@ -132,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B7D88A1FAAD15E00484ECF /* LoginViewController.swift in Sources */,
 				0097C1641FAAC7F0000E7B49 /* CardsViewController.swift in Sources */,
 				0097C1521FAAC70E000E7B49 /* AppDelegate.swift in Sources */,
 			);

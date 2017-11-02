@@ -17,9 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         window?.makeKeyAndVisible()
-        let layout = UICollectionViewFlowLayout()
-        let cardsView = CardsViewController(collectionViewLayout: layout)
-        window?.rootViewController = UINavigationController(rootViewController: cardsView)
+//        let layout = UICollectionViewFlowLayout()
+//        let cardsView = CardsViewController(collectionViewLayout: layout)
+//        window?.rootViewController = UINavigationController(rootViewController: cardsView)
+        window?.rootViewController = LoginViewController()
         
         return true
     }
