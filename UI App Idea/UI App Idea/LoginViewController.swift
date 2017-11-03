@@ -12,6 +12,7 @@ import Vision
 class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var selectedImageFromPicker: UIImage?
+    let addImage = UIImage(named: "")
     var detectedFaces = [(observation: VNFaceObservation, blur: Bool)]()
     
     let imageView: UIImageView = {
@@ -106,21 +107,16 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             request.results?.forEach({(request) in
                 guard let faceObservation = request as? VNFaceObservation else { return }
                 
-                self.textView.text = "Faces detected: \(self.detectedFaces.count)"
+                //self.textView.text = "Faces detected: \(self.detectedFaces.count)"
                 print("=== \(faceObservation.boundingBox)")
-                
-//                let x = self.view.frame.width * faceObservation.boundingBox.origin.x
-//                let height = self.view.frame.height * faceObservation.boundingBox.height
-//                let y = 1 - (faceObservation.boundingBox.origin.y) - height
-//                let width = self.view.frame.width * faceObservation.boundingBox.width
-                
-//                let faceView = UIView()
-//                faceView.backgroundColor = .red
-//                faceView.alpha = 0.4
-//                faceView.frame = CGRect(x: x, y: y, width: width, height: height)
-//                self.view.addSubview(faceView)
-                
             })
+            
+            if self.detectedFaces.count == 0 {
+                self.imageView.image = self.addImage
+                self.textView.text = "Please choose a photo with your face in the shot."
+            } else if self.detectedFaces.count > 0 {
+                self.textView.text = ""
+            }
         }
         
         let handler = VNImageRequestHandler(ciImage: ciImage)
