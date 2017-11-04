@@ -204,7 +204,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     //MARK: ==== Handle UIButtons/Keyboard.
     @objc func handleRegister() {
-        //
+        dismiss(animated: true, completion: nil)
     }
     
     @objc func handleCancel() {
