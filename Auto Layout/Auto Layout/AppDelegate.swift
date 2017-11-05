@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  UI App Idea
+//  Auto Layout
 //
-//  Created by Caleb Wells on 11/1/17.
+//  Created by Caleb Wells on 11/4/17.
 //  Copyright © 2017 Caleb Wells. All rights reserved.
 //
 
@@ -13,15 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        window = UIWindow()
-        window?.makeKeyAndVisible()
-        //window?.rootViewController = MainNavigationController()
-        let vc = MainNavigationController()
-        window?.rootViewController = UINavigationController(rootViewController: vc)
-        return true
-        
+        // Override point for customization after application launch.
         return true
     }
 

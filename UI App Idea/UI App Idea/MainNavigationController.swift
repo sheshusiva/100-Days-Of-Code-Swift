@@ -12,7 +12,12 @@ class MainNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .red
+        
+        let editButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(actionEdit))
+        navigationItem.leftBarButtonItem = editButtonItem
+        
+        navigationItem.title = "Hello?"
         
         if isLoggedIn() {
             let homeController = HomeController()
@@ -22,6 +27,10 @@ class MainNavigationController: UINavigationController {
         }
         
         setupNavigationBarItems()
+    }
+    
+    @objc func actionEdit() {
+        print("=== 123")
     }
     
     func isLoggedIn() -> Bool {
