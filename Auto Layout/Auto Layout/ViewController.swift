@@ -9,17 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let imageView: UIImageView = {
+        let image = UIImageView(image: #imageLiteral(resourceName: "game"))
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        view.addSubview(imageView)
+        setupImageView()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setupImageView() {
+        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
     }
-
-
 }
 
