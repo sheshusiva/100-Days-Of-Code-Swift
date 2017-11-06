@@ -33,8 +33,7 @@ class WelcomeController: UICollectionViewController, UICollectionViewDelegateFlo
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! WelcomePageCell
         let page = pages[indexPath.item]
-        cell.imageView.image = UIImage(named: page.imageViews)
-        cell.textView.text = page.textViews
+        cell.page = page
         return cell
     }
     

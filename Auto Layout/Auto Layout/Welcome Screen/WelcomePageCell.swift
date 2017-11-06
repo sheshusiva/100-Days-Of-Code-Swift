@@ -10,17 +10,26 @@ import UIKit
 
 class WelcomePageCell: UICollectionViewCell {
     
-    let imageView: UIImageView = {
+    var page: WelcomePageModel? {
+        didSet {
+            guard let unwrappedPage = page else { return }
+            
+            imageView.image = UIImage(named: unwrappedPage.imageViews)
+        }
+    }
+    
+    private let imageView: UIImageView = {
         let image = UIImageView(image: #imageLiteral(resourceName: "game"))
+        image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
-    let textView: UITextView = {
+    private let textView: UITextView = {
         let text = UITextView()
+        let attributedText = NSMutableAttributedString(string: "Join us today in our fun in games!", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18)])
+        text.attributedText = attributedText
         text.textAlignment = .center
-        text.font = UIFont.boldSystemFont(ofSize: 18)
-        text.text = "Join us today in our fun in games!"
         text.isEditable = false
         text.isScrollEnabled = false
         text.translatesAutoresizingMaskIntoConstraints = false

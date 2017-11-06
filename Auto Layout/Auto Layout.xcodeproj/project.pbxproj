@@ -41,6 +41,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001E7BCB1FB10A05004D3CB3 /* Welcome Screen */ = {
+			isa = PBXGroup;
+			children = (
+				001E7BC51FB0F5A5004D3CB3 /* WelcomeController.swift */,
+				001E7BC71FB0FA42004D3CB3 /* WelcomePageCell.swift */,
+				001E7BC91FB106C4004D3CB3 /* WelcomePageModel.swift */,
+			);
+			path = "Welcome Screen";
+			sourceTree = "<group>";
+		};
 		0055C9211FAEBB8700A53FBC = {
 			isa = PBXGroup;
 			children = (
@@ -62,9 +72,7 @@
 			children = (
 				0055C92D1FAEBB8700A53FBC /* AppDelegate.swift */,
 				0055C92F1FAEBB8700A53FBC /* ViewController.swift */,
-				001E7BC51FB0F5A5004D3CB3 /* WelcomeController.swift */,
-				001E7BC71FB0FA42004D3CB3 /* WelcomePageCell.swift */,
-				001E7BC91FB106C4004D3CB3 /* WelcomePageModel.swift */,
+				001E7BCB1FB10A05004D3CB3 /* Welcome Screen */,
 				0055C9311FAEBB8700A53FBC /* Main.storyboard */,
 				0055C9341FAEBB8700A53FBC /* Assets.xcassets */,
 				0055C9361FAEBB8700A53FBC /* LaunchScreen.storyboard */,
