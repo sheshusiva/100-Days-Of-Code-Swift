@@ -8,17 +8,51 @@
 
 import UIKit
 
+extension UIColor {
+    static var mainPink = UIColor(red: 255/255, green: 104/255, blue: 179/255, alpha: 1.0)
+    static var mainPinkHalf = UIColor(red: 255/255, green: 104/255, blue: 179/255, alpha: 0.5)
+}
+
 class WelcomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    let signUpButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Sign Up", for: .normal)
+        button.setTitleColor(.mainPink, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    let signInButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Sign In", for: .normal)
+        button.setTitleColor(.mainPink, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    let pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.currentPage = 0
+        pageControl.numberOfPages = 4
+        pageControl.currentPageIndicatorTintColor = .mainPink
+        pageControl.pageIndicatorTintColor = .mainPinkHalf
+        return pageControl
+    }()
+    
     let pages = [
-        WelcomePageModel(imageViews: "game", textViews: "Join us today in our fun in games!"),
-        WelcomePageModel(imageViews: "joystick", textViews: "Sign in for more fun in games!")
+        WelcomePageModel(imageViews: "game", headerText: "Join us today in our fun in games!", bodyText: "\n\nAre you ready for loads of fun?"),
+        WelcomePageModel(imageViews: "joystick", headerText: "Sign in for more fun in games!", bodyText: "\n\nAre you sure you are ready for loads of fun?")
     ]
     
     let cellId = "cellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupBottomControls()
         
         collectionView?.backgroundColor = .white
         
@@ -43,5 +77,22 @@ class WelcomeController: UICollectionViewController, UICollectionViewDelegateFlo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    func setupBottomControls() {
+        view.addSubview(signUpButton)
+        view.addSubview(signInButton)
+        view.addSubview(pageControl)
+        
+        let bottomControlsStackView = UIStackView(arrangedSubviews: [signUpButton, pageControl, signInButton])
+        bottomControlsStackView.distribution = .fillEqually
+        bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(bottomControlsStackView)
+        
+        bottomControlsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12).isActive = true
+        bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -12).isActive = true
+        bottomControlsStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 }

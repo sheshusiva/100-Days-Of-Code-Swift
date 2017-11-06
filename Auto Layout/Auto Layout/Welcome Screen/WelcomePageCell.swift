@@ -15,6 +15,13 @@ class WelcomePageCell: UICollectionViewCell {
             guard let unwrappedPage = page else { return }
             
             imageView.image = UIImage(named: unwrappedPage.imageViews)
+            
+            let attributedText = NSMutableAttributedString(string: unwrappedPage.headerText, attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18)])
+            
+            attributedText.append(NSAttributedString(string: unwrappedPage.bodyText, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: UIColor.gray]))
+            
+            textView.attributedText = attributedText
+            textView.textAlignment = .center
         }
     }
     
@@ -28,6 +35,7 @@ class WelcomePageCell: UICollectionViewCell {
     private let textView: UITextView = {
         let text = UITextView()
         let attributedText = NSMutableAttributedString(string: "Join us today in our fun in games!", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18)])
+        attributedText.append(NSAttributedString(string: "\n\nAre you ready for loads of fun?", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: UIColor.gray]))
         text.attributedText = attributedText
         text.textAlignment = .center
         text.isEditable = false

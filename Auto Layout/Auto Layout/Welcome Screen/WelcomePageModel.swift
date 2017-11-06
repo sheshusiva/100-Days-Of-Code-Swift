@@ -10,5 +10,6 @@ import Foundation
 
 struct WelcomePageModel {
     let imageViews: String
-    let textViews: String
+    let headerText: String
+    let bodyText: String
 }

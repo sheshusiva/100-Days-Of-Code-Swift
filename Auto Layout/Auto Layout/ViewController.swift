@@ -8,10 +8,10 @@
 
 import UIKit
 
-extension UIColor {
-    static var mainPink = UIColor(red: 255/255, green: 104/255, blue: 179/255, alpha: 1.0)
-    static var mainPinkHalf = UIColor(red: 255/255, green: 104/255, blue: 179/255, alpha: 0.5)
-}
+//extension UIColor {
+//    static var mainPink = UIColor(red: 255/255, green: 104/255, blue: 179/255, alpha: 1.0)
+//    static var mainPinkHalf = UIColor(red: 255/255, green: 104/255, blue: 179/255, alpha: 0.5)
+//}
 
 class ViewController: UIViewController {
     
@@ -32,32 +32,32 @@ class ViewController: UIViewController {
 //        return text
 //    }()
     
-    let signUpButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Sign Up", for: .normal)
-        button.setTitleColor(.mainPink, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    let signInButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Sign In", for: .normal)
-        button.setTitleColor(.mainPink, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    let pageControl: UIPageControl = {
-        let pageControl = UIPageControl()
-        pageControl.currentPage = 0
-        pageControl.numberOfPages = 4
-        pageControl.currentPageIndicatorTintColor = .mainPink
-        pageControl.pageIndicatorTintColor = .mainPinkHalf
-        return pageControl
-    }()
+//    let signUpButton: UIButton = {
+//        let button = UIButton(type: .system)
+//        button.setTitle("Sign Up", for: .normal)
+//        button.setTitleColor(.mainPink, for: .normal)
+//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        return button
+//    }()
+//    
+//    let signInButton: UIButton = {
+//        let button = UIButton(type: .system)
+//        button.setTitle("Sign In", for: .normal)
+//        button.setTitleColor(.mainPink, for: .normal)
+//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        return button
+//    }()
+//    
+//    let pageControl: UIPageControl = {
+//        let pageControl = UIPageControl()
+//        pageControl.currentPage = 0
+//        pageControl.numberOfPages = 4
+//        pageControl.currentPageIndicatorTintColor = .mainPink
+//        pageControl.pageIndicatorTintColor = .mainPinkHalf
+//        return pageControl
+//    }()
     
     //MARK: === View did load
     override func viewDidLoad() {
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
 //        
 //        setupImageView()
 //        setupTextView()
-        setupBottomControls()
+//        setupBottomControls()
     }
     
     //MARK: === Set up layout
@@ -86,21 +86,21 @@ class ViewController: UIViewController {
 //        textView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
 //    }
     
-    func setupBottomControls() {
-        view.addSubview(signUpButton)
-        view.addSubview(signInButton)
-        view.addSubview(pageControl)
-        
-        let bottomControlsStackView = UIStackView(arrangedSubviews: [signUpButton, pageControl, signInButton])
-        bottomControlsStackView.distribution = .fillEqually
-        bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(bottomControlsStackView)
-        
-        bottomControlsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12).isActive = true
-        bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -12).isActive = true
-        bottomControlsStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    }
+//    func setupBottomControls() {
+//        view.addSubview(signUpButton)
+//        view.addSubview(signInButton)
+//        view.addSubview(pageControl)
+//        
+//        let bottomControlsStackView = UIStackView(arrangedSubviews: [signUpButton, pageControl, signInButton])
+//        bottomControlsStackView.distribution = .fillEqually
+//        bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        view.addSubview(bottomControlsStackView)
+//        
+//        bottomControlsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+//        bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12).isActive = true
+//        bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -12).isActive = true
+//        bottomControlsStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//    }
 }
 
