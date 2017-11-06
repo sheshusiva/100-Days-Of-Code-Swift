@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
         let welcomeController = WelcomeController(collectionViewLayout: layout)
         window?.rootViewController = welcomeController
         
