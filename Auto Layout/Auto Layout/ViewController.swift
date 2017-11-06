@@ -32,21 +32,20 @@ class ViewController: UIViewController {
         return text
     }()
     
-    let previousButton: UIButton = {
+    let signUpButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("PREV", for: .normal)
-        button.setTitleColor(.gray, for: .normal)
-        button.setTitleColor(.mainPinkHalf, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitle("Sign Up", for: .normal)
+        button.setTitleColor(.mainPink, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    let nextButton: UIButton = {
+    let signInButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("NEXT", for: .normal)
+        button.setTitle("Sign In", for: .normal)
         button.setTitleColor(.mainPink, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -88,19 +87,19 @@ class ViewController: UIViewController {
     }
     
     func setupBottomControls() {
-        view.addSubview(previousButton)
-        view.addSubview(nextButton)
+        view.addSubview(signUpButton)
+        view.addSubview(signInButton)
         view.addSubview(pageControl)
         
-        let bottomControlsStackView = UIStackView(arrangedSubviews: [previousButton, pageControl, nextButton])
+        let bottomControlsStackView = UIStackView(arrangedSubviews: [signUpButton, pageControl, signInButton])
         bottomControlsStackView.distribution = .fillEqually
         bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(bottomControlsStackView)
         
         bottomControlsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12).isActive = true
+        bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -12).isActive = true
         bottomControlsStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 }
