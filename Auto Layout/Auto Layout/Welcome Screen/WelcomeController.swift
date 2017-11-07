@@ -29,10 +29,6 @@ class WelcomeController: UICollectionViewController, UICollectionViewDelegateFlo
         button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
-    
-    @objc func handleSignUp() {
-        //
-    }
 
     let signInButton: UIButton = {
         let button = UIButton(type: .system)
@@ -44,10 +40,6 @@ class WelcomeController: UICollectionViewController, UICollectionViewDelegateFlo
         return button
     }()
     
-    @objc func handleSignIn() {
-        //
-    }
-
     lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.currentPage = 0
@@ -59,6 +51,7 @@ class WelcomeController: UICollectionViewController, UICollectionViewDelegateFlo
     
     let cellId = "cellId"
     
+    //MARK: === View did load.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,6 +63,7 @@ class WelcomeController: UICollectionViewController, UICollectionViewDelegateFlo
         collectionView?.isPagingEnabled = true
     }
     
+    //MARK: === Update page controlor dots.
     override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let x = targetContentOffset.pointee.x
         pageControl.currentPage = Int(x / view.frame.width)
@@ -94,6 +88,7 @@ class WelcomeController: UICollectionViewController, UICollectionViewDelegateFlo
         return 0
     }
     
+    // MARK: === Set up bottom controls.
     func setupBottomControls() {
         view.addSubview(signUpButton)
         view.addSubview(signInButton)
@@ -109,5 +104,14 @@ class WelcomeController: UICollectionViewController, UICollectionViewDelegateFlo
         bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12).isActive = true
         bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -12).isActive = true
         bottomControlsStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    //MARK: === Handle sign up and in buttons.
+    @objc func handleSignUp() {
+        //
+    }
+    
+    @objc func handleSignIn() {
+        //
     }
 }
