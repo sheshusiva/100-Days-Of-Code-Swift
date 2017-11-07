@@ -108,10 +108,12 @@ class WelcomeController: UICollectionViewController, UICollectionViewDelegateFlo
     
     //MARK: === Handle sign up and in buttons.
     @objc func handleSignUp() {
-        //
+        let signUp = SignUpController()
+        present(signUp, animated: true, completion: nil)
     }
     
     @objc func handleSignIn() {
-        //
+        let signIn = SignInController()
+        present(signIn, animated: true, completion: nil)
     }
 }
