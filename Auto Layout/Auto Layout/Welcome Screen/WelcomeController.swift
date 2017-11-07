@@ -15,14 +15,24 @@ extension UIColor {
 
 class WelcomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    let pages = [
+        WelcomePageModel(imageViews: "game", headerText: "Join us today in our fun in games!", bodyText: "\n\nAre you ready for loads of fun?"),
+        WelcomePageModel(imageViews: "joystick", headerText: "Sign in for more fun in games!", bodyText: "\n\nAre you sure you are ready for loads of fun?")
+    ]
+    
     let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
         button.setTitleColor(.mainPink, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
+    
+    @objc func handleSignUp() {
+        //
+    }
 
     let signInButton: UIButton = {
         let button = UIButton(type: .system)
@@ -30,22 +40,22 @@ class WelcomeController: UICollectionViewController, UICollectionViewDelegateFlo
         button.setTitleColor(.mainPink, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(handleSignIn), for: .touchUpInside)
         return button
     }()
+    
+    @objc func handleSignIn() {
+        //
+    }
 
-    let pageControl: UIPageControl = {
+    lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.currentPage = 0
-        pageControl.numberOfPages = 4
+        pageControl.numberOfPages = pages.count
         pageControl.currentPageIndicatorTintColor = .mainPink
         pageControl.pageIndicatorTintColor = .mainPinkHalf
         return pageControl
     }()
-    
-    let pages = [
-        WelcomePageModel(imageViews: "game", headerText: "Join us today in our fun in games!", bodyText: "\n\nAre you ready for loads of fun?"),
-        WelcomePageModel(imageViews: "joystick", headerText: "Sign in for more fun in games!", bodyText: "\n\nAre you sure you are ready for loads of fun?")
-    ]
     
     let cellId = "cellId"
     
@@ -58,6 +68,11 @@ class WelcomeController: UICollectionViewController, UICollectionViewDelegateFlo
         
         collectionView?.register(WelcomePageCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.isPagingEnabled = true
+    }
+    
+    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let x = targetContentOffset.pointee.x
+        pageControl.currentPage = Int(x / view.frame.width)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
