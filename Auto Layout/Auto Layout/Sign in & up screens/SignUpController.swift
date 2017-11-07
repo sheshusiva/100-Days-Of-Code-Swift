@@ -204,7 +204,8 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
     
     //MARK: ==== Handle UIButtons/Keyboard.
     @objc func handleRegister() {
-        //
+        let homeController = HomeController()
+        present(homeController, animated: true, completion: nil)
     }
     
     @objc func handleCancel() {
