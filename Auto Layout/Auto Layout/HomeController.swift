@@ -65,7 +65,8 @@ class HomeController: UIViewController {
     
     //MARK: === Handle buttons
     @objc func handleProfile() {
-        
+        let profileController = ProfileController()
+        present(profileController, animated: true, completion: nil)
     }
     
     @objc func handleHome() {
@@ -73,7 +74,8 @@ class HomeController: UIViewController {
     }
     
     @objc func handleMessages() {
-        
+        let messagesController = MessagesController()
+        present(messagesController, animated: true, completion: nil)
     }
 }
 
