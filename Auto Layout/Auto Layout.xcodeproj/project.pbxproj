@@ -18,6 +18,7 @@
 		0055C92E1FAEBB8700A53FBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0055C92D1FAEBB8700A53FBC /* AppDelegate.swift */; };
 		0055C9351FAEBB8700A53FBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0055C9341FAEBB8700A53FBC /* Assets.xcassets */; };
 		0055C9381FAEBB8700A53FBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0055C9361FAEBB8700A53FBC /* LaunchScreen.storyboard */; };
+		00638B121FB5224500B6FA64 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00638B111FB5224500B6FA64 /* SettingsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0055C9341FAEBB8700A53FBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0055C9371FAEBB8700A53FBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0055C9391FAEBB8700A53FBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00638B111FB5224500B6FA64 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				0055C92D1FAEBB8700A53FBC /* AppDelegate.swift */,
 				001E7BD11FB14DA5004D3CB3 /* HomeController.swift */,
 				001E7BD31FB1769E004D3CB3 /* ProfileController.swift */,
+				00638B111FB5224500B6FA64 /* SettingsController.swift */,
 				001E7BD51FB17EB7004D3CB3 /* MessagesController.swift */,
 				001E7BD01FB14D19004D3CB3 /* Sign in & up screens */,
 				001E7BCB1FB10A05004D3CB3 /* Welcome Screen */,
@@ -175,6 +178,7 @@
 				001E7BC81FB0FA42004D3CB3 /* WelcomePageCell.swift in Sources */,
 				001E7BD61FB17EB7004D3CB3 /* MessagesController.swift in Sources */,
 				001E7BCF1FB13C5A004D3CB3 /* SignInController.swift in Sources */,
+				00638B121FB5224500B6FA64 /* SettingsController.swift in Sources */,
 				0055C92E1FAEBB8700A53FBC /* AppDelegate.swift in Sources */,
 				001E7BCD1FB13A23004D3CB3 /* SignUpController.swift in Sources */,
 				001E7BD41FB1769E004D3CB3 /* ProfileController.swift in Sources */,
