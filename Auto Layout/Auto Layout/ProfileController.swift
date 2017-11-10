@@ -12,9 +12,8 @@ class ProfileController: UIViewController {
     
     let settingsButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle("Settings", for: .normal)
         button.setTitleColor(.mainPink, for: .normal)
-//        button.setImage(#imageLiteral(resourceName: "profile"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "setting"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleSettings), for: .touchUpInside)

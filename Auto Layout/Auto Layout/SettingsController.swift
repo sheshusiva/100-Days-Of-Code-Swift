@@ -30,13 +30,12 @@ class SettingsController: UIViewController {
     
     func setUpLayout() {
         doneButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12).isActive = true
-        doneButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 260).isActive = true
-        doneButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        doneButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        doneButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        doneButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12).isActive = true
+        doneButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
     @objc func handleDone() {
-        print("=== hello")
         dismiss(animated: true, completion: nil)
     }
 }
