@@ -21,12 +21,13 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "A Title Label in Swift!"
         label.textAlignment = .center
-        //label.font = UIFont(name: label.font.fontName, size: 27)
         label.numberOfLines = 0
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +35,16 @@ class ViewController: UIViewController {
         
         view.addSubview(headerView)
         headerView.addSubview(titleLabel)
+        setUpHeaderAndTitle()
         
-        seUpViewLayout()
+        let frame = view.frame
+        let layout = UICollectionViewFlowLayout()
+        collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
+        view.addSubview(collectionView)
+        setUpCollectionView()
     }
     
-    func seUpViewLayout() {
+    func setUpHeaderAndTitle() {
         headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         headerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         headerView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 1).isActive = true
@@ -48,6 +54,14 @@ class ViewController: UIViewController {
         titleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
         titleLabel.widthAnchor.constraint(equalTo: headerView.widthAnchor, multiplier: 0.4).isActive = true
         titleLabel.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 0.5).isActive = true
+    }
+    
+    func setUpCollectionView() {
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
     }
 }
 
