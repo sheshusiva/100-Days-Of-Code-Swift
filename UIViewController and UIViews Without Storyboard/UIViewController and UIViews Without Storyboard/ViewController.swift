@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     let headerView: UIView = {
         let header = UIView()
-        header.backgroundColor = .red
+        header.backgroundColor = .black
         header.translatesAutoresizingMaskIntoConstraints = false
         return header
     }()
@@ -28,6 +28,10 @@ class ViewController: UIViewController {
     }()
     
     var collectionView: UICollectionView!
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,7 @@ class ViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
         view.addSubview(collectionView)
+        collectionView.backgroundColor = .white
         setUpCollectionView()
     }
     
