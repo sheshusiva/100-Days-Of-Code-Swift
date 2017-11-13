@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     let headerView: UIView = {
         let header = UIView()
@@ -72,9 +73,11 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(sendFeedback), for: .touchUpInside)
         return button
     }()
     
+    //MARK: === View did load
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,6 +86,10 @@ class ViewController: UIViewController {
         view.addSubview(setUpAdbustersHeader)
         view.addSubview(setUpAdbustersLabel)
         view.addSubview(feedbackButton)
+        
+        if !MFMailComposeViewController.canSendMail() {
+            return
+        }
         
         setUpSubViews()
     }
@@ -118,7 +125,23 @@ class ViewController: UIViewController {
         feedbackButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         feedbackButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -80).isActive = true
         feedbackButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
+    }
+    
+    func sendEmail() {
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        composeVC.setToRecipients(["calebrwells@gmail.com"])
+        composeVC.setSubject("Adbusters Feedback")
+        composeVC.setMessageBody("Please write your feedback here.", isHTML: false)
+        self.present(composeVC, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func sendFeedback() {
+        sendEmail()
     }
 }
 
