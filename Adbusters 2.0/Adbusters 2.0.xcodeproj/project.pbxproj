@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001051E81FBA404600676C1F /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 001051E71FBA404600676C1F /* blockerList.json */; };
+		001051EA1FBA404600676C1F /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001051E91FBA404600676C1F /* ContentBlockerRequestHandler.swift */; };
+		001051EE1FBA404600676C1F /* Adbusters.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 001051E51FBA404600676C1F /* Adbusters.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		007734BD1FB8E055003B41F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007734BC1FB8E055003B41F2 /* AppDelegate.swift */; };
 		007734BF1FB8E055003B41F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007734BE1FB8E055003B41F2 /* ViewController.swift */; };
 		007734C21FB8E055003B41F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007734C01FB8E055003B41F2 /* Main.storyboard */; };
 		007734C41FB8E055003B41F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007734C31FB8E055003B41F2 /* Assets.xcassets */; };
 		007734C71FB8E055003B41F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007734C51FB8E055003B41F2 /* LaunchScreen.storyboard */; };
-		007734D51FB8E08F003B41F2 /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 007734D41FB8E08F003B41F2 /* blockerList.json */; };
-		007734D71FB8E08F003B41F2 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007734D61FB8E08F003B41F2 /* ContentBlockerRequestHandler.swift */; };
-		007734DB1FB8E08F003B41F2 /* Adbusters.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 007734D21FB8E08F003B41F2 /* Adbusters.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		007734D91FB8E08F003B41F2 /* PBXContainerItemProxy */ = {
+		001051EC1FBA404600676C1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 007734B11FB8E055003B41F2 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 007734D11FB8E08F003B41F2;
+			remoteGlobalIDString = 001051E41FBA404600676C1F;
 			remoteInfo = Adbusters;
 		};
 /* End PBXContainerItemProxy section */
@@ -34,7 +34,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				007734DB1FB8E08F003B41F2 /* Adbusters.appex in Embed App Extensions */,
+				001051EE1FBA404600676C1F /* Adbusters.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,6 +42,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		001051E51FBA404600676C1F /* Adbusters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Adbusters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		001051E71FBA404600676C1F /* blockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
+		001051E91FBA404600676C1F /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
+		001051EB1FBA404600676C1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007734B91FB8E055003B41F2 /* Adbusters 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adbusters 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		007734BC1FB8E055003B41F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		007734BE1FB8E055003B41F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,21 +53,17 @@
 		007734C31FB8E055003B41F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		007734C61FB8E055003B41F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		007734C81FB8E055003B41F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		007734D21FB8E08F003B41F2 /* Adbusters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Adbusters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		007734D41FB8E08F003B41F2 /* blockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
-		007734D61FB8E08F003B41F2 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
-		007734D81FB8E08F003B41F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		007734B61FB8E055003B41F2 /* Frameworks */ = {
+		001051E21FBA404600676C1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		007734CF1FB8E08F003B41F2 /* Frameworks */ = {
+		007734B61FB8E055003B41F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -73,11 +73,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001051E61FBA404600676C1F /* Adbusters */ = {
+			isa = PBXGroup;
+			children = (
+				001051E71FBA404600676C1F /* blockerList.json */,
+				001051E91FBA404600676C1F /* ContentBlockerRequestHandler.swift */,
+				001051EB1FBA404600676C1F /* Info.plist */,
+			);
+			path = Adbusters;
+			sourceTree = "<group>";
+		};
 		007734B01FB8E055003B41F2 = {
 			isa = PBXGroup;
 			children = (
 				007734BB1FB8E055003B41F2 /* Adbusters 2.0 */,
-				007734D31FB8E08F003B41F2 /* Adbusters */,
+				001051E61FBA404600676C1F /* Adbusters */,
 				007734BA1FB8E055003B41F2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				007734B91FB8E055003B41F2 /* Adbusters 2.0.app */,
-				007734D21FB8E08F003B41F2 /* Adbusters.appex */,
+				001051E51FBA404600676C1F /* Adbusters.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,19 +114,26 @@
 			path = "Adbusters 2.0";
 			sourceTree = "<group>";
 		};
-		007734D31FB8E08F003B41F2 /* Adbusters */ = {
-			isa = PBXGroup;
-			children = (
-				007734D41FB8E08F003B41F2 /* blockerList.json */,
-				007734D61FB8E08F003B41F2 /* ContentBlockerRequestHandler.swift */,
-				007734D81FB8E08F003B41F2 /* Info.plist */,
-			);
-			path = Adbusters;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		001051E41FBA404600676C1F /* Adbusters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 001051EF1FBA404600676C1F /* Build configuration list for PBXNativeTarget "Adbusters" */;
+			buildPhases = (
+				001051E11FBA404600676C1F /* Sources */,
+				001051E21FBA404600676C1F /* Frameworks */,
+				001051E31FBA404600676C1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Adbusters;
+			productName = Adbusters;
+			productReference = 001051E51FBA404600676C1F /* Adbusters.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		007734B81FB8E055003B41F2 /* Adbusters 2.0 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 007734CB1FB8E055003B41F2 /* Build configuration list for PBXNativeTarget "Adbusters 2.0" */;
@@ -129,29 +146,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				007734DA1FB8E08F003B41F2 /* PBXTargetDependency */,
+				001051ED1FBA404600676C1F /* PBXTargetDependency */,
 			);
 			name = "Adbusters 2.0";
 			productName = "Adbusters 2.0";
 			productReference = 007734B91FB8E055003B41F2 /* Adbusters 2.0.app */;
 			productType = "com.apple.product-type.application";
-		};
-		007734D11FB8E08F003B41F2 /* Adbusters */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 007734DC1FB8E08F003B41F2 /* Build configuration list for PBXNativeTarget "Adbusters" */;
-			buildPhases = (
-				007734CE1FB8E08F003B41F2 /* Sources */,
-				007734CF1FB8E08F003B41F2 /* Frameworks */,
-				007734D01FB8E08F003B41F2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Adbusters;
-			productName = Adbusters;
-			productReference = 007734D21FB8E08F003B41F2 /* Adbusters.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -163,11 +163,11 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Caleb Wells";
 				TargetAttributes = {
-					007734B81FB8E055003B41F2 = {
+					001051E41FBA404600676C1F = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
-					007734D11FB8E08F003B41F2 = {
+					007734B81FB8E055003B41F2 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -187,12 +187,20 @@
 			projectRoot = "";
 			targets = (
 				007734B81FB8E055003B41F2 /* Adbusters 2.0 */,
-				007734D11FB8E08F003B41F2 /* Adbusters */,
+				001051E41FBA404600676C1F /* Adbusters */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		001051E31FBA404600676C1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				001051E81FBA404600676C1F /* blockerList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		007734B71FB8E055003B41F2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,17 +211,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		007734D01FB8E08F003B41F2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				007734D51FB8E08F003B41F2 /* blockerList.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		001051E11FBA404600676C1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				001051EA1FBA404600676C1F /* ContentBlockerRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		007734B51FB8E055003B41F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,21 +231,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		007734CE1FB8E08F003B41F2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				007734D71FB8E08F003B41F2 /* ContentBlockerRequestHandler.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		007734DA1FB8E08F003B41F2 /* PBXTargetDependency */ = {
+		001051ED1FBA404600676C1F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 007734D11FB8E08F003B41F2 /* Adbusters */;
-			targetProxy = 007734D91FB8E08F003B41F2 /* PBXContainerItemProxy */;
+			target = 001051E41FBA404600676C1F /* Adbusters */;
+			targetProxy = 001051EC1FBA404600676C1F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -261,6 +261,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		001051F01FBA404600676C1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 33NUGZ4GWE;
+				INFOPLIST_FILE = Adbusters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Adbusters.Adbusters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		001051F11FBA404600676C1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 33NUGZ4GWE;
+				INFOPLIST_FILE = Adbusters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Adbusters.Adbusters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		007734C91FB8E055003B41F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -376,8 +408,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33NUGZ4GWE;
 				INFOPLIST_FILE = "Adbusters 2.0/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.calebrwells.Adbusters-2-0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Adbusters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -392,41 +425,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33NUGZ4GWE;
 				INFOPLIST_FILE = "Adbusters 2.0/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.calebrwells.Adbusters-2-0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Adbusters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		007734DD1FB8E08F003B41F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33NUGZ4GWE;
-				INFOPLIST_FILE = Adbusters/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.calebrwells.Adbusters-2-0.Adbusters";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		007734DE1FB8E08F003B41F2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33NUGZ4GWE;
-				INFOPLIST_FILE = Adbusters/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.calebrwells.Adbusters-2-0.Adbusters";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -435,6 +437,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		001051EF1FBA404600676C1F /* Build configuration list for PBXNativeTarget "Adbusters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				001051F01FBA404600676C1F /* Debug */,
+				001051F11FBA404600676C1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		007734B41FB8E055003B41F2 /* Build configuration list for PBXProject "Adbusters 2.0" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -449,15 +460,6 @@
 			buildConfigurations = (
 				007734CC1FB8E055003B41F2 /* Debug */,
 				007734CD1FB8E055003B41F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		007734DC1FB8E08F003B41F2 /* Build configuration list for PBXNativeTarget "Adbusters" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				007734DD1FB8E08F003B41F2 /* Debug */,
-				007734DE1FB8E08F003B41F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -50,7 +50,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         text.text =
                     """
                     Follow these simple steps to enable Adbusters.
-                    .
+                    
                     ∙ Start by opening Settings.
                     ∙ Scroll to Safari and tap it.
                     ∙ Tap on content blockers.
