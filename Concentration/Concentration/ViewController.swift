@@ -10,6 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var flipCount = 0 {
+        didSet {
+            flipCountLabel.text = "Flips: \(flipCount)"
+        }
+    }
+    
+    let flipCountLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Flips: 0"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     let cardOneButton: UIButton = {
         let card = UIButton()
         card.setTitle("🤯", for: .normal)
@@ -74,6 +89,13 @@ class ViewController: UIViewController {
     }
     
     func setUpCardsLayout() {
+        view.addSubview(flipCountLabel)
+        
+        flipCountLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12).isActive = true
+        flipCountLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        flipCountLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -50).isActive = true
+        flipCountLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
         view.addSubview(cardOneButton)
         view.addSubview(cardTwoButton)
         view.addSubview(cardThreeButton)
@@ -89,7 +111,7 @@ class ViewController: UIViewController {
         bottomCardsStackView.distribution = .equalSpacing
         view.addSubview(bottomCardsStackView)
         
-        topCardsStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 25).isActive = true
+        topCardsStackView.topAnchor.constraint(equalTo: flipCountLabel.bottomAnchor, constant: 25).isActive = true
         topCardsStackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         topCardsStackView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -50).isActive = true
         topCardsStackView.bottomAnchor.constraint(equalTo: bottomCardsStackView.topAnchor, constant: -300).isActive = true
@@ -117,7 +139,8 @@ class ViewController: UIViewController {
     }
     
     func flipCard(withEmoji emoji: String, on button: UIButton) {
-        print("flipCard(withEmoji: \(emoji))")
+        flipCount += 1
+        
         if button.currentTitle == emoji {
             button.setTitle("", for: .normal)
             button.backgroundColor = #colorLiteral(red: 1, green: 0.6425891288, blue: 0.2804650337, alpha: 1)
