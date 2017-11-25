@@ -19,11 +19,15 @@ class ViewController: UITableViewController {
         ["Patrick", "Patty"]
     ]
     
+    var showIndexPaths = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.title = "Contacts"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Show IndexPath", style: .plain, target: self, action: #selector(handleShowIndexPath))
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
@@ -49,9 +53,28 @@ class ViewController: UITableViewController {
         let name = twoDimensionalArray[indexPath.section][indexPath.row]
         cell.textLabel?.text = name
         
-        cell.textLabel?.text = "\(name) Section: \(indexPath.section) Row: \(indexPath.row)"
+        if showIndexPaths {
+            cell.textLabel?.text = "\(name) Section: \(indexPath.section) Row: \(indexPath.row)"
+        }
         
         return cell
+    }
+    
+    @objc func handleShowIndexPath() {
+        
+        var indexPathsToReload = [IndexPath]()
+        
+        for section in twoDimensionalArray.indices {
+            for row in twoDimensionalArray[section].indices {
+                let indexPath = IndexPath(row: row, section: section)
+                indexPathsToReload.append(indexPath)
+            }
+        }
+        
+        showIndexPaths = !showIndexPaths
+        
+        let animationStyle = showIndexPaths ? UITableViewRowAnimation.right : .left
+        tableView.reloadRows(at: indexPathsToReload, with: animationStyle)
     }
 }
 
