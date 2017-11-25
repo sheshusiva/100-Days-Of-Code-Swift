@@ -30,14 +30,14 @@ class ViewController: UITableViewController {
         
         //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Show IndexPath", style: .plain, target: self, action: #selector(handleShowIndexPath))
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(ContactCell.self, forCellReuseIdentifier: cellId)
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let button = UIButton(type: .system)
         button.setTitle("Close", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor(red: 27/255, green: 154/255, blue: 43/170, alpha: 1.0)
+        button.backgroundColor = UIColor(red: 1/255, green: 186/255, blue: 239/170, alpha: 1.0)
         button.addTarget(self, action: #selector(handleOpenClose), for: .touchUpInside)
         
         button.tag = section

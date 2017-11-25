@@ -12,6 +12,7 @@
 		00B3D1921FC7E6D4003AF043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B3D1911FC7E6D4003AF043 /* Assets.xcassets */; };
 		00B3D1951FC7E6D4003AF043 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B3D1931FC7E6D4003AF043 /* LaunchScreen.storyboard */; };
 		00B3D19D1FC92528003AF043 /* ExpandableNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3D19C1FC92528003AF043 /* ExpandableNames.swift */; };
+		00B3D19F1FC92CFD003AF043 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3D19E1FC92CFD003AF043 /* ContactCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		00B3D1941FC7E6D4003AF043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00B3D1961FC7E6D4003AF043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00B3D19C1FC92528003AF043 /* ExpandableNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableNames.swift; sourceTree = "<group>"; };
+		00B3D19E1FC92CFD003AF043 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				00B3D18A1FC7E6D4003AF043 /* AppDelegate.swift */,
 				00B3D18C1FC7E6D4003AF043 /* ViewController.swift */,
+				00B3D19E1FC92CFD003AF043 /* ContactCell.swift */,
 				00B3D19C1FC92528003AF043 /* ExpandableNames.swift */,
 				00B3D1911FC7E6D4003AF043 /* Assets.xcassets */,
 				00B3D1931FC7E6D4003AF043 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B3D19F1FC92CFD003AF043 /* ContactCell.swift in Sources */,
 				00B3D19D1FC92528003AF043 /* ExpandableNames.swift in Sources */,
 				00B3D18D1FC7E6D4003AF043 /* ViewController.swift in Sources */,
 				00B3D18B1FC7E6D4003AF043 /* AppDelegate.swift in Sources */,
