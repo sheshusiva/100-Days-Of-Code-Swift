@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Label"
+        label.text = ""
         label.textColor = .white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -33,10 +33,11 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(handleChooseButton), for: .touchUpInside)
         return button
     }()
     
-    //MARK: View did load.
+    //MARK: === View did load.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,6 +66,21 @@ class ViewController: UIViewController {
         chooseButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         chooseButton.widthAnchor.constraint(equalToConstant: 320).isActive = true
         chooseButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    //MARK: === Handle button.
+    @objc func handleChooseButton() {
+        let selectionVC = SelectionScreen()
+        selectionVC.selectionDelegate = self
+        present(selectionVC, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: SelectionDelegate {
+    func didSelect(image: UIImage, name: String, color: UIColor) {
+        mainImageView.image = image
+        nameLabel.text = name
+        view.backgroundColor = color
     }
 }
 
