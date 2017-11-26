@@ -26,6 +26,6 @@ class ContactCell: UITableViewCell {
     }
     
     @objc func handleStarButton(starButton: UIButton) {
-        starButton.tintColor = .lightGray
+        starButton.tintColor = .blue
     }
 }
