@@ -12,14 +12,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let shapeLayer = CAShapeLayer()
+        
+        shapeLayer.bounds = CGRect(x: 0.0, y: 0.0, width: 120.0, height: 120.0)
+        shapeLayer.lineWidth = 2.0
+        shapeLayer.fillColor = UIColor.red.cgColor
+        shapeLayer.path = UIBezierPath(rect: shapeLayer.bounds).cgPath
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
