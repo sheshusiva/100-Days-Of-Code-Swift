@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Adbusters 2.0
+//  02 LBTA Facebook's News Feed
 //
-//  Created by Caleb Wells on 11/12/17.
+//  Created by Caleb Wells on 11/29/17.
 //  Copyright © 2017 Caleb Wells. All rights reserved.
 //
 
@@ -15,13 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        window = UIWindow()
-        window?.makeKeyAndVisible()
-        
-        let vc = ViewController()
-        window?.rootViewController = vc
-        
+        // Override point for customization after application launch.
         return true
     }
 
