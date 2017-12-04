@@ -23,29 +23,26 @@ class ViewController: UIViewController {
     
     let headerTitle: UILabel = {
         let label = UILabel()
-        label.text = "UIButton"
+        label.text = "UISegmentedControl"
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let button: UIButton = {
-        let button = UIButton()
-        button.setTitle("Hello, button", for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-        button.layer.cornerRadius = 12
-        button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(handleButtonPrss), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
+    let segmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(items: ["Week", "Month", "Year"])
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.tintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.addTarget(self, action: #selector(handleSegmentIndex), for: .touchUpInside)
+        return segmentedControl
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(headerView)
-        
-        view.addSubview(button)
+        view.addSubview(segmentedControl)
         
         setUpLayout()
     }
@@ -53,15 +50,21 @@ class ViewController: UIViewController {
     func setUpLayout() {
         setUpHeader()
         
-        button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        button.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -50).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        segmentedControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
+        segmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        segmentedControl.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -50).isActive = true
+        segmentedControl.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        
     }
     
-    @objc func handleButtonPrss() {
-        print("Hello, button.")
+    @objc func handleSegmentIndex(sender: UISegmentedControl!) {
+        print(sender.selectedSegmentIndex)
     }
+    
+    
+    
+    
+    
     
     
     
