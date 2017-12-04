@@ -23,26 +23,27 @@ class ViewController: UIViewController {
     
     let headerTitle: UILabel = {
         let label = UILabel()
-        label.text = "UISegmentedControl"
+        label.text = "UILabel"
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let segmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl(items: ["Week", "Month", "Year"])
-        segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.tintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        segmentedControl.addTarget(self, action: #selector(handleSegmentIndex), for: .touchUpInside)
-        return segmentedControl
+    let label: UILabel = {
+        let label = UILabel()
+        label.text = "Hello, label."
+        label.textAlignment = .center
+        label.textColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        label.font = UIFont.boldSystemFont(ofSize: 27)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(headerView)
-        view.addSubview(segmentedControl)
+        view.addSubview(label)
         
         setUpLayout()
     }
@@ -50,16 +51,13 @@ class ViewController: UIViewController {
     func setUpLayout() {
         setUpHeader()
         
-        segmentedControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
-        segmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        segmentedControl.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -50).isActive = true
-        segmentedControl.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        
+        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
-    @objc func handleSegmentIndex(sender: UISegmentedControl!) {
-        print(sender.selectedSegmentIndex)
-    }
+    
     
     
     
