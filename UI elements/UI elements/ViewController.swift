@@ -41,22 +41,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         view.addSubview(headerView)
         view.addSubview(label)
-        
+
         setUpLayout()
     }
-    
+
     func setUpLayout() {
         setUpHeader()
-        
+
         label.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         label.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         label.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
-    
     
     
     
