@@ -23,27 +23,33 @@ class ViewController: UIViewController {
     
     let headerTitle: UILabel = {
         let label = UILabel()
-        label.text = "UILabel"
+        label.text = "UISlider"
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let label: UILabel = {
-        let label = UILabel()
-        label.text = "Hello, label."
-        label.textAlignment = .center
-        label.textColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-        label.font = UIFont.boldSystemFont(ofSize: 27)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    let slider: UISlider = {
+        let slider = UISlider(frame: CGRect(x: 20, y: 260, width: 280, height: 20))
+        slider.minimumValue = 1
+        slider.maximumValue = 24
+        slider.isContinuous = true
+        slider.value = 12
+        slider.tintColor = #colorLiteral(red: 0.9995597005, green: 0, blue: 0, alpha: 1)
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.addTarget(self, action: #selector(handleSlider), for: .valueChanged)
+        return slider
     }()
+    
+    @objc func handleSlider(sender: UISlider!) {
+        print(sender.value)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.addSubview(headerView)
-        view.addSubview(label)
+        view.addSubview(slider)
 
         setUpLayout()
     }
@@ -51,10 +57,10 @@ class ViewController: UIViewController {
     func setUpLayout() {
         setUpHeader()
 
-        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
-        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        label.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        label.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        slider.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
+        slider.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        slider.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        slider.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
     
