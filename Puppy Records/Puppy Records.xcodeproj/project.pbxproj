@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001EA3B61FDE0B41006B7116 /* PuppyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001EA3B51FDE0B41006B7116 /* PuppyCell.swift */; };
+		001EA3B81FDE11F1006B7116 /* PuppyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001EA3B71FDE11F1006B7116 /* PuppyController.swift */; };
 		00C43F521FDDAFBE00DB0619 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C43F511FDDAFBE00DB0619 /* AppDelegate.swift */; };
 		00C43F541FDDAFBE00DB0619 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C43F531FDDAFBE00DB0619 /* ViewController.swift */; };
 		00C43F591FDDAFBE00DB0619 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00C43F581FDDAFBE00DB0619 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		001EA3B51FDE0B41006B7116 /* PuppyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyCell.swift; sourceTree = "<group>"; };
+		001EA3B71FDE11F1006B7116 /* PuppyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyController.swift; sourceTree = "<group>"; };
 		00C43F4E1FDDAFBE00DB0619 /* Puppy Records.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Puppy Records.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C43F511FDDAFBE00DB0619 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00C43F531FDDAFBE00DB0619 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			children = (
 				00C43F511FDDAFBE00DB0619 /* AppDelegate.swift */,
 				00C43F531FDDAFBE00DB0619 /* ViewController.swift */,
+				001EA3B51FDE0B41006B7116 /* PuppyCell.swift */,
+				001EA3B71FDE11F1006B7116 /* PuppyController.swift */,
 				00C43F581FDDAFBE00DB0619 /* Assets.xcassets */,
 				00C43F5A1FDDAFBE00DB0619 /* LaunchScreen.storyboard */,
 				00C43F5D1FDDAFBE00DB0619 /* Info.plist */,
@@ -132,7 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				001EA3B61FDE0B41006B7116 /* PuppyCell.swift in Sources */,
 				00C43F541FDDAFBE00DB0619 /* ViewController.swift in Sources */,
+				001EA3B81FDE11F1006B7116 /* PuppyController.swift in Sources */,
 				00C43F521FDDAFBE00DB0619 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
