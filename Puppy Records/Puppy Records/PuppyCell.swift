@@ -10,8 +10,6 @@ import UIKit
 
 class PuppyCell: UITableViewCell {
     
-    var vc = ViewController()
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         

@@ -26,7 +26,12 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Puppy Records"
+        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
         navigationController?.navigationBar.prefersLargeTitles = true
+        let largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.largeTitleTextAttributes = largeTitleTextAttributes
         
         let rightButton = UIBarButtonItem(customView: addBarButton)
         navigationItem.rightBarButtonItem = rightButton
