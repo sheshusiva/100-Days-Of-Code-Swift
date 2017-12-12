@@ -46,7 +46,7 @@ class TableViewController: UITableViewController {
     
     let switchLabel: UILabel = {
         let label = UILabel()
-        label.text = "Switch!"
+        label.text = "Switch"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -110,7 +110,7 @@ class TableViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -118,7 +118,9 @@ class TableViewController: UITableViewController {
         case 0:
             return 2
         case 1:
-            return 3
+            return 1
+        case 2:
+            return 2
         default:
             fatalError()
         }
@@ -139,9 +141,14 @@ class TableViewController: UITableViewController {
             switch indexPath.row {
             case 0:
                 return feedbackCell
-            case 1:
+            default:
+                fatalError()
+            }
+        case 2:
+            switch indexPath.row {
+            case 0:
                 return checkmarkCell
-            case 2:
+            case 1:
                 return switchCell
             default:
                 fatalError()
@@ -157,6 +164,8 @@ class TableViewController: UITableViewController {
             return "Profile"
         case 1:
             return "Contact"
+        case 2:
+            return "More stuff"
         default:
             fatalError()
         }
