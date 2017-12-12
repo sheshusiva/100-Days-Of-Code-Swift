@@ -172,7 +172,7 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 && indexPath.row == 1 {
+        if indexPath.section == 2 && indexPath.row == 0 {
             tableView.deselectRow(at: indexPath, animated: false)
             
             if checkmarkCell.accessoryType == UITableViewCellAccessoryType.none {
