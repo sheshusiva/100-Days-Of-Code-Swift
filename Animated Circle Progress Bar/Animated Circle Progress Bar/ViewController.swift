@@ -40,7 +40,7 @@ class ViewController: UIViewController, URLSessionDownloadDelegate {
         trackLayer.position = view.center
         
         shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor.red.cgColor
+        shapeLayer.strokeColor = UIColor.blue.cgColor
         shapeLayer.lineWidth = 10
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = kCALineCapRound
