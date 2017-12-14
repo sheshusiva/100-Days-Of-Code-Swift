@@ -13,18 +13,51 @@ class PuppyCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        let detailButton = UIButton(type: .system)
-        detailButton.setImage(#imageLiteral(resourceName: "paw"), for: .normal)
-        detailButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        detailButton.addTarget(self, action: #selector(handleDetailButton), for: .touchUpInside)
-        accessoryView = detailButton
+        accessoryType = .disclosureIndicator
+        setUpViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func handleDetailButton() {
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Puppy Name"
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let detailsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Puppy details"
+        label.textColor = .lightGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    func setUpViews() {
+        let imageView: UIImageView = {
+            let image = UIImageView(image: #imageLiteral(resourceName: "shih-tzu"))
+            image.layer.cornerRadius = 12
+            image.clipsToBounds = true
+            image.translatesAutoresizingMaskIntoConstraints = false
+            return image
+        }()
         
+        addSubview(imageView)
+        imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        addSubview(nameLabel)
+        nameLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 100).isActive = true
+        nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -30).isActive = true
+        
+        addSubview(detailsLabel)
+        detailsLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 100).isActive = true
+        detailsLabel.centerYAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 12).isActive = true
     }
 }

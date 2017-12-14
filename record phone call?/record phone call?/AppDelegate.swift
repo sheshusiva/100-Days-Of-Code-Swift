@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Puppy Records
+//  record phone call?
 //
-//  Created by Caleb Wells on 12/10/17.
+//  Created by Caleb Wells on 12/13/17.
 //  Copyright © 2017 Caleb Wells. All rights reserved.
 //
 
@@ -15,15 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        window = UIWindow()
-        window?.makeKeyAndVisible()
-        let navController = UINavigationController(rootViewController: ViewController())
-        window?.rootViewController = navController
-        
-        UINavigationBar.appearance().barTintColor = UIColor(red: 0/255, green: 83/255, blue: 255/255, alpha: 1.0)
-        application.statusBarStyle = .lightContent
-        
+        // Override point for customization after application launch.
         return true
     }
 
