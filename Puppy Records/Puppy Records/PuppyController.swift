@@ -15,6 +15,12 @@ class PuppyController: UIViewController {
         navigationController?.navigationBar.tintColor = .white
         navigationItem.title = "Puppy Details"
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(handleEditButton))
+        
         view.backgroundColor = .white
+    }
+    
+    @objc func handleEditButton() {
+        print("Edit puppy controller!")
     }
 }

@@ -40,8 +40,11 @@ class PuppyCell: UITableViewCell {
     func setUpViews() {
         let imageView: UIImageView = {
             let image = UIImageView(image: #imageLiteral(resourceName: "shih-tzu"))
-            image.layer.cornerRadius = 12
+            image.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+            image.layer.cornerRadius = image.frame.size.width / 2
             image.clipsToBounds = true
+            image.layer.borderWidth = 6
+            image.layer.borderColor = UIColor.blue.cgColor
             image.translatesAutoresizingMaskIntoConstraints = false
             return image
         }()

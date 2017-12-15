@@ -15,6 +15,13 @@ class AddPuppyController: UIViewController {
         navigationController?.navigationBar.tintColor = .white
         navigationItem.title = "Add New Puppy"
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(handleSaveButton))
+        navigationController?.navigationBar.tintColor = .white
+        
         view.backgroundColor = .white
+    }
+    
+    @objc func handleSaveButton() {
+        print("Saved!")
     }
 }

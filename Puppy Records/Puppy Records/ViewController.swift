@@ -23,6 +23,8 @@ class ViewController: UITableViewController {
         let largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleTextAttributes
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(handleEditButton))
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleAddButton))
         navigationController?.navigationBar.tintColor = .white
         
@@ -33,6 +35,10 @@ class ViewController: UITableViewController {
     @objc func handleAddButton() {
         let addPuppyController = AddPuppyController()
         navigationController?.pushViewController(addPuppyController, animated: true)
+    }
+    
+    @objc func handleEditButton() {
+        print("Edit!")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
